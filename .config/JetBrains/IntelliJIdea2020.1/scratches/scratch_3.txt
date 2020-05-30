@@ -1,1 +1,0 @@
-kubectl get secret git-ssh-secret --namespace=kube-system --export -o yaml |   kubectl apply --namespace=flux -f -

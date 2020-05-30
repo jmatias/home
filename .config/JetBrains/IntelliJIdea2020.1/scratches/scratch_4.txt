@@ -1,1 +1,0 @@
-[1mSUCCESS![0m -- [1m1 Passed[0m | [91m[1m0 Failed[0m | [33m[1m0 Pending[0m | [36m[1m1 Skipped[0m
