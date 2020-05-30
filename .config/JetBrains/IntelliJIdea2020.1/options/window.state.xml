@@ -1,0 +1,44 @@
+<application>
+  <component name="DimensionService">
+    <location key="find.popup.0.1115.2560.1400" x="321" y="1164" />
+    <size key="GridCell.Tab.0.left.0.1115.2560.1400" width="1859" height="377" />
+    <size key="GridCell.Tab.0.center.0.1115.2560.1400" width="1859" height="377" />
+    <size key="GridCell.Tab.0.right.0.1115.2560.1400" width="1859" height="377" />
+    <size key="GridCell.Tab.0.bottom.0.1115.2560.1400" width="1859" height="377" />
+    <size key="find.popup.0.1115.2560.1400" width="1932" height="1193" />
+    <size key="GridCell.Tab.1.left.0.1115.2560.1400" width="1866" height="641" />
+    <size key="GridCell.Tab.1.center.0.1115.2560.1400" width="1866" height="641" />
+    <size key="GridCell.Tab.1.right.0.1115.2560.1400" width="1866" height="641" />
+    <size key="GridCell.Tab.1.bottom.0.1115.2560.1400" width="1866" height="641" />
+  </component>
+  <component name="WindowManager">
+    <frame x="1" y="1148" width="2556" height="1366" />
+    <layout>
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+    </layout>
+  </component>
+  <component name="WindowStateApplicationService">
+    <state x="1060" y="303" key="FileChooserDialogImpl" timestamp="1586229575970">
+      <screen x="0" y="0" width="2544" height="1361" />
+    </state>
+    <state x="1060" y="303" key="FileChooserDialogImpl/0.0.2544.1361" timestamp="1586229575970" />
+    <state x="1914" y="2374" width="400" height="141" key="ProcessPopupWindow" timestamp="1590793551185">
+      <screen x="0" y="1115" width="2560" height="1400" />
+    </state>
+    <state x="1914" y="2374" width="400" height="141" key="ProcessPopupWindow/0.1115.2560.1400/2560.0.1440.2520" timestamp="1590793551185" />
+    <state width="300" height="421" key="Vcs.CompareWithSelectedRevision.Popup" timestamp="1590795179807">
+      <screen x="0" y="1115" width="2560" height="1400" />
+    </state>
+    <state width="300" height="421" key="Vcs.CompareWithSelectedRevision.Popup/0.1115.2560.1400/2560.0.1440.2520" timestamp="1590795179807" />
+    <state x="649" y="1915" width="864" height="361" key="bookmarks" timestamp="1590124822722">
+      <screen x="0" y="1115" width="2560" height="1400" />
+    </state>
+    <state x="649" y="1915" width="864" height="361" key="bookmarks/0.1115.2560.1400/2560.0.1440.2520" timestamp="1590124822722" />
+  </component>
+</application>

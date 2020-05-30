@@ -1,0 +1,90 @@
+{
+  "settings": {
+    "index": {
+      "mapping": {
+        "total_fields": {
+          "limit": "1000"
+        }
+      },
+      "refresh_interval": "5s",
+      "number_of_shards": "4",
+      "number_of_replicas": "1"
+    }
+  },
+  "mappings":{
+    "properties": {
+
+      "kubernetes.namespace": {
+        "type": "keyword"
+      },
+      "kubernetes.pod.name": {
+        "type": "keyword"
+      },
+
+      "kubernetes.node.name": {
+        "type": "keyword"
+      },
+
+      "kubernetes.labels.app": {
+        "type": "keyword"
+      },
+
+      "kubernetes.container.name": {
+        "type": "keyword"
+      },
+
+      "kubernetes.container.image": {
+        "type": "keyword"
+      },
+
+      "kubernetes.statefulset.name": {
+        "type": "keyword"
+      },
+
+      "kubernetes.replicaset.name": {
+        "type": "keyword"
+      },
+
+      "kubernetes.labels.tekton_dev/pipeline" : {
+        "type": "keyword"
+      },
+
+      "kubernetes.labels.tekton_dev/pipelineRun" : {
+        "type": "keyword"
+      },
+
+      "kubernetes.labels.tekton_dev/pipelineTask" : {
+        "type": "keyword"
+      },
+
+      "kubernetes.labels.tekton_dev/task" : {
+        "type": "keyword"
+      },
+
+      "kubernetes.labels.tekton_dev/taskRun" : {
+        "type": "keyword"
+      },
+
+      "kubernetes.labels.kuberhealthy-check-name" : {
+        "type": "keyword"
+      },
+
+      "kubernetes.labels.resourceName" : {
+        "type": "keyword"
+      },
+
+      "kubernetes.labels.buildNumber" : {
+        "type": "keyword"
+      },
+
+      "kubernetes.labels.testLabel" : {
+        "type": "keyword"
+      },
+
+
+      "error": {
+        "type": "boolean"
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+[filesystem "AYANAMI.localdomain|AdoptOpenJDK|11.0.3|/dev/sdb"]
+	timestampResolution = 4000 nanoseconds
+	minRacyThreshold = 19350 microseconds

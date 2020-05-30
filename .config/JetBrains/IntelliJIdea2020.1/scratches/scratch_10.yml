@@ -1,0 +1,185 @@
+apiVersion: v1
+data:
+  alertmanager.yaml: global:
+  resolve_timeout: 5m
+  slack_api_url: https://xo.chat.***REMOVED***.com/hooks/***REMOVED***
+receivers:
+- name: "null"
+- name: KubeAlerts
+  slack_configs:
+  - channel: war-room
+    icon_url: '{{ template "icon_url" . }}'
+    send_resolved: true
+    text: |-
+      {{ template "alert_text" . }}
+
+      {{ template "silence_link" . }}
+    title: |
+      {{ template "xochat_msg_title" . }}
+- name: DockerOpErrorSlackMsg
+  slack_configs:
+  - channel: war-room
+    icon_url: '{{ template "icon_url" . }}'
+    send_resolved: true
+    text: |2-
+
+      {{ if eq .Status "firing" }}
+      Hey, I noticed an increase in the number of Docker operation errors.
+
+      {{ template "silence_link" . }}
+- name: TargetEndpointDownMsg
+  slack_configs:
+  - channel: war-room
+    icon_url: '{{ template "icon_url" . }}'
+    send_resolved: true
+    text: |2-
+
+      {{ if eq .Status "firing" }}
+      One or more target endpoints are down.
+
+
+      I{{ template "silence_link" . }}
+    title: |
+      {{ template "xochat_msg_title" . }}
+- name: ServiceDownMsg
+  slack_configs:
+  - channel: war-room
+    icon_url: '{{ template "icon_url" . }}'
+    send_resolved: true
+    text: |2-
+
+      One or more services have been down for more than 30 seconds.
+      {{ range .Alerts.Firing }}
+      - {{ .Labels.instance }}
+      {{ end }}
+
+      {{ template "silence_link" . }}
+    title: |
+      {{ template "xochat_msg_title" . }}
+- name: SyntheticTxMsg
+  slack_configs:
+  - channel: war-room
+    send_resolved: true
+    title_link: https://grafana.***REMOVED***.k8.***REMOVED***.com/d/kuberhealthy/***REMOVED***-tests-kuberhealthy?orgId=1&refresh=10s
+- name: HelmOperatorQueueMsg
+  slack_configs:
+  - channel: war-room
+    icon_url: '{{ template "icon_url" . }}'
+    send_resolved: true
+    text: |-
+      {{ template "alert_text" . }}
+
+      {{ template "silence_link" . }}
+    title: '{{ template "xochat_msg_title" . }}'
+    title_link: https://grafana.***REMOVED***.k8.***REMOVED***.com/d/wbm2efuWk/***REMOVED***-services-uptime?panelId=47&edit&fullscreen&orgId=1&refresh=10s&from=now-1h&to=now
+- name: DebuggingDashboardMsg
+  slack_configs:
+  - channel: war-room
+    icon_url: '{{ template "icon_url" . }}'
+    send_resolved: true
+    text: |-
+      {{ template "alert_text" . }}
+
+      {{ template "silence_link" . }}
+    title: |
+      {{ template "xochat_msg_title" . }}
+    title_link: '{{ template "container_conflict_dashboard" }}'
+route:
+  group_by:
+  - alertname
+  group_interval: 5m
+  group_wait: 30s
+  receiver: "null"
+  repeat_interval: 12h
+  routes:
+  - continue: false
+    group_interval: 30s
+    match:
+      alertname: DockerOperationErrorCountHigh
+    receiver: DockerOpErrorSlackMsg
+    repeat_interval: 15m
+  - continue: false
+    group_interval: 30s
+    match:
+      alertname: TargetDown
+    receiver: TargetEndpointDownMsg
+    repeat_interval: 10m
+  - continue: false
+    group_interval: 30s
+    match:
+      alertname: ServiceDown
+    receiver: ServiceDownMsg
+    repeat_interval: 10m
+  - continue: false
+    group_interval: 30s
+    match:
+      alertname: SyntheticTransactionFastError
+    receiver: SyntheticTxMsg
+    repeat_interval: 10m
+  - continue: false
+    group_interval: 30s
+    match:
+      alertname: SyntheticTransactionSlowError
+    receiver: SyntheticTxMsg
+    repeat_interval: 10m
+  - continue: false
+    group_interval: 30s
+    match:
+      alertname: HelmOperatorQueueLengthHigh
+    receiver: HelmOperatorQueueMsg
+    repeat_interval: 30m
+  - continue: false
+    group_interval: 30s
+    match:
+      alertname: DiskIoSaturated
+    receiver: DebuggingDashboardMsg
+    repeat_interval: 10m
+  - continue: false
+    group_interval: 30s
+    match:
+      alertname: CpuSaturated
+    receiver: DebuggingDashboardMsg
+    repeat_interval: 10m
+  - continue: false
+    group_interval: 30s
+    match:
+      alertname: KubeContainerWaiting
+    receiver: "null"
+    repeat_interval: 8h
+  - continue: false
+    group_interval: 30s
+    match:
+      alertname: KubePodCrashLooping
+    receiver: "null"
+    repeat_interval: 8h
+  - continue: false
+    group_interval: 30s
+    match:
+      alertname: KubePodNotReady
+    receiver: "null"
+    repeat_interval: 8h
+  - continue: false
+    group_interval: 30s
+    match:
+      alertname: KubeJobFailed
+    receiver: "null"
+    repeat_interval: 8h
+templates:
+- '*.tmpl'
+
+  dashboards.tmpl: e3sgZGVmaW5lICJjb250YWluZXJfY29uZmxpY3RfZGFzaGJvYXJkIiB9fWh0dHBzOi8vZ3JhZmFuYS5kZXZodWIuazguZGV2ZmFjdG9yeS5jb20vZC9hVmxoTXhqWnovZGV2aHViLWNvbnRhaW5lci1jb25mbGljdC1kZWJ1Z2dpbmc/b3JnSWQ9MXt7IGVuZCB9fQ==
+  slack.tmpl: e3sgZGVmaW5lICJpY29uX3VybCIgfX17eyBpZiBlcSAuU3RhdHVzICJmaXJpbmciIH19aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vcy90cmo3Zmk3MWdvcjljZ2kvaWNvbi1lbWVyZ2VuY3ktc2VydmljZXMtMi5wbmc/cmF3PTF7eyBlbHNlIH19aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vcy82ajRjazk1a3dzajRvYW8vcmVzb2x2ZWQucG5nP3Jhdz0xe3sgZW5kIH19e3sgZW5kIH19Cgp7eyBkZWZpbmUgImFsZXJ0X3RleHQiIH19Cnt7IHJhbmdlIC5BbGVydHMuRmlyaW5nIH19Cnt7IC5Bbm5vdGF0aW9ucy5tZXNzYWdlIH19Cnt7IGVuZCB9fQp7eyBlbmQgfX0KCnt7IGRlZmluZSAieG9jaGF0X21zZ190aXRsZSIgfX0KW3t7IC5TdGF0dXMgfCB0b1VwcGVyIH19e3sgaWYgZXEgLlN0YXR1cyAiZmlyaW5nIiB9fTp7eyAuQWxlcnRzLkZpcmluZyB8IGxlbiB9fXt7IGVuZCB9fV0gIHt7IC5Hcm91cExhYmVscy5Tb3J0ZWRQYWlycy5WYWx1ZXMgfCBqb2luICIgIiB9fSB7eyBpZiBndCAobGVuIC5Db21tb25MYWJlbHMpIChsZW4gLkdyb3VwTGFiZWxzKSB9fXt7IGVuZCB9fQp7eyBlbmQgfX0KCnt7IGRlZmluZSAic2lsZW5jZV9saW5rIiB9fQp7eyBpZiBlcSAuU3RhdHVzICJmaXJpbmciIH19Q2xpY2sgPGh0dHA6Ly9hbGVydG1hbmFnZXIuZGV2aHViLms4LmRldmZhY3RvcnkuY29tLyMvYWxlcnRzP3JlY2VpdmVyPXt7IC5SZWNlaXZlciB9fSB8aGVyZT4gdG8gdGVtcG9yYXJpbHkgc2lsZW5jZSBtZS57eyBlbmQgfX0Ke3sgZW5kIH19
+kind: Secret
+metadata:
+  creationTimestamp: "2020-05-22T19:31:25Z"
+  labels:
+    app: prometheus-operator-alertmanager
+    chart: prometheus-operator-8.13.8
+    heritage: Tiller
+    release: prom-operator
+  name: alertmanager-prom-operator-prometheus-o-alertmanager
+  namespace: monitoring
+  resourceVersion: "776271316"
+  selfLink: /api/v1/namespaces/monitoring/secrets/alertmanager-prom-operator-prometheus-o-alertmanager
+  uid: ee5e863b-6f5f-4c61-989e-b14e70f06001
+type: Opaque

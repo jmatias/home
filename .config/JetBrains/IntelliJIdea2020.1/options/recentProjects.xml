@@ -1,0 +1,383 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/alertmanager">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1adHTLqgUtKQKxx6DNpCqnvgJKT">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.6668.121" />
+              <option name="buildTimestamp" value="1586355456492" />
+              <frame x="0" y="1138" width="2560" height="1377" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1587698372979" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/knative">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1az7SZwlUBPhDjqo1MbdW3Sm1m2">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.6668.121" />
+              <option name="buildTimestamp" value="1586355453301" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1587726568247" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/cli">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1azrhmdTfEE3jvw4QpQ7DGoCBY9">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.6668.121" />
+              <option name="buildTimestamp" value="1586355447562" />
+              <frame x="8" y="1146" width="2558" height="1368" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1587749384426" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/pipeline">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1azS0dUweRFggYQlUg9c8okmOET">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.6668.121" />
+              <option name="buildTimestamp" value="1586355436147" />
+              <frame x="1" y="1146" width="2558" height="1368" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1588000858297" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/thanos">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1bUhJ4ACnh4Gdzldbi4bL5LGrOe">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217356664" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1589303145370" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/prometheus-operator">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1bT3BrlSB46yN5eXKRoqOqjFnxy">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217356664" />
+              <frame x="0" y="1138" width="2560" height="1377" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1589376334316" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/unleash">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1bza4gZwWPmyfahLWBdsFRDeECe">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217345934" />
+              <frame x="1" y="1148" width="2556" height="1366" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1589637404536" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/bitnami_charts">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1axvoLTYxuoS6vVVYTcs5hvP7uu">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217369836" />
+              <frame x="0" y="1138" width="2560" height="1377" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590186144176" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/weaveworks">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1aqx3vgrld9xHMzwqfUzjJ8156O">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217369836" />
+              <frame x="0" y="1138" width="2560" height="1377" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590192083309" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/kuberhealthy">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1adu16zrqF2IQh8soLHeM7lrvtv">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217386184" />
+              <frame x="0" y="1137" width="2560" height="1378" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590192950126" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/oteemo_charts">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1cJhu22xTWgDbKloySTRxbomQq7">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217376783" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590252822283" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/cloudfix-gitops">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1cTOcxYUgBJyXRYS7I2jGdmZNTg">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217376783" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590549199685" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/podinfo">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1bVpU6tpWcQibdbSp3GBxu0r0nm">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217353000" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590619995449" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/autoscaler">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1bF7br16IX61tnQHpofW3afZvJY">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217353000" />
+              <frame x="0" y="1138" width="2560" height="1377" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590619997605" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/***REMOVED***-eksctl">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1cXeJUbYXVPQGwc0CMc5IxoYSno">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217389265" />
+              <frame x="1" y="1148" width="2556" height="1366" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590685382703" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/eksctl">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1cYWdYgZsB4bU3zrY1SKkCpTi3F">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217356921" />
+              <frame x="1" y="1148" width="2556" height="1366" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590707190987" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/helm_charts">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1Z4LzxKFPw0CSYWCTbvElvHrYj2">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217356921" />
+              <frame x="0" y="1146" width="2560" height="1400" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590785618343" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/external_repos/elastic-charts">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1auNdOpV2cNMF6PYx1WrHC895AM">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217363250" />
+              <frame x="1" y="1148" width="2556" height="1366" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590786050462" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/external_repos">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1cbKt7DrU64OQERmzmvGE9LXDEg">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217348957" />
+              <frame x="0" y="1138" width="2560" height="1377" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590794243541" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/external_repos/./.">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1cbKt7DrU64OQERmzmvGE9LXDEg">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217348957" />
+              <frame x="0" y="1138" width="2560" height="1377" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590795649389" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/external_repos/helm_charts">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1cbSBUKXinYCycIXwuinKphgJhr">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217348957" />
+              <frame x="0" y="1146" width="2560" height="1368" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590795663702" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1ZgiO5y7HcmnqCRvhDjJ61S5uFR">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217348957" />
+              <frame x="1" y="1148" width="2556" height="1366" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590797516502" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/d/aws/eks-sandbox/./.">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1cXeJUbYXVPQGwc0CMc5IxoYSno">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217365380" />
+              <frame x="1" y="1148" width="2556" height="1366" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590803144046" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/unleash-deployment">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1cbrvLvyJolgzng46GVwNx8noaH">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217385669" />
+              <frame x="0" y="1138" width="2560" height="1377" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590820962940" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/.oh-my-zsh">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1cbWVxRobAoXubs9jwJ67kIRhsU">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217395966" />
+              <frame x="1" y="1148" width="2556" height="1366" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590836287223" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/eks-sandbox">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1cbiWAw6sbb7HkthGzVMMtqghYc">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217395966" />
+              <frame x="1" y="1148" width="2556" height="1366" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590837146727" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/.kube">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1ccmc0Iv9j6f14BrelUOtwIkgDz">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217380669" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590839234394" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/.aws">
+          <value>
+            <RecentProjectMetaInfo projectWorkspaceId="1cbdW1C6PgN7OcLJ1eiHyWyWlu1">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217380669" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590839453169" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/workspace/ScaledDi/.">
+          <value>
+            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1ZgiO5y7HcmnqCRvhDjJ61S5uFR">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IU-201.7223.91" />
+              <option name="buildTimestamp" value="1588217380669" />
+              <frame x="1" y="1148" width="2556" height="1366" />
+              <option name="productionCode" value="IU" />
+              <option name="projectOpenTimestamp" value="1590839454908" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastProjectLocation" value="$USER_HOME$/workspace/ScaledDi/external_repos" />
+    <option name="recentPaths">
+      <list>
+        <option value="$USER_HOME$/workspace/ScaledDi/." />
+        <option value="$USER_HOME$/.aws" />
+        <option value="$USER_HOME$/.kube" />
+        <option value="$USER_HOME$/workspace/eks-sandbox" />
+        <option value="$USER_HOME$/.oh-my-zsh" />
+        <option value="$USER_HOME$/workspace/unleash-deployment" />
+        <option value="/d/aws/eks-sandbox/./." />
+        <option value="$USER_HOME$/workspace/ScaledDi" />
+        <option value="$USER_HOME$/workspace/external_repos/helm_charts" />
+        <option value="$USER_HOME$/workspace/external_repos/./." />
+        <option value="$USER_HOME$/workspace/external_repos" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/elastic-charts" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/helm_charts" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/eksctl" />
+        <option value="$USER_HOME$/workspace/ScaledDi/***REMOVED***-eksctl" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/autoscaler" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/podinfo" />
+        <option value="$USER_HOME$/workspace/ScaledDi/cloudfix-gitops" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/oteemo_charts" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/kuberhealthy" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/weaveworks" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/bitnami_charts" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/unleash" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/prometheus-operator" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/thanos" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/pipeline" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/cli" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/knative" />
+        <option value="$USER_HOME$/workspace/ScaledDi/external_repos/alertmanager" />
+      </list>
+    </option>
+  </component>
+</application>

@@ -1,0 +1,21 @@
+{
+  "PackagesDirectory": "C:\\AmazonS3",
+  "RuntimeDirectory": "C:\\ACRM",
+  "EnterpriseKey": "aQOI-rvYv-zDYk-ZQOz-XUvw-zvZv-F1ZN-IOcu",
+  "StandardKey": "fvvn-FLCv-4vXk-QQPI-ZGQO-HzZv-F4ZE-IOcI",
+  "S3BucketName": "update-dev-files",
+  "S3AccessKey": "AKIAIU2TFWRNVAYKKDBQ",
+  "S3SecretKey": "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",
+  "DeployerExecutablePath": "C:\\Users\\Administrator\\code\\***REMOVED***-tools\\ACRMQA\\ACRM.Deploy\\bin\\ReleaseACRM.Deploy.exe",
+  "PathTo7z": "C:\\Program Files\\7-Zip\\7z.exe",
+  "SQLServerHost": ".",
+  "CustomerBackups": "E:\\CustomerBackups",
+  "DefaultBranch": "hotfix",
+  "ConnectorSeServerHost": "https://outlook.office365.com/EWS/Exchange.asmx",
+  "ConnectorSeAdminUserEmail": "impersonator",
+  "ConnectorSeAdminUserPW": "Hom94841",
+  "OracleServerHost": "localhost",
+  "OracleServerPort": "1521",
+  "OracleServerInstanceName": "xe",
+  "ProcessCredentialsPath":  "C:\\QAPortal\\process.dat"
+}

@@ -1,0 +1,7 @@
+
+eksctl create iamserviceaccount  --region us-east-1  --name alb-ingress-controller \
+    --namespace kube-system \
+    --cluster javier \
+    --attach-policy-arn arn:aws:iam::745892955196:policy/ALBIngressControllerIAMPolicy \
+    --override-existing-serviceaccounts \
+    --approve
