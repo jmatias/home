@@ -1,4 +1,0 @@
-Username: unleashUser
-Password: Lqi0ZZlIDj
-Database: unleash
-postgres://unleashUser:Lqi0ZZlIDj@unleash-postgresql:5432/unleash

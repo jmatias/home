@@ -1,3 +1,0 @@
-helm upgrade -i flux fluxcd/flux --wait \
---namespace fluxcd \
---set git.url=git@github.com:***REMOVED***/impdh-gitops-dev.git
