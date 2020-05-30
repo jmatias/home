@@ -1,0 +1,18 @@
+global:
+  resolve_timeout: 5m
+  slack_api_url: https://xo.chat.***REMOVED***.com/hooks/***REMOVED***
+receivers:
+- name: slack-notifications
+  slack_configs:
+  - channel: ***REMOVED***-e2e-health
+    text: Docker is acting up.
+route:
+  group_by:
+  - alertname
+  group_interval: 5m
+  group_wait: 30s
+  receiver: slack-notifications
+  repeat_interval: 12h
+  routes:
+  - match:
+      alertname: DockerOperationErrors

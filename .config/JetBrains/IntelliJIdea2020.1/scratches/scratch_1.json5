@@ -1,0 +1,118 @@
+PUT _template/logstash?include_type_name
+{
+"version": 60001,
+"order": 0,
+"index_patterns": [
+"logstash-*"
+],
+"settings": {
+"index": {
+"lifecycle": {
+"name": "logstash-policy",
+"rollover_alias": "logstash"
+},
+"refresh_interval": "5s",
+"number_of_shards": "4",
+"number_of_replicas": "3"
+}
+},
+"mappings": {
+"_doc": {
+"_meta": {},
+"_source": {},
+"dynamic_templates": [
+{
+"message_field": {
+"path_match": "message",
+"mapping": {
+"norms": false,
+"type": "text"
+},
+"match_mapping_type": "string"
+}
+},
+{
+"string_fields": {
+"mapping": {
+"norms": false,
+"type": "text",
+"fields": {
+"keyword": {
+"ignore_above": 256,
+"type": "keyword"
+}
+}
+},
+"match_mapping_type": "string",
+"match": "*"
+}
+}
+],
+"properties": {
+"kubernetes.node.name": {
+"type": "keyword"
+},
+"kubernetes.container.name": {
+"type": "keyword"
+},
+"kubernetes.labels.tekton_dev/taskRun": {
+"type": "keyword"
+},
+"kubernetes.replicaset.name": {
+"type": "keyword"
+},
+"kubernetes.labels.buildNumber": {
+"type": "keyword"
+},
+"kubernetes.labels.resourceName": {
+"type": "keyword"
+},
+"kubernetes.labels.tekton_dev/task": {
+"type": "keyword"
+},
+"error": {
+"type": "boolean"
+},
+"kubernetes.labels.testLabel": {
+"type": "keyword"
+},
+"kubernetes.statefulset.name": {
+"type": "keyword"
+},
+"environment": {
+"type": "keyword"
+},
+"@timestamp": {
+"type": "date"
+},
+"kubernetes.labels.app": {
+"type": "keyword"
+},
+"kubernetes.container.image": {
+"type": "keyword"
+},
+"kubernetes.labels.tekton_dev/pipeline": {
+"type": "keyword"
+},
+"kubernetes.namespace": {
+"type": "keyword"
+},
+"@version": {
+"type": "keyword"
+},
+"kubernetes.labels.kuberhealthy-check-name": {
+"type": "keyword"
+},
+"kubernetes.labels.tekton_dev/pipelineTask": {
+"type": "keyword"
+},
+"kubernetes.pod.name": {
+"type": "keyword"
+},
+"kubernetes.labels.tekton_dev/pipelineRun": {
+"type": "keyword"
+}
+}
+}
+}
+}

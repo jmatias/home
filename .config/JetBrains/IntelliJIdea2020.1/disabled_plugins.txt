@@ -1,0 +1,12 @@
+Code Navigator
+Lombook Plugin
+YAML/Ansible support
+com.egoshard.intellij.k8s-runtime-config-plugin
+com.intellij.bigdatatools
+com.jetbrains.sh
+com.thvardhan.gradianto
+com.zhaow.restful.toolkit
+in.xiv.cs
+net.seesharpsoft.intellij.plugins.file-preview
+org.jetbrains.android
+tanvd.grazi

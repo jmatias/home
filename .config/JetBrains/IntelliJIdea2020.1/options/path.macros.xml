@@ -1,0 +1,6 @@
+<application>
+  <component name="PathMacrosImpl">
+    <macro name="MAVEN_REPOSITORY" value="/home/matiasca/.m2/repository" />
+    <macro name="KOTLIN_BUNDLED" value="/home/matiasca/.local/share/JetBrains/IntelliJIdea2020.1/Kotlin/kotlinc" />
+  </component>
+</application>

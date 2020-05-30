@@ -1,0 +1,46 @@
+BashSupport
+Batch Scripts Support
+CMD Support
+FrameSwitcher
+Pythonid
+YAML/Ansible support
+com.alayouni.ansiHighlight
+com.chrisrm.idea.MaterialThemeUI
+com.egoshard.intellij.k8s-runtime-config-plugin
+org.intellij.scala
+com.intellij.bigdatatools
+com.intellij.plugin.adernov.powershell
+com.markskelton.one-dark-theme
+org.jetbrains.plugins.go
+in.xiv.cs
+name.kropp.intellij.makefile
+ru.meanmail.plugin.requirements
+Lombook Plugin
+mobi.hsz.idea.gitignore
+net.seesharpsoft.intellij.plugins.file-preview
+MavenRunHelper
+de.netnexus.camelcaseplugin
+com.zhaow.restful.toolkit
+AWSCloudFormation
+String Manipulation
+com.mnr.java.intellij.idea.plugin.base64helper
+ch.ricardo.plugins.intellij.mockery
+tanvd.grazi
+some.awesome
+com.ypwang.plugin.go-linter
+de.endrullis.idea.postfixtemplates
+ro.florinpatan.gopher
+aws.toolkit
+Code Navigator
+com.intellij.ideolog
+com.intellij.kubernetes
+com.intellij.plugins.macoskeymap
+com.euphoricity.gitignore
+com.dmarcotte.handlebars
+org.toml.lang
+com.thvardhan.gradianto
+org.jetbrains.kotlin
+org.jetbrains.plugins.go-template
+izhangzhihao.rainbow.brackets
+org.intellij.plugins.hcl
+com.mallowigi

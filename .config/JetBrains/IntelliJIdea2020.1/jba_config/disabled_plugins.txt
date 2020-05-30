@@ -1,0 +1,13 @@
+YAML/Ansible support
+in.xiv.cs
+net.seesharpsoft.intellij.plugins.file-preview
+com.zhaow.restful.toolkit
+org.jetbrains.android
+Lombook Plugin
+com.intellij.laf.win10
+com.egoshard.intellij.k8s-runtime-config-plugin
+tanvd.grazi
+com.intellij.bigdatatools
+Code Navigator
+com.jetbrains.sh
+com.thvardhan.gradianto

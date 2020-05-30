@@ -1,0 +1,1 @@
+/home/matiasca/.oh-my-zsh/.zshrc

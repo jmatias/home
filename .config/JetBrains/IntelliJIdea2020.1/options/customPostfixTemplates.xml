@@ -1,0 +1,268 @@
+<application>
+  <component name="CustomPostfixTemplatesApplicationSettings">
+    <CptPluginSettings SettingsVersion="2">
+      <option name="langName2virtualFiles">
+        <map>
+          <entry key="go">
+            <value>
+              <list>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="pg.numbers" />
+                  <option name="url" value="https://raw.githubusercontent.com/philipgriggs/go-postfix-templates/master/numbers.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/go/pg.numbers.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="pg.collections" />
+                  <option name="url" value="https://raw.githubusercontent.com/philipgriggs/go-postfix-templates/master/collections.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/go/pg.collections.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="pg.zerolog" />
+                  <option name="url" value="https://raw.githubusercontent.com/philipgriggs/go-postfix-templates/master/zerolog.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/go/pg.zerolog.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="pg.zap" />
+                  <option name="url" value="https://raw.githubusercontent.com/philipgriggs/go-postfix-templates/master/zap.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/go/pg.zap.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="pg.testing" />
+                  <option name="url" value="https://raw.githubusercontent.com/philipgriggs/go-postfix-templates/master/testing.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/go/pg.testing.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="pg.misc" />
+                  <option name="url" value="https://raw.githubusercontent.com/philipgriggs/go-postfix-templates/master/misc.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/go/pg.misc.postfixTemplates" />
+                </VFile>
+              </list>
+            </value>
+          </entry>
+          <entry key="java">
+            <value>
+              <list>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="cassiuscai.vavr" />
+                  <option name="url" value="https://raw.githubusercontent.com/cassiuscai/postfix-templates/master/templates/vavr.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/cassiuscai.vavr.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="cassiuscai.assertj-vavr" />
+                  <option name="url" value="https://raw.githubusercontent.com/cassiuscai/postfix-templates/master/templates/assertj-vavr.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/cassiuscai.assertj-vavr.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="cassiuscai.commons-lang.date" />
+                  <option name="url" value="https://raw.githubusercontent.com/cassiuscai/postfix-templates/master/templates/commons-lang.date.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/cassiuscai.commons-lang.date.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="cassiuscai.assertj-core" />
+                  <option name="url" value="https://raw.githubusercontent.com/cassiuscai/postfix-templates/master/templates/assertj-core.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/cassiuscai.assertj-core.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.junit4" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/java/junit4.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/xylo.junit4.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="cassiuscai.mockito" />
+                  <option name="url" value="https://raw.githubusercontent.com/cassiuscai/postfix-templates/master/templates/mockito.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/cassiuscai.mockito.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="cassiuscai.guava-string" />
+                  <option name="url" value="https://raw.githubusercontent.com/cassiuscai/postfix-templates/master/templates/guava-string.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/cassiuscai.guava-string.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.LazySeq" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/java/LazySeq.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/xylo.LazySeq.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.JavaFX" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/java/javafx.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/xylo.JavaFX.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.numbers" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/java/numbers.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/xylo.numbers.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.functions" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/java/functions.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/xylo.functions.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.commons-lang" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/java/commons-lang.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/xylo.commons-lang.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.commons-logging" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/java/commons-logging.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/xylo.commons-logging.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.io" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/java/io.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/xylo.io.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.collections" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/java/collections.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/xylo.collections.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.misc" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/java/misc.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/xylo.misc.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.java-math" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/java/java-math.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/xylo.java-math.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.java-reflect" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/java/java-reflect.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/xylo.java-reflect.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.idea-dev" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/java/idea-dev.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/java/xylo.idea-dev.postfixTemplates" />
+                </VFile>
+              </list>
+            </value>
+          </entry>
+          <entry key="php">
+            <value>
+              <list>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.array" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/php/array.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/php/xylo.array.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.string" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/php/string.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/php/xylo.string.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.misc" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/php/misc.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/php/xylo.misc.postfixTemplates" />
+                </VFile>
+              </list>
+            </value>
+          </entry>
+          <entry key="python">
+            <value>
+              <list>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.stdlib" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/python/stdlib.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/python/xylo.stdlib.postfixTemplates" />
+                </VFile>
+              </list>
+            </value>
+          </entry>
+          <entry key="scala">
+            <value>
+              <list>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.kantan" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/scala/kantan.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/scala/xylo.kantan.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.scala-arm" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/scala/scala-arm.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/scala/xylo.scala-arm.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.junit4" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/scala/junit4.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/scala/xylo.junit4.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.commons-logging" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/scala/commons-logging.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/scala/xylo.commons-logging.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.JavaFX" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/scala/javafx.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/scala/xylo.JavaFX.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.functions" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/scala/functions.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/scala/xylo.functions.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.io" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/scala/io.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/scala/xylo.io.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.collections" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/scala/collections.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/scala/xylo.collections.postfixTemplates" />
+                </VFile>
+                <VFile>
+                  <option name="enabled" value="true" />
+                  <option name="id" value="xylo.java-reflect" />
+                  <option name="url" value="https://raw.githubusercontent.com/xylo/intellij-postfix-templates/master/templates/scala/java-reflect.postfixTemplates" />
+                  <option name="file" value="${PLUGIN}/scala/xylo.java-reflect.postfixTemplates" />
+                </VFile>
+              </list>
+            </value>
+          </entry>
+        </map>
+      </option>
+    </CptPluginSettings>
+  </component>
+</application>

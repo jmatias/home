@@ -1,0 +1,7 @@
+$env:AWS_SECRET_ACCESS_KEY="jjGiLnQX2uefTSryYxlpE8HbAKGPFEfjIQfh6o2m"
+$env:AWS_ACCESS_KEY_ID="AKIAI7OXLEPUSHP6E7XA"
+$env:certificate_path= "C:\\tw\\cert\\***REMOVED***-cs-SHA-1.pfx"
+$env:certificate_password="istOrdIPhiAn"
+$env:BRANCH_NAME="feature"
+$env:nuget_config_path= "C:\tw\nuget.config"
+$env:nuget_api_key="a08a37d7-65cb-3137-8c08-37b33f177866"
