@@ -4,6 +4,10 @@
 !.aws
 !.aws/config
 
+
+!.kube
+!.kube/config
+
 !/.my-zsh/custom
 !/.my-zsh/custom/*
 !/.my-zsh/completions
