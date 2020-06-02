@@ -4,7 +4,7 @@
 !.aws
 !.aws/config
 
-!*.conf
+!.gitconfig
 
 
 !/.my-zsh/custom
@@ -15,4 +15,14 @@
 
 !.zshrc
 !.bashrc
+!/.vimrc
 
+
+!/.config
+!/.config/JetBrains
+!/.config/JetBrains/IntelliJIdea2020.1
+!/.config/JetBrains/IntelliJIdea2020.1/
+!/.config/JetBrains/IntelliJIdea2020.1/idea64.vmoptions
+!/.config/JetBrains/IntelliJIdea2020.1/keymaps/
+!/.config/JetBrains/IntelliJIdea2020.1/codestyles/
+!/.config/starship.toml

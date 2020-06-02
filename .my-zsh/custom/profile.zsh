@@ -7,6 +7,7 @@
 alias ls='ls -lha --color'
 alias win='cd /c/users/Javier/workspace/ScaledDi'
 alias work='cd ~/workspace/ScaledDi'
+alias bfg='java -jar /home/matiasca/workspace/bfg-repo-cleaner/bfg/target/bfg-1.13.0-tags/v1.13.0-2c1ec2f.jar'
 # PROMPT='$(kube_ps1)'$PROMPT
 # kubeoff
 
@@ -16,8 +17,8 @@ export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 export PATH=/opt/idea-IU-201.7223.91/bin:$PATH
-
 export PATH=/usr/local/sbt/bin:$PATH
+export PATH=/home/matiasca/bin/:$PATH
 
 export SONAR_HOST_URL="http://sonar.***REMOVED***.k8.***REMOVED***.com"
 
