@@ -4,6 +4,8 @@
 !.aws
 !.aws/config
 
+!*.conf
+
 
 !.kube
 !.kube/config
