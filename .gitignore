@@ -8,7 +8,6 @@
 
 
 !.kube
-!.kube/config
 
 !/.my-zsh/custom
 !/.my-zsh/custom/*
