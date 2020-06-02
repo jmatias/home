@@ -20,7 +20,6 @@ export PATH=/opt/idea-IU-201.7223.91/bin:$PATH
 export PATH=/usr/local/sbt/bin:$PATH
 export PATH=/home/matiasca/bin/:$PATH
 
-export SONAR_HOST_URL="http://sonar.***REMOVED***.k8.***REMOVED***.com"
 
 
 export PATH=$PATH:/usr/local/sonar-scanner/bin
