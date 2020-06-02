@@ -1,0 +1,33 @@
+<application>
+  <component name="KubernetesSettings">
+    <specSources>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/autoscaler/vertical-pod-autoscaler/deploy/updater-deployment.yaml" />
+      </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/autoscaler/vertical-pod-autoscaler/deploy/vpa-beta-crd.yaml" />
+      </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/autoscaler/vertical-pod-autoscaler/deploy/vpa-beta2-crd.yaml" />
+      </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/autoscaler/vertical-pod-autoscaler/deploy/vpa-crd.yaml" />
+      </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/autoscaler/vertical-pod-autoscaler/deploy/vpa-rbac.yaml" />
+      </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/autoscaler/vertical-pod-autoscaler/deploy/vpa-v1-crd.yaml" />
+      </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/autoscaler/vertical-pod-autoscaler/deploy/admission-controller-deployment.yaml" />
+      </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/autoscaler/vertical-pod-autoscaler/deploy/recommender-deployment.yaml" />
+      </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/weaveworks/helm-operator/chart/helm-operator/crds/helmrelease.yaml" />
+      </SpecSource>
+    </specSources>
+  </component>
+</application>
