@@ -27,4 +27,6 @@
 !/.config/JetBrains/IntelliJIdea2020.1/keymaps/*
 !/.config/JetBrains/IntelliJIdea2020.1/codestyles/
 !/.config/JetBrains/IntelliJIdea2020.1/codestyles/*
+!/.config/JetBrains/IntelliJIdea2020.1/options/
+!/.config/JetBrains/IntelliJIdea2020.1/options/*
 !/.config/starship.toml
