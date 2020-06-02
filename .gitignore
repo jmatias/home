@@ -7,8 +7,6 @@
 !*.conf
 
 
-!.kube
-
 !/.my-zsh/custom
 !/.my-zsh/custom/*
 !/.my-zsh/completions
