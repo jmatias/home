@@ -29,3 +29,6 @@
 !/.config/JetBrains/IntelliJIdea2020.1/options/
 !/.config/JetBrains/IntelliJIdea2020.1/options/keymap.xml
 !/.config/JetBrains/IntelliJIdea2020.1/options/kubernetes-settings.xml
+
+!/bin
+!/bin/assume-role
