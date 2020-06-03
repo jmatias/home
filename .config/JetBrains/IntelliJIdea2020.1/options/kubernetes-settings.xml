@@ -28,6 +28,9 @@
       <SpecSource>
         <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/weaveworks/helm-operator/chart/helm-operator/crds/helmrelease.yaml" />
       </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/kubernetes-external-secrets/crd.yaml" />
+      </SpecSource>
     </specSources>
   </component>
 </application>

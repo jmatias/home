@@ -1,8 +1,6 @@
 *
 
 !.gitignore
-!.aws
-!.aws/config
 
 !.gitconfig
 
