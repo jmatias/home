@@ -46,9 +46,9 @@ unset AWS_EXPIRATION
 unset AWS_PROFILE
 }
 
-
-
-
+export AWS_DEFAULT_PROFILE=mfa
+export AWS_PROFILE=mfa
+export AWS_EB_PROFILE=mfa
 
 #function awssource() {
 #	uaws
@@ -58,7 +58,7 @@ unset AWS_PROFILE
 
 autoload -U compinit
 compinit
-fpath=($fpath ~/.oh-my-zsh/completions)
+fpath=($fpath ~/.oh-my-zsh/completions ~/.oh-my-zsh/completions/private)
 eval "$(starship init zsh)"
 
 
