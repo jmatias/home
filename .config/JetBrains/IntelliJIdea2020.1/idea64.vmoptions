@@ -1,5 +1,5 @@
--Xms1g
--Xmx4g
+-Xms2g
+-Xmx8g
 -XX:ReservedCodeCacheSize=240m
 -XX:+UseConcMarkSweepGC
 -XX:SoftRefLRUPolicyMSPerMB=50
