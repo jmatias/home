@@ -81,6 +81,7 @@ plugins=(
 export SHOW_AWS_PROMPT=false
 
 source $ZSH/oh-my-zsh.sh
+source $ZSH/custom/secret/*
 
 # User configuration
 
