@@ -83,3 +83,7 @@ export LANG=en_US.UTF-8
 
 #bindkey '\e[A' history-beginning-search-backward
 #bindkey '\e[B' history-beginning-search-forward
+
+
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
