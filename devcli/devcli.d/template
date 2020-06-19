@@ -1,0 +1,16 @@
+# vim: ft=sh
+SUBCOMMAND_DESC="Subcommand description"
+SUBCOMMAND_HELP=$(cat <<EOH
+
+action                      Action documentation
+
+EOH
+)
+
+#Different actions based on arguments
+case ${1} in
+  hello)
+    echo "Hello World!"
+  ;;
+esac
+

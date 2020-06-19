@@ -32,3 +32,8 @@
 
 !/bin
 !/bin/assume-role
+
+!/devcli
+!/devcli/devcli.d
+!/devcli/devcli.d/*
+!/devcli/*
