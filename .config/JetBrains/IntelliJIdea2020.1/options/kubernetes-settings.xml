@@ -2,9 +2,6 @@
   <component name="KubernetesSettings">
     <specSources>
       <SpecSource>
-        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/autoscaler/vertical-pod-autoscaler/deploy/updater-deployment.yaml" />
-      </SpecSource>
-      <SpecSource>
         <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/autoscaler/vertical-pod-autoscaler/deploy/vpa-beta-crd.yaml" />
       </SpecSource>
       <SpecSource>
@@ -24,6 +21,24 @@
       </SpecSource>
       <SpecSource>
         <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/kubernetes-external-secrets/crd.yaml" />
+      </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/helm_charts/stable/prometheus-operator/crds/crd-alertmanager.yaml" />
+      </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/helm_charts/stable/prometheus-operator/crds/crd-podmonitor.yaml" />
+      </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/helm_charts/stable/prometheus-operator/crds/crd-prometheus.yaml" />
+      </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/helm_charts/stable/prometheus-operator/crds/crd-prometheusrules.yaml" />
+      </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/helm_charts/stable/prometheus-operator/crds/crd-servicemonitor.yaml" />
+      </SpecSource>
+      <SpecSource>
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/helm_charts/stable/prometheus-operator/crds/crd-thanosrulers.yaml" />
       </SpecSource>
     </specSources>
   </component>
