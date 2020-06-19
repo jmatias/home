@@ -38,6 +38,14 @@ export HYPHEN_INSENSITIVE="true"
 export FLUX_FORWARD_NAMESPACE=flux
 
 
+export CR_OWNER=***REMOVED***
+export CR_GIT_REPO=helm-charts
+export CR_CHARTS_REPO=https://github.com/***REMOVED***/helm-charts
+export CR_PACKAGE_PATH=deploy
+export CR_GIT_BASE_URL="https://api.github.com/"
+export CR_GIT_UPLOAD_URL="https://uploads.github.com/"
+
+
 function uaws() {
 unset AWS_ACCESS_KEY_ID
 unset AWS_SECRET_ACCESS_KEY
