@@ -21,6 +21,7 @@ export KUBE_EDITOR='code --wait'
 export PATH=/opt/idea-IU-201.7223.91/bin:$PATH
 export PATH=/usr/local/sbt/bin:$PATH
 export PATH=/home/matiasca/bin/:$PATH
+export PATH=/home/matiasca/devcli/:$PATH
 
 
 
@@ -57,6 +58,7 @@ unset AWS_PROFILE
 export AWS_DEFAULT_PROFILE=mfa
 export AWS_PROFILE=mfa
 export AWS_EB_PROFILE=mfa
+export AWS_PAGER=""
 
 #function awssource() {
 #	uaws
