@@ -10,16 +10,22 @@ personal                     Connect to my personal AWS account.
 EOH
 )
 
-#Different actions based on arguments
-#Different actions based on arguments
 case ${1} in
   ***REMOVED***)
     shift
     ~/bin/assume-role ***REMOVED*** "$TRILOGY_MFA_ARN" "$TRILOGY_CLIADMINROLE_ARN" ${@}
+
+    tw mfa
   ;;
 
  tw)
-    echo "Hello World!"
+
+   source $HOME/workspace/.env3.8/bin/activate
+    python --version
+    saml=`oktaauthpy3 --username ***REMOVED***@thoughtworks.com -s thoughtworks.okta.com --apptype amazon_aws --appid $TW_AWS_APP_ID`
+    echo $saml | aws_role_credentials saml --profile tw
+
+    asp tw
   ;;
 
  personal)

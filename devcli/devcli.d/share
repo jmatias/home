@@ -1,4 +1,5 @@
-# vim: ft=sh
+#!/usr/bin/env bash
+
 use 'ngrok' # helpers interface for ngrok
 
 SUBCOMMAND_DESC="Helpers for sharing stuff between team members"
