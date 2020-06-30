@@ -20,7 +20,7 @@
         <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/weaveworks/helm-operator/chart/helm-operator/crds/helmrelease.yaml" />
       </SpecSource>
       <SpecSource>
-        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/kubernetes-external-secrets/crd.yaml" />
+        <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/kubernetes-external-secrets/charts/kubernetes-external-secrets/crds/kubernetes-client.io_externalsecrets_crd.yaml" />
       </SpecSource>
       <SpecSource>
         <option name="pathOrUrl" value="$USER_HOME$/workspace/ScaledDi/external_repos/helm_charts/stable/prometheus-operator/crds/crd-alertmanager.yaml" />
