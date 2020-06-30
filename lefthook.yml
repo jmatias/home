@@ -1,0 +1,7 @@
+pre-commit:
+  parallel: true
+  commands:
+    secret-leak-check:
+      tags: secrets
+      files: git ls-files
+      run: ~/devcli/devcli secret check -s ~/secret {files}
