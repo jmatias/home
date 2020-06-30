@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+
+SUBCOMMAND_DESC="Subcommand description"
+SUBCOMMAND_HELP=$(cat <<EOH
+
+***REMOVED***                      Connect to Trilogy's AWS account.
+tw                           Connect to ThoughtWorks' AWS account.
+personal                     Connect to my personal AWS account.
+
+EOH
+)
+
+case ${1} in
+  ***REMOVED***)
+
+    set -e
+
+    mfaArn=$(<${CONFIGURATION_DIR}/secrets/assume-role/***REMOVED***/mfa-arn)
+    roleArn=$(<${CONFIGURATION_DIR}/secrets/assume-role/***REMOVED***/role-arn)
+
+    echo MFA Arn: $mfaArn
+
+    export AWS_PROFILE=***REMOVED***
+
+    echo -n "MFA code: "
+    read code
+    echo
+
+    temp_role=$(aws --profile ${1} sts assume-role --serial-number $mfaArn --role-arn $roleArn --token-code $code \
+       --role-session-name AssumedRole  --duration-seconds 7200  )
+    #echo $temp_role
+
+    expiration=$(echo $temp_role | jq -r .Credentials.Expiration |   xargs -I{} date -d {} +%s)
+    access_key=$(echo $temp_role | jq -r .Credentials.AccessKeyId)
+    secret=$(echo $temp_role | jq -r .Credentials.SecretAccessKey)
+    token=$(echo $temp_role | jq -r .Credentials.SessionToken)
+
+
+    echo "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {})"
+
+    aws configure set  aws_session_token $token --profile ***REMOVED***mfa
+    aws configure set  aws_secret_access_key $secret --profile ***REMOVED***mfa
+    aws configure set  aws_access_key_id  $access_key --profile  ***REMOVED***mfa
+    aws configure set  region  us-east-1 --profile  ***REMOVED***mfa
+
+    export AWS_PROFILE=***REMOVED***mfa
+
+  ;;
+
+ tw)
+
+   set -e
+
+   export AWS_PROFILE=tw
+   source $HOME/workspace/.env3.8/bin/activate
+    python --version
+    saml=`oktaauthpy3 --username ***REMOVED***@thoughtworks.com -s thoughtworks.okta.com \
+    --apptype amazon_aws --appid $TW_AWS_APP_ID`
+
+    echo $saml | aws_role_credentials saml --profile tw
+
+    temp_role=`aws sts assume-role --role-arn $TW_CLIADMINROLE_ARN --role-session-name "AssumedRole"`
+
+    expiration=$(echo $temp_role | jq -r .Credentials.Expiration |   xargs -I{} date -d {} +%s)
+    access_key=$(echo $temp_role | jq -r .Credentials.AccessKeyId)
+    secret=$(echo $temp_role | jq -r .Credentials.SecretAccessKey)
+    token=$(echo $temp_role | jq -r .Credentials.SessionToken)
+
+    echo "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {})"
+
+    aws configure set  aws_session_token $token --profile twmfa
+    aws configure set  aws_secret_access_key $secret --profile twmfa
+    aws configure set  aws_access_key_id  $access_key --profile  twmfa
+    aws configure set  region  us-east-1 --profile  twmfa
+
+    export AWS_PROFILE=twmfa
+
+  ;;
+
+ personal)
+    echo "Hello World!"
+  ;;
+esac
+

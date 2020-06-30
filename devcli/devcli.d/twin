@@ -1,4 +1,5 @@
-# vim: ft=sh sw=2 ts=2 expandtab
+#!/usr/bin/env bash
+
 SUBCOMMAND_DESC="Utility for maintain copies of '${MAIN_COMMAND}'"
 SUBCOMMAND_HELP=$(cat <<EOH
 
