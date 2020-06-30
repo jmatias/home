@@ -31,6 +31,7 @@ alias intellij='idea >/dev/null 2>&1 &'
 alias zshconfig="idea ~/.zshrc >/dev/null 2>&1 & "
 alias ohmyzsh="idea  ~/.oh-my-zsh"
 alias zshreload="source ~/.zshrc"
+alias awk1='awk '"'"'{print $1}'"'"''
 
 chmod 700 ~/.ssh/jumpbox/trusted-infra-creators.pem
 
@@ -55,16 +56,11 @@ unset AWS_EXPIRATION
 unset AWS_PROFILE
 }
 
-export AWS_DEFAULT_PROFILE=mfa
-export AWS_PROFILE=mfa
-export AWS_EB_PROFILE=mfa
+export AWS_DEFAULT_PROFILE=***REMOVED***mfa
+export AWS_PROFILE=***REMOVED***mfa
+export AWS_EB_PROFILE=***REMOVED***mfa
 export AWS_PAGER=""
 
-#function awssource() {
-#	uaws
-#	source  ~/.oh-my-zsh/custom/aws.zsh
-#}
-#add-zsh-hook precmd awssource
 
 autoload -U compinit
 compinit
