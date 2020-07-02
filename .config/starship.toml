@@ -2,3 +2,21 @@
 [kubernetes]
 style = "dimmed green"
 disabled = false
+
+
+
+[memory_usage]
+disabled = false
+show_percentage = true
+show_swap = true
+threshold = -1
+symbol = "Mem: "
+separator = "/"
+style = "bold dimmed green"
+
+
+[time]
+disabled = false
+format = "[ %T ]"
+
+utc_time_offset = "local"
