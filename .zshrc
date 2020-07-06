@@ -76,6 +76,7 @@ plugins=(
   history
   zsh-navigation-tools
   aws
+  z
 )
 
 export SHOW_AWS_PROMPT=false
