@@ -18,7 +18,7 @@ install-dependencies)
 
   mypwd=$PWD
   set -e
-  clean_up () {
+  clean_up() {
     ARG=$?
     echo "> clean_up"
     rm -rf /tmp/aws_role_credentials
@@ -38,8 +38,10 @@ install-dependencies)
   git clone git@github.com:MatthiasScholzTW/aws_role_credentials.git /tmp/aws_role_credentials
   git clone git@github.com:MatthiasScholzTW/oktaauth.git /tmp/oktaauth
 
-  cd /tmp/aws_role_credentials; python setup.py install
-  cd /tmp/oktaauth; python setup.py install
+  cd /tmp/aws_role_credentials
+  python setup.py install
+  cd /tmp/oktaauth
+  python setup.py install
 
   ;;
 ***REMOVED***)
@@ -56,6 +58,8 @@ install-dependencies)
   echo -n "MFA code: "
   read code
   echo
+
+  source $ROOT_DIR/.env3/bin/activate
 
   temp_role=$(aws --profile ${1} sts assume-role --serial-number $mfaArn --role-arn $roleArn --token-code $code \
     --role-session-name AssumedRole --duration-seconds 7200)
@@ -79,14 +83,28 @@ install-dependencies)
 
 tw)
 
-  set -e
 
   export AWS_PROFILE=tw
-  python --version
+
+  source $ROOT_DIR/.env3/bin/activate
   saml=$(oktaauth --username ***REMOVED***@thoughtworks.com -s thoughtworks.okta.com \
     --apptype amazon_aws --appid $TW_AWS_APP_ID)
 
-  echo $saml | aws_role_credentials saml --profile tw
+  retVal=$?
+  if [ $retVal -ne 0 ]; then
+    error "Could not authenticate through Okta."
+    exit $retVal
+  fi
+
+  echo $saml | aws_role_credentials saml --profile tw >/dev/null 2>&1
+
+  retVal=$?
+  if [ $retVal -ne 0 ]; then
+    error "Could not assume role."
+    exit $retVal
+  fi
+
+  in_green "\n\nSuccess.\n"
 
   temp_role=$(aws sts assume-role --role-arn $TW_CLIADMINROLE_ARN --role-session-name "AssumedRole")
 
@@ -95,7 +113,7 @@ tw)
   secret=$(echo $temp_role | jq -r .Credentials.SecretAccessKey)
   token=$(echo $temp_role | jq -r .Credentials.SessionToken)
 
-  echo "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {})"
+  in_green "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {}) \n"
 
   aws configure set aws_session_token $token --profile twmfa
   aws configure set aws_secret_access_key $secret --profile twmfa
