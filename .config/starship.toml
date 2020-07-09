@@ -20,3 +20,9 @@ disabled = false
 format = "[ %T ]"
 
 utc_time_offset = "local"
+
+[custom.assume_role]
+shell = ["/usr/bin/zsh"]
+when = "exit 0"
+command = "devcli assume-role time-left"
+style = "bold 208"

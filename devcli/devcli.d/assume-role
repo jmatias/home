@@ -8,6 +8,7 @@ SUBCOMMAND_HELP=$(
 tw                           Connect to ThoughtWorks' AWS account.
 personal                     Connect to my personal AWS account.
 install-deps                 Install dependencies.
+time-left                    Print the time remaining in the current assume-role session.
 
 EOH
 )
@@ -44,6 +45,21 @@ install-dependencies)
   python setup.py install
 
   ;;
+
+time-left)
+
+#  source $ZSH_CUSTOM/aws
+	secondsRemaining=$(( $AWS_EXPIRATION - `date -u +%s` - 3 ))
+	date -u -d "@$secondsRemaining" +'%Hh %Mm %Ss'
+#	  export AWS_TIME_REMAINING="`date -u -d "@$secondsRemaining" +'%Hh %Mm %Ss'`"
+	if [ $secondsRemaining -ge 0 ]; then
+      exit 0
+	else
+	  exit 1
+  fi
+
+  ;;
+
 ***REMOVED***)
 
   set -e
@@ -65,7 +81,7 @@ install-dependencies)
     --role-session-name AssumedRole --duration-seconds 7200)
   #echo $temp_role
 
-  expiration=$(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {} +%s)
+  expiration=$(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -u -d {} +%s)
   access_key=$(echo $temp_role | jq -r .Credentials.AccessKeyId)
   secret=$(echo $temp_role | jq -r .Credentials.SecretAccessKey)
   token=$(echo $temp_role | jq -r .Credentials.SessionToken)
@@ -107,7 +123,6 @@ tw)
   in_green "\n\nSuccess.\n"
 
   temp_role=$(aws sts assume-role --role-arn $TW_CLIADMINROLE_ARN --role-session-name "AssumedRole")
-
   expiration=$(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {} +%s)
   access_key=$(echo $temp_role | jq -r .Credentials.AccessKeyId)
   secret=$(echo $temp_role | jq -r .Credentials.SecretAccessKey)
@@ -120,7 +135,10 @@ tw)
   aws configure set aws_access_key_id $access_key --profile twmfa
   aws configure set region us-east-1 --profile twmfa
 
-  export AWS_PROFILE=twmfa
+  cat >$HOME/.zshenv <<EOL
+export AWS_EXPIRATION="$expiration"
+export AWS_PROFILE=twmfa
+EOL
 
   ;;
 

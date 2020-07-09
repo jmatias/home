@@ -7,7 +7,7 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 export KUBE_EDITOR='code --wait'
 
-export PATH=/opt/idea-IU-201.7223.91/bin:$PATH
+export PATH=/opt/idea-IU-202.6109.22/bin:$PATH
 export PATH=/usr/local/sbt/bin:$PATH
 export PATH=/home/matiasca/bin/:$PATH
 export PATH=/home/matiasca/devcli/:$PATH
@@ -26,19 +26,6 @@ export CR_CHARTS_REPO=https://github.com/***REMOVED***/helm-charts
 export CR_PACKAGE_PATH=deploy
 export CR_GIT_BASE_URL="https://api.github.com/"
 export CR_GIT_UPLOAD_URL="https://uploads.github.com/"
-
-function uaws() {
-  unset AWS_ACCESS_KEY_ID
-  unset AWS_SECRET_ACCESS_KEY
-  unset AWS_SESSION_TOKEN
-  unset AWS_EXPIRATION
-  unset AWS_PROFILE
-}
-
-export AWS_DEFAULT_PROFILE=***REMOVED***mfa
-export AWS_PROFILE=***REMOVED***mfa
-export AWS_EB_PROFILE=***REMOVED***mfa
-export AWS_PAGER=""
 
 autoload -U compinit
 compinit
@@ -63,3 +50,18 @@ if [ ! -f "$HOME/.env3/bin/activate" ]; then
 fi
 
 source $HOME/.env3/bin/activate
+
+#function uaws() {
+#  unset AWS_ACCESS_KEY_ID
+#  unset AWS_SECRET_ACCESS_KEY
+#  unset AWS_SESSION_TOKEN
+#  unset AWS_EXPIRATION
+#  #  unset AWS_PROFILE
+#}
+
+export AWS_PAGER=""
+
+function awssource() {
+  source $HOME/.zshenv
+}
+add-zsh-hook precmd awssource
