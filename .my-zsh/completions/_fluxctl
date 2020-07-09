@@ -18,7 +18,7 @@ function _fluxctl {
   cmnds)
     commands=(
       "automate:Turn on automatic deployment for a workload."
-      "completion:Output shell completion code for the specified shell (bash or zsh)"
+      "completion:Output shell completion code for the specified shell (bash, zsh, or fish)"
       "deautomate:Turn off automatic deployment for a workload."
       "help:Help about any command"
       "identity:Display SSH public key"
@@ -110,7 +110,7 @@ function _fluxctl_completion {
     '--timeout[Global command timeout; you can also set the environment variable FLUX_TIMEOUT]:' \
     '(-t --token)'{-t,--token}'[Weave Cloud authentication token; you can also set the environment variable WEAVE_CLOUD_TOKEN or FLUX_SERVICE_TOKEN]:' \
     '(-u --url)'{-u,--url}'[Base URL of the Flux API (defaults to "https://cloud.weave.works/api/flux" if a token is provided); you can also set the environment variable FLUX_URL]:' \
-    '1: :("bash" "zsh")'
+    '1: :("bash" "zsh" "fish")'
 }
 
 function _fluxctl_deautomate {
