@@ -7,7 +7,7 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 export KUBE_EDITOR='code --wait'
 
-export PATH=/opt/idea-IU-202.6109.22/bin:$PATH
+export PATH=/opt/idea-IU-201.7223.91/bin:$PATH
 export PATH=/usr/local/sbt/bin:$PATH
 export PATH=/home/matiasca/bin/:$PATH
 export PATH=/home/matiasca/devcli/:$PATH

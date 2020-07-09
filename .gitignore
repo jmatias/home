@@ -20,15 +20,6 @@
 
 !/.config
 !/.config/starship.toml
-!/.config/JetBrains
-!/.config/JetBrains/IntelliJIdea2020.1
-!/.config/JetBrains/IntelliJIdea2020.1/
-!/.config/JetBrains/IntelliJIdea2020.1/idea64.vmoptions
-!/.config/JetBrains/IntelliJIdea2020.1/codestyles/
-!/.config/JetBrains/IntelliJIdea2020.1/codestyles/*
-!/.config/JetBrains/IntelliJIdea2020.1/options/
-!/.config/JetBrains/IntelliJIdea2020.1/options/keymap.xml
-!/.config/JetBrains/IntelliJIdea2020.1/options/kubernetes-settings.xml
 
 !/bin
 !/bin/assume-role
