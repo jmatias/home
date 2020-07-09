@@ -189,7 +189,7 @@ function _eksctl_create_cluster {
     '--appmesh-preview-access[enable full access to AppMesh Preview]' \
     '--asg-access[enable IAM policy for cluster-autoscaler]' \
     '--authenticator-role-arn[AWS IAM role to assume for authenticator]:' \
-    '--auto-kubeconfig[save kubeconfig file by cluster name, e.g. "/home/matiasca/.kube/eksctl/clusters/beautiful-creature-1594239951"]' \
+    '--auto-kubeconfig[save kubeconfig file by cluster name, e.g. "/home/matiasca/.kube/eksctl/clusters/ridiculous-badger-1594276660"]' \
     '--cfn-role-arn[IAM role used by CloudFormation to call AWS API on your behalf]:' \
     '(-f --config-file)'{-f,--config-file}'[load configuration from a file (or stdin if set to '\''-'\'')]:' \
     '--external-dns-access[enable IAM policy for external-dns]' \
@@ -202,7 +202,7 @@ function _eksctl_create_cluster {
     '--kubeconfig[path to write kubeconfig (incompatible with --auto-kubeconfig)]:' \
     '--managed[Create EKS-managed nodegroup]' \
     '--max-pods-per-node[maximum number of pods per node (set automatically if unspecified)]:' \
-    '(-n --name)'{-n,--name}'[EKS cluster name (generated if unspecified, e.g. "beautiful-creature-1594239951")]:' \
+    '(-n --name)'{-n,--name}'[EKS cluster name (generated if unspecified, e.g. "ridiculous-badger-1594276660")]:' \
     '--node-ami[Advanced use cases only. If '\''ssm'\'' is supplied (default) then eksctl will use SSM Parameter; if '\''auto'\'' is supplied then eksctl will automatically set the AMI based on version/region/instance type; if static is supplied (deprecated), then static AMIs will be used; if any other value is supplied it will override the AMI to use for the nodes. Use with extreme care.]:' \
     '--node-ami-family[Advanced use cases only. If '\''AmazonLinux2'\'' is supplied (default), then eksctl will use the official AWS EKS AMIs (Amazon Linux 2); if '\''Ubuntu1804'\'' is supplied, then eksctl will use the official Canonical EKS AMIs (Ubuntu 18.04).]:' \
     '--node-labels[Extra labels to add when registering the nodes in the nodegroup. List of comma separated KV pairs "k1=v1,k2=v2"]:' \
@@ -212,7 +212,7 @@ function _eksctl_create_cluster {
     '--node-volume-size[node volume size in GB]:' \
     '--node-volume-type[node volume type (valid options: gp2, io1, sc1, st1)]:' \
     '*--node-zones[(inherited from the cluster if unspecified)]:' \
-    '--nodegroup-name[name of the nodegroup (generated if unspecified, e.g. "ng-6d1be871")]:' \
+    '--nodegroup-name[name of the nodegroup (generated if unspecified, e.g. "ng-9adb7596")]:' \
     '(-N --nodes)'{-N,--nodes}'[total number of nodes (for a static ASG)]:' \
     '(-M --nodes-max)'{-M,--nodes-max}'[maximum nodes in ASG]:' \
     '(-m --nodes-min)'{-m,--nodes-min}'[minimum nodes in ASG]:' \
@@ -307,7 +307,7 @@ function _eksctl_create_nodegroup {
     '--instance-prefix[Add a prefix value in front of the instance'\''s name.]:' \
     '--managed[Create EKS-managed nodegroup]' \
     '--max-pods-per-node[maximum number of pods per node (set automatically if unspecified)]:' \
-    '(-n --name)'{-n,--name}'[name of the new nodegroup (generated if unspecified, e.g. "ng-9e84184a")]:' \
+    '(-n --name)'{-n,--name}'[name of the new nodegroup (generated if unspecified, e.g. "ng-e6e32148")]:' \
     '--node-ami[Advanced use cases only. If '\''ssm'\'' is supplied (default) then eksctl will use SSM Parameter; if '\''auto'\'' is supplied then eksctl will automatically set the AMI based on version/region/instance type; if static is supplied (deprecated), then static AMIs will be used; if any other value is supplied it will override the AMI to use for the nodes. Use with extreme care.]:' \
     '--node-ami-family[Advanced use cases only. If '\''AmazonLinux2'\'' is supplied (default), then eksctl will use the official AWS EKS AMIs (Amazon Linux 2); if '\''Ubuntu1804'\'' is supplied, then eksctl will use the official Canonical EKS AMIs (Ubuntu 18.04).]:' \
     '--node-labels[Extra labels to add when registering the nodes in the nodegroup. List of comma separated KV pairs "k1=v1,k2=v2"]:' \
