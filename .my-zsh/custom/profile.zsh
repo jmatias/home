@@ -1,3 +1,5 @@
+#!/usr/bin/zsh
+
 # PROMPT='$(kube_ps1)'$PROMPT
 # kubeoff
 
@@ -21,8 +23,8 @@ export HYPHEN_INSENSITIVE="true"
 export FLUX_FORWARD_NAMESPACE=flux
 
 export CR_OWNER=***REMOVED***
-export CR_GIT_REPO=helm-charts
-export CR_CHARTS_REPO=https://github.com/***REMOVED***/helm-charts
+export CR_GIT_REPO=unleash-deployment
+export CR_CHARTS_REPO=https://github.com/***REMOVED***/unleash-deployment
 export CR_PACKAGE_PATH=deploy
 export CR_GIT_BASE_URL="https://api.github.com/"
 export CR_GIT_UPLOAD_URL="https://uploads.github.com/"
