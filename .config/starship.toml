@@ -6,7 +6,7 @@ disabled = false
 
 
 [memory_usage]
-disabled = false
+disabled = true
 show_percentage = true
 show_swap = true
 threshold = -1
@@ -25,4 +25,5 @@ utc_time_offset = "local"
 shell = ["/usr/bin/zsh"]
 when = "exit 0"
 command = "devcli assume-role time-left"
-style = "bold 208"
+style = "bold dimmed green"
+prefix= "AWS: "
