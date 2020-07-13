@@ -118,6 +118,7 @@ function _gh_api {
     '(-i --include)'{-i,--include}'[Include HTTP response headers in the output]' \
     '--input[The file to use as body for the HTTP request]:' \
     '(-X --method)'{-X,--method}'[The HTTP method for the request]:' \
+    '--paginate[Make additional HTTP requests to fetch all pages of results]' \
     '(*-f *--raw-field)'{\*-f,\*--raw-field}'[Add a string parameter]:' \
     '--help[Show help for command]' \
     '(-R --repo)'{-R,--repo}'[Select another repository using the `OWNER/REPO` format]:'
@@ -266,11 +267,11 @@ function _gh_issue_close {
 
 function _gh_issue_create {
   _arguments \
-    '(*-a *--assignee)'{\*-a,\*--assignee}'[Assign a person by their `login`]:' \
+    '(*-a *--assignee)'{\*-a,\*--assignee}'[Assign people by their `login`]:' \
     '(-b --body)'{-b,--body}'[Supply a body. Will prompt for one otherwise.]:' \
-    '(*-l *--label)'{\*-l,\*--label}'[Add a label by `name`]:' \
+    '(*-l *--label)'{\*-l,\*--label}'[Add labels by `name`]:' \
     '(-m --milestone)'{-m,--milestone}'[Add the issue to a milestone by `name`]:' \
-    '(*-p *--project)'{\*-p,\*--project}'[Add the issue to a project by `name`]:' \
+    '(*-p *--project)'{\*-p,\*--project}'[Add the issue to projects by `name`]:' \
     '(-t --title)'{-t,--title}'[Supply a title. Will prompt for one otherwise.]:' \
     '(-w --web)'{-w,--web}'[Open the browser to create an issue]' \
     '--help[Show help for command]' \
@@ -281,7 +282,7 @@ function _gh_issue_list {
   _arguments \
     '(-a --assignee)'{-a,--assignee}'[Filter by assignee]:' \
     '(-A --author)'{-A,--author}'[Filter by author]:' \
-    '(*-l *--label)'{\*-l,\*--label}'[Filter by label]:' \
+    '(*-l *--label)'{\*-l,\*--label}'[Filter by labels]:' \
     '(-L --limit)'{-L,--limit}'[Maximum number of issues to fetch]:' \
     '(-s --state)'{-s,--state}'[Filter by state: {open|closed|all}]:' \
     '--help[Show help for command]' \
@@ -387,15 +388,15 @@ function _gh_pr_close {
 
 function _gh_pr_create {
   _arguments \
-    '(*-a *--assignee)'{\*-a,\*--assignee}'[Assign a person by their `login`]:' \
+    '(*-a *--assignee)'{\*-a,\*--assignee}'[Assign people by their `login`]:' \
     '(-B --base)'{-B,--base}'[The branch into which you want your code merged]:' \
     '(-b --body)'{-b,--body}'[Supply a body. Will prompt for one otherwise.]:' \
     '(-d --draft)'{-d,--draft}'[Mark pull request as a draft]' \
     '(-f --fill)'{-f,--fill}'[Do not prompt for title/body and just use commit info]' \
-    '(*-l *--label)'{\*-l,\*--label}'[Add a label by `name`]:' \
+    '(*-l *--label)'{\*-l,\*--label}'[Add labels by `name`]:' \
     '(-m --milestone)'{-m,--milestone}'[Add the pull request to a milestone by `name`]:' \
-    '(*-p *--project)'{\*-p,\*--project}'[Add the pull request to a project by `name`]:' \
-    '(*-r *--reviewer)'{\*-r,\*--reviewer}'[Request a review from someone by their `login`]:' \
+    '(*-p *--project)'{\*-p,\*--project}'[Add the pull request to projects by `name`]:' \
+    '(*-r *--reviewer)'{\*-r,\*--reviewer}'[Request reviews from people by their `login`]:' \
     '(-t --title)'{-t,--title}'[Supply a title. Will prompt for one otherwise.]:' \
     '(-w --web)'{-w,--web}'[Open the web browser to create a pull request]' \
     '--help[Show help for command]' \

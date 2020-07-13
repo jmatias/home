@@ -7,6 +7,7 @@ alias intellij='idea >/dev/null 2>&1 &'
 alias zshconfig="idea ~/.zshrc >/dev/null 2>&1 & "
 alias ohmyzsh="idea  ~/.oh-my-zsh"
 alias zshreload="source ~/.zshrc"
+alias reload="source ~/.zshrc"
 alias awk1='awk '"'"'{print $1}'"'"''
 alias awk2='awk '"'"'{print $2}'"'"''
 alias awk3='awk '"'"'{print $3}'"'"''
