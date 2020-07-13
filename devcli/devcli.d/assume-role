@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 SUBCOMMAND_DESC="Assume an AWS IAM role."
 SUBCOMMAND_HELP=$(
   cat <<EOH
@@ -48,14 +49,12 @@ install-dependencies)
 
 time-left)
 
-#  source $ZSH_CUSTOM/aws
-	secondsRemaining=$(( $AWS_EXPIRATION - `date -u +%s` - 3 ))
-	date -u -d "@$secondsRemaining" +'%Hh %Mm %Ss'
-#	  export AWS_TIME_REMAINING="`date -u -d "@$secondsRemaining" +'%Hh %Mm %Ss'`"
-	if [ $secondsRemaining -ge 0 ]; then
-      exit 0
-	else
-	  exit 1
+  secondsRemaining=$(($(aws configure get expiration) - $(date -u +%s) - 3))
+  date -u -d "@$secondsRemaining" +'%Hh %Mm %Ss'
+  if [ $secondsRemaining -ge 0 ]; then
+    exit 0
+  else
+    exit 1
   fi
 
   ;;
@@ -72,33 +71,40 @@ time-left)
   export AWS_PROFILE=***REMOVED***
 
   echo -n "MFA code: "
-  read code
+  while IFS= read -p "$prompt" -r -s -n 1 char
+  do
+      if [[ $char == $'\0' ]]
+      then
+          break
+      fi
+      prompt='*'
+      code+="$char"
+  done
   echo
 
   source $ROOT_DIR/.env3/bin/activate
 
   temp_role=$(aws --profile ${1} sts assume-role --serial-number $mfaArn --role-arn $roleArn --token-code $code \
-    --role-session-name AssumedRole --duration-seconds 7200)
-  #echo $temp_role
+    --role-session-name AssumedRole --duration-seconds 3600)
 
-  expiration=$(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -u -d {} +%s)
+  in_green "Assumed admin role.\n"
+
+  expiration=$(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {} +%s)
   access_key=$(echo $temp_role | jq -r .Credentials.AccessKeyId)
   secret=$(echo $temp_role | jq -r .Credentials.SecretAccessKey)
   token=$(echo $temp_role | jq -r .Credentials.SessionToken)
 
-  echo "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {})"
+  in_gray "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {}) \n"
 
   aws configure set aws_session_token $token --profile ***REMOVED***mfa
   aws configure set aws_secret_access_key $secret --profile ***REMOVED***mfa
   aws configure set aws_access_key_id $access_key --profile ***REMOVED***mfa
   aws configure set region us-east-1 --profile ***REMOVED***mfa
-
-  export AWS_PROFILE=***REMOVED***mfa
+  aws configure set expiration $expiration --profile ***REMOVED***mfa
 
   ;;
 
 tw)
-
 
   export AWS_PROFILE=tw
 
@@ -112,6 +118,8 @@ tw)
     exit $retVal
   fi
 
+  in_green "\n\nAuthenticated via Okta.\n"
+
   echo $saml | aws_role_credentials saml --profile tw >/dev/null 2>&1
 
   retVal=$?
@@ -120,7 +128,7 @@ tw)
     exit $retVal
   fi
 
-  in_green "\n\nSuccess.\n"
+  in_green "Assumed admin federated-admin role.\n"
 
   temp_role=$(aws sts assume-role --role-arn $TW_CLIADMINROLE_ARN --role-session-name "AssumedRole")
   expiration=$(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {} +%s)
@@ -128,17 +136,13 @@ tw)
   secret=$(echo $temp_role | jq -r .Credentials.SecretAccessKey)
   token=$(echo $temp_role | jq -r .Credentials.SessionToken)
 
-  in_green "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {}) \n"
+  in_gray "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {}) \n"
 
   aws configure set aws_session_token $token --profile twmfa
   aws configure set aws_secret_access_key $secret --profile twmfa
   aws configure set aws_access_key_id $access_key --profile twmfa
   aws configure set region us-east-1 --profile twmfa
-
-  cat >$HOME/.zshenv <<EOL
-export AWS_EXPIRATION="$expiration"
-export AWS_PROFILE=twmfa
-EOL
+  aws configure set expiration $expiration --profile twmfa
 
   ;;
 

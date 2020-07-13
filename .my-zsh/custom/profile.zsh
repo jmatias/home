@@ -22,13 +22,6 @@ export COMPLETION_WAITING_DOTS="true"
 export HYPHEN_INSENSITIVE="true"
 export FLUX_FORWARD_NAMESPACE=flux
 
-export CR_OWNER=***REMOVED***
-export CR_GIT_REPO=unleash-deployment
-export CR_CHARTS_REPO=https://github.com/***REMOVED***/unleash-deployment
-export CR_PACKAGE_PATH=deploy
-export CR_GIT_BASE_URL="https://api.github.com/"
-export CR_GIT_UPLOAD_URL="https://uploads.github.com/"
-
 autoload -U compinit
 compinit
 fpath=($fpath ~/.my-zsh/completions ~/.my-zsh/completions/private)
@@ -53,17 +46,12 @@ fi
 
 source $HOME/.env3/bin/activate
 
-#function uaws() {
-#  unset AWS_ACCESS_KEY_ID
-#  unset AWS_SECRET_ACCESS_KEY
-#  unset AWS_SESSION_TOKEN
-#  unset AWS_EXPIRATION
-#  #  unset AWS_PROFILE
-#}
+function uaws() {
+  unset AWS_ACCESS_KEY_ID
+  unset AWS_SECRET_ACCESS_KEY
+  unset AWS_SESSION_TOKEN
+  unset AWS_EXPIRATION
+  unset AWS_PROFILE
+}
 
 export AWS_PAGER=""
-
-function awssource() {
-  source $HOME/.zshenv
-}
-add-zsh-hook precmd awssource
