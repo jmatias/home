@@ -1,0 +1,54 @@
+#!/bin/bash
+
+SUBCOMMAND_DESC="Configure credentials for an AWS IAM role."
+SUBCOMMAND_HELP=$(
+  cat <<EOH
+
+***REMOVED***                      Configure role for Trilogy's AWS account.
+tw                           Configure role for ThoughtWorks' AWS account.
+personal                     Configure role for my personal AWS account.
+
+EOH
+)
+
+set -e
+
+case ${1} in
+
+
+  ***REMOVED***)
+
+  aws configure set region us-east-1 --profile ***REMOVED***
+  aws configure --profile ***REMOVED***
+
+  read -p "MFA Arn [$(aws configure get serial-number --profile ***REMOVED***)]: " mfaArn
+  mfaArn=${mfaArn:-$(aws configure get serial-number --profile ***REMOVED***)}
+  aws configure set serial-number --profile ***REMOVED*** $mfaArn
+
+  read -p "Assumed Role Arn [$(aws configure get role-arn --profile ***REMOVED***)]: " roleArn
+  roleArn=${roleArn:-$(aws configure get role-arn --profile ***REMOVED***)}
+  aws configure set role-arn --profile ***REMOVED*** $roleArn
+
+  ;;
+
+tw)
+
+  set -e
+
+  aws configure set region us-east-1 --profile tw
+
+  read -p "AWS Okta App Id [$(aws configure get tw-app-id --profile tw)]: " twAppId
+  twAppId=${twAppId:-$(aws configure get tw-app-id --profile tw)}
+  aws configure set tw-app-id --profile tw $twAppId
+
+  read -p "Okta username [$(aws configure get username --profile tw)]: " username
+  username=${username:-$(aws configure get username --profile tw)}
+  aws configure set username --profile tw $username
+
+  ;;
+
+
+  personal)
+  echo "Not implemented."
+  ;;
+esac
