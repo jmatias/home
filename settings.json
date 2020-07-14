@@ -47,21 +47,11 @@
         {
             "command": {
                 "action": "splitPane",
-                "index": 3,
+                "index": 1,
                 "split": "vertical"
             },
             "keys": [
-                "alt+shift+4"
-            ]
-        },
-        {
-            "command": {
-                "action": "splitPane",
-                "index": 4,
-                "split": "vertical"
-            },
-            "keys": [
-                "alt+shift+5"
+                "alt+shift+j"
             ]
         },
         {
@@ -71,7 +61,17 @@
                 "split": "vertical"
             },
             "keys": [
-                "alt+shift+plus"
+                "alt+shift+k"
+            ]
+        },
+        {
+            "command": {
+                "action": "splitPane",
+                "index": 1,
+                "split": "vertical"
+            },
+            "keys": [
+                "alt+shift+l"
             ]
         },
         {
