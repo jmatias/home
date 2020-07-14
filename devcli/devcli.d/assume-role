@@ -16,14 +16,12 @@ case ${1} in
 
 time-left)
 
-  secondsRemaining=$(($(aws configure get expiration) - $(date -u +%s) - 3))
-  date -u -d "@$secondsRemaining" +'%Hh %Mm %Ss'
-  if [ $secondsRemaining -ge 0 ]; then
-    exit 0
-  else
-    exit 1
-  fi
+  expiration="$(aws configure get expiration)"
+  [[ -z $expiration ]] && exit 1
 
+  secondsRemaining=$(($expiration - $(date -u +%s) - 3))
+  date -u -d "@$secondsRemaining" +'%Hh %Mm %Ss'
+  [[ $secondsRemaining -ge 0 ]]
   ;;
 
 ***REMOVED***)
@@ -31,17 +29,8 @@ time-left)
   set -e
 
   echo MFA Arn: $(aws configure get serial-number --profile ***REMOVED***)
-
-  export AWS_PROFILE=***REMOVED***
-
   echo -n "MFA code: "
-  while IFS= read -p "$prompt" -r -s -n 1 char; do
-    if [[ $char == $'\0' ]]; then
-      break
-    fi
-    prompt='*'
-    code+="$char"
-  done
+  read -s code
   echo
 
   source $ROOT_DIR/.env3/bin/activate
@@ -69,47 +58,36 @@ time-left)
 
 tw)
 
-  export AWS_PROFILE=tw
+  set -e
 
   source $ROOT_DIR/.env3/bin/activate
-  saml=$(oktaauth --username ***REMOVED***@thoughtworks.com -s thoughtworks.okta.com \
-    --apptype amazon_aws --appid $(aws configure get tw-app-id --profile tw))
+  saml=$(oktaauth --username $(aws configure get username --profile tw)  \
+    -s  $(aws configure get server --profile tw) --apptype amazon_aws \
+    --appid $(aws configure get tw-app-id --profile tw))
 
-  retVal=$?
-  if [ $retVal -ne 0 ]; then
+  if [ $? -ne 0 ]; then
     error "Could not authenticate through Okta."
-    exit $retVal
+    exit 1
   fi
 
   in_green "\n\nAuthenticated via Okta.\n"
 
-  echo $saml | aws_role_credentials saml --profile tw >/dev/null 2>&1
+  echo "$saml" | aws_role_credentials saml --profile tw >/dev/null 2>&1
 
-  retVal=$?
-  if [ $retVal -ne 0 ]; then
+  if [ $? -ne 0 ]; then
     error "Could not assume role."
-    exit $retVal
+    exit 1
   fi
 
   in_green "Assumed admin federated-admin role.\n"
-
-  temp_role=$(aws sts assume-role --role-arn $(aws configure get tw-cliadmin-role) --role-session-name "AssumedRole")
-  expiration=$(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {} +%s)
-  access_key=$(echo $temp_role | jq -r .Credentials.AccessKeyId)
-  secret=$(echo $temp_role | jq -r .Credentials.SecretAccessKey)
-  token=$(echo $temp_role | jq -r .Credentials.SessionToken)
-
-  in_gray "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {}) \n"
-
-  aws configure set aws_session_token $token --profile twmfa
-  aws configure set aws_secret_access_key $secret --profile twmfa
-  aws configure set aws_access_key_id $access_key --profile twmfa
-  aws configure set region us-east-1 --profile twmfa
-  aws configure set expiration $expiration --profile twmfa
+  expiration=$(($(date +%s) + 3585))
+  aws configure set expiration $expiration --profile tw
+  in_gray "Expires: $(echo $expiration | xargs -I{} date -d @{}) \n"
 
   ;;
 
-personal)
-  echo "Hello World!"
+\
+  personal)
+  echo "Not implemented."
   ;;
 esac
