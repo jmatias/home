@@ -30,20 +30,17 @@ time-left)
 
   set -e
 
-
   echo MFA Arn: $(aws configure get serial-number --profile ***REMOVED***)
 
   export AWS_PROFILE=***REMOVED***
 
   echo -n "MFA code: "
-  while IFS= read -p "$prompt" -r -s -n 1 char
-  do
-      if [[ $char == $'\0' ]]
-      then
-          break
-      fi
-      prompt='*'
-      code+="$char"
+  while IFS= read -p "$prompt" -r -s -n 1 char; do
+    if [[ $char == $'\0' ]]; then
+      break
+    fi
+    prompt='*'
+    code+="$char"
   done
   echo
 
