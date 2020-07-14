@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+SUBCOMMAND_DESC="Environment loaded for all commands"
+SUBCOMMAND_HELP=$(cat <<EOH
+This file is loaded before calling other subcommands,
+variables and functions will be available to all
+subcommands.
+EOH
+)
+
+# A helper function...
+# that returns true if running on OSX
+function __osx() {
+  # __osx - return if we are running in 'Darwin' (macos)
+  [[ $(uname) == "Darwin" ]]
+}
+
+
+function __linux() {
+  # __osx - return if we are running in 'Darwin' (macos)
+  [[ $(uname) == "Linux" ]]
+}
+

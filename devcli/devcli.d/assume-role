@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-
+#!/bin/bash
 
 SUBCOMMAND_DESC="Assume an AWS IAM role."
 SUBCOMMAND_HELP=$(
@@ -8,45 +7,12 @@ SUBCOMMAND_HELP=$(
 ***REMOVED***                      Connect to Trilogy's AWS account.
 tw                           Connect to ThoughtWorks' AWS account.
 personal                     Connect to my personal AWS account.
-install-deps                 Install dependencies.
 time-left                    Print the time remaining in the current assume-role session.
 
 EOH
 )
 
 case ${1} in
-
-install-deps)
-
-  mypwd=$PWD
-  set -e
-  clean_up() {
-    ARG=$?
-    echo "> clean_up"
-    rm -rf /tmp/aws_role_credentials
-    rm -rf /tmp/oktaauth
-    cd $mypwd
-    exit $ARG
-  }
-  trap clean_up EXIT
-
-  python3 -m venv $ROOT_DIR/.env3
-  source $ROOT_DIR/.env3/bin/activate
-  pip install --upgrade pip
-
-
-  rm -rf /tmp/aws_role_credentials
-  rm -rf /tmp/oktaauth
-
-  git clone git@github.com:MatthiasScholzTW/aws_role_credentials.git /tmp/aws_role_credentials
-  git clone git@github.com:MatthiasScholzTW/oktaauth.git /tmp/oktaauth
-
-  cd /tmp/aws_role_credentials
-  python setup.py install
-  cd /tmp/oktaauth
-  python setup.py install
-
-  ;;
 
 time-left)
 
