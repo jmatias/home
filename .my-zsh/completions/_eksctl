@@ -189,7 +189,7 @@ function _eksctl_create_cluster {
     '--appmesh-preview-access[enable full access to AppMesh Preview]' \
     '--asg-access[enable IAM policy for cluster-autoscaler]' \
     '--authenticator-role-arn[AWS IAM role to assume for authenticator]:' \
-    '--auto-kubeconfig[save kubeconfig file by cluster name, e.g. "/home/matiasca/.kube/eksctl/clusters/ridiculous-badger-1594276660"]' \
+    '--auto-kubeconfig[save kubeconfig file by cluster name, e.g. "/home/matiasca/.kube/eksctl/clusters/attractive-wardrobe-1594748088"]' \
     '--cfn-role-arn[IAM role used by CloudFormation to call AWS API on your behalf]:' \
     '(-f --config-file)'{-f,--config-file}'[load configuration from a file (or stdin if set to '\''-'\'')]:' \
     '--external-dns-access[enable IAM policy for external-dns]' \
@@ -202,7 +202,7 @@ function _eksctl_create_cluster {
     '--kubeconfig[path to write kubeconfig (incompatible with --auto-kubeconfig)]:' \
     '--managed[Create EKS-managed nodegroup]' \
     '--max-pods-per-node[maximum number of pods per node (set automatically if unspecified)]:' \
-    '(-n --name)'{-n,--name}'[EKS cluster name (generated if unspecified, e.g. "ridiculous-badger-1594276660")]:' \
+    '(-n --name)'{-n,--name}'[EKS cluster name (generated if unspecified, e.g. "attractive-wardrobe-1594748088")]:' \
     '--node-ami[Advanced use cases only. If '\''ssm'\'' is supplied (default) then eksctl will use SSM Parameter; if '\''auto'\'' is supplied then eksctl will automatically set the AMI based on version/region/instance type; if static is supplied (deprecated), then static AMIs will be used; if any other value is supplied it will override the AMI to use for the nodes. Use with extreme care.]:' \
     '--node-ami-family[Advanced use cases only. If '\''AmazonLinux2'\'' is supplied (default), then eksctl will use the official AWS EKS AMIs (Amazon Linux 2); if '\''Ubuntu1804'\'' is supplied, then eksctl will use the official Canonical EKS AMIs (Ubuntu 18.04).]:' \
     '--node-labels[Extra labels to add when registering the nodes in the nodegroup. List of comma separated KV pairs "k1=v1,k2=v2"]:' \
@@ -212,7 +212,7 @@ function _eksctl_create_cluster {
     '--node-volume-size[node volume size in GB]:' \
     '--node-volume-type[node volume type (valid options: gp2, io1, sc1, st1)]:' \
     '*--node-zones[(inherited from the cluster if unspecified)]:' \
-    '--nodegroup-name[name of the nodegroup (generated if unspecified, e.g. "ng-9adb7596")]:' \
+    '--nodegroup-name[name of the nodegroup (generated if unspecified, e.g. "ng-7ab9e1d2")]:' \
     '(-N --nodes)'{-N,--nodes}'[total number of nodes (for a static ASG)]:' \
     '(-M --nodes-max)'{-M,--nodes-max}'[maximum nodes in ASG]:' \
     '(-m --nodes-min)'{-m,--nodes-min}'[minimum nodes in ASG]:' \
@@ -223,7 +223,7 @@ function _eksctl_create_cluster {
     '--ssh-public-key[SSH public key to use for nodes (import from local path, or use existing EC2 key pair)]:' \
     '--tags[Used to tag the AWS resources. List of comma separated KV pairs "k1=v1,k2=v2"]:' \
     '--timeout[maximum waiting time for any long-running operation]:' \
-    '--version[Kubernetes version (valid options: 1.14, 1.15, 1.16)]:' \
+    '--version[Kubernetes version (valid options: 1.14, 1.15, 1.16, 1.17)]:' \
     '--vpc-cidr[global CIDR to use for VPC]:' \
     '--vpc-from-kops-cluster[re-use VPC from a given kops cluster]:' \
     '--vpc-nat-mode[VPC NAT mode, valid options: HighlyAvailable, Single, Disable]:' \
@@ -307,7 +307,7 @@ function _eksctl_create_nodegroup {
     '--instance-prefix[Add a prefix value in front of the instance'\''s name.]:' \
     '--managed[Create EKS-managed nodegroup]' \
     '--max-pods-per-node[maximum number of pods per node (set automatically if unspecified)]:' \
-    '(-n --name)'{-n,--name}'[name of the new nodegroup (generated if unspecified, e.g. "ng-e6e32148")]:' \
+    '(-n --name)'{-n,--name}'[name of the new nodegroup (generated if unspecified, e.g. "ng-64d1d180")]:' \
     '--node-ami[Advanced use cases only. If '\''ssm'\'' is supplied (default) then eksctl will use SSM Parameter; if '\''auto'\'' is supplied then eksctl will automatically set the AMI based on version/region/instance type; if static is supplied (deprecated), then static AMIs will be used; if any other value is supplied it will override the AMI to use for the nodes. Use with extreme care.]:' \
     '--node-ami-family[Advanced use cases only. If '\''AmazonLinux2'\'' is supplied (default), then eksctl will use the official AWS EKS AMIs (Amazon Linux 2); if '\''Ubuntu1804'\'' is supplied, then eksctl will use the official Canonical EKS AMIs (Ubuntu 18.04).]:' \
     '--node-labels[Extra labels to add when registering the nodes in the nodegroup. List of comma separated KV pairs "k1=v1,k2=v2"]:' \
@@ -327,7 +327,7 @@ function _eksctl_create_nodegroup {
     '--tags[Used to tag the AWS resources. List of comma separated KV pairs "k1=v1,k2=v2"]:' \
     '--timeout[maximum waiting time for any long-running operation]:' \
     '--update-auth-configmap[Add nodegroup IAM role to aws-auth configmap]' \
-    '--version[Kubernetes version (valid options: 1.14, 1.15, 1.16) [for nodegroups "auto" and "latest" can be used to automatically inherit version from the control plane or force latest]]:' \
+    '--version[Kubernetes version (valid options: 1.14, 1.15, 1.16, 1.17) [for nodegroups "auto" and "latest" can be used to automatically inherit version from the control plane or force latest]]:' \
     '(-C --color)'{-C,--color}'[toggle colorized logs (valid options: true, false, fabulous)]:' \
     '(-h --help)'{-h,--help}'[help for this command]' \
     '(-v --verbose)'{-v,--verbose}'[set log level, use 0 to silence, 4 for debugging and 5 for debugging with AWS debug logging]:'
@@ -919,7 +919,7 @@ function _eksctl_update_cluster {
     '(-p --profile)'{-p,--profile}'[AWS credentials profile to use (overrides the AWS_PROFILE environment variable)]:' \
     '(-r --region)'{-r,--region}'[AWS region]:' \
     '--timeout[maximum waiting time for any long-running operation]:' \
-    '--version[Kubernetes version (valid options: 1.14, 1.15, 1.16)]:' \
+    '--version[Kubernetes version (valid options: 1.14, 1.15, 1.16, 1.17)]:' \
     '(-C --color)'{-C,--color}'[toggle colorized logs (valid options: true, false, fabulous)]:' \
     '(-h --help)'{-h,--help}'[help for this command]' \
     '(-v --verbose)'{-v,--verbose}'[set log level, use 0 to silence, 4 for debugging and 5 for debugging with AWS debug logging]:'
@@ -964,7 +964,7 @@ function _eksctl_upgrade_cluster {
     '(-p --profile)'{-p,--profile}'[AWS credentials profile to use (overrides the AWS_PROFILE environment variable)]:' \
     '(-r --region)'{-r,--region}'[AWS region]:' \
     '--timeout[maximum waiting time for any long-running operation]:' \
-    '--version[Kubernetes version (valid options: 1.14, 1.15, 1.16)]:' \
+    '--version[Kubernetes version (valid options: 1.14, 1.15, 1.16, 1.17)]:' \
     '(-C --color)'{-C,--color}'[toggle colorized logs (valid options: true, false, fabulous)]:' \
     '(-h --help)'{-h,--help}'[help for this command]' \
     '(-v --verbose)'{-v,--verbose}'[set log level, use 0 to silence, 4 for debugging and 5 for debugging with AWS debug logging]:'
