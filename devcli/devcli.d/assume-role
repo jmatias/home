@@ -16,7 +16,7 @@ EOH
 
 case ${1} in
 
-install-dependencies)
+install-deps)
 
   mypwd=$PWD
   set -e
@@ -33,6 +33,7 @@ install-dependencies)
   python3 -m venv $ROOT_DIR/.env3
   source $ROOT_DIR/.env3/bin/activate
   pip install --upgrade pip
+
 
   rm -rf /tmp/aws_role_credentials
   rm -rf /tmp/oktaauth
@@ -63,10 +64,8 @@ time-left)
 
   set -e
 
-  mfaArn=$(<${CONFIGURATION_DIR}/secrets/assume-role/***REMOVED***/mfa-arn)
-  roleArn=$(<${CONFIGURATION_DIR}/secrets/assume-role/***REMOVED***/role-arn)
 
-  echo MFA Arn: $mfaArn
+  echo MFA Arn: $(aws configure get serial-number --profile ***REMOVED***)
 
   export AWS_PROFILE=***REMOVED***
 
@@ -84,7 +83,8 @@ time-left)
 
   source $ROOT_DIR/.env3/bin/activate
 
-  temp_role=$(aws --profile ${1} sts assume-role --serial-number $mfaArn --role-arn $roleArn --token-code $code \
+  temp_role=$(aws --profile ${1} sts assume-role --serial-number $(aws configure get serial-number --profile ***REMOVED***) \
+    --role-arn $(aws configure get role-arn --profile ***REMOVED***) --token-code $code \
     --role-session-name AssumedRole --duration-seconds 3600)
 
   in_green "Assumed admin role.\n"
@@ -110,7 +110,7 @@ tw)
 
   source $ROOT_DIR/.env3/bin/activate
   saml=$(oktaauth --username ***REMOVED***@thoughtworks.com -s thoughtworks.okta.com \
-    --apptype amazon_aws --appid $TW_AWS_APP_ID)
+    --apptype amazon_aws --appid $(aws configure get tw-app-id --profile tw))
 
   retVal=$?
   if [ $retVal -ne 0 ]; then
@@ -130,7 +130,7 @@ tw)
 
   in_green "Assumed admin federated-admin role.\n"
 
-  temp_role=$(aws sts assume-role --role-arn $TW_CLIADMINROLE_ARN --role-session-name "AssumedRole")
+  temp_role=$(aws sts assume-role --role-arn $(aws configure get tw-cliadmin-role) --role-session-name "AssumedRole")
   expiration=$(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {} +%s)
   access_key=$(echo $temp_role | jq -r .Credentials.AccessKeyId)
   secret=$(echo $temp_role | jq -r .Credentials.SecretAccessKey)
