@@ -58,7 +58,7 @@
             "command": {
                 "action": "splitPane",
                 "index": 1,
-                "split": "vertical"
+                "split": "horizontal"
             },
             "keys": [
                 "alt+shift+k"
@@ -68,7 +68,7 @@
             "command": {
                 "action": "splitPane",
                 "index": 1,
-                "split": "vertical"
+                "split": "auto"
             },
             "keys": [
                 "alt+shift+l"
@@ -87,7 +87,7 @@
             "fontFace": "Fira Code",
             "fontSize": 10,
             "experimental.retroTerminalEffect": false,
-            "startingDirectory": "C:/Users/Javier/workspace",
+            "startingDirectory": "C:/Users/Javier/workspace/ScaledDi",
             "useAcrylic": false,
             "acrylicOpacity": 0.95,
             "closeOnExit": true
@@ -135,7 +135,7 @@
                 "name": "Ubuntu",
                 "commandline": "wsl",
                 "icon": "C:\\Users\\Javier\\Documents\\ubuntu.ico",
-                "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\matiasca\\workspace\\ScaledDi",
+                "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\matiasca\\workspace",
                 "antialiasingMode": "grayscale"
             },
             {
