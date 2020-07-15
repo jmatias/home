@@ -8,8 +8,9 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export KUBE_EDITOR='code --wait'
 
 export PATH=/usr/local/sbt/bin:$PATH
-export PATH=/home/matiasca/bin/:$PATH
-export PATH=/home/matiasca/devcli/:$PATH
+export PATH=$HOME/bin/:$PATH
+export PATH=$HOME/devcli/:$PATH
+export PATH=$HOME/anaconda3/bin/:$PATH
 
 export PATH=$PATH:/usr/local/sonar-scanner/bin
 
