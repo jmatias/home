@@ -5,7 +5,7 @@
     "defaultProfile": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}",
     "initialCols": 200,
     "initialRows": 65,
-    "tabWidthMode": "titleLength",
+    "tabWidthMode": "compact",
     "launchMode": "maximized",
     "keybindings": [
         // {
