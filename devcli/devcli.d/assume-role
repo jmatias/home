@@ -21,7 +21,8 @@ time-left)
 
   secondsRemaining=$(($expiration - $(date -u +%s) - 3))
   date -u -d "@$secondsRemaining" +'%Hh %Mm %Ss'
-  [[ $secondsRemaining -ge 0 ]]
+  [[ $secondsRemaining -le 0 ]] && exit 1
+  exit 0
   ;;
 
 ***REMOVED***)
