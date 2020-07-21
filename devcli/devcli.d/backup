@@ -20,7 +20,10 @@ start)
 
   rsync --info=name0 --info=progress3 --delete-excluded --exclude="*anaconda*" \
   --exclude="*cache*" --exclude="*.git/*" --exclude=".gnupg" --exclude=".npm" --exclude=".m2" --exclude=".conda" \
-  --exclude="go" --exclude=".env3" --exclude="R/*" --exclude=".theano" --archive --delete \
+  --exclude="go" --exclude=".env3" --exclude="R/*" --exclude=".theano" --exclude="***REMOVED***" \
+  --exclude=".m2" --exclude=".gradle" --exclude=".vscode-server" --exclude=".dotnet" \
+  --exclude="node_modules" --exclude="external_repos" \
+  --archive --delete \
   /home/matiasca/ /e/Dropbox/wsl2_backup
 
 

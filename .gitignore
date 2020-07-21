@@ -2,8 +2,6 @@
 
 !.gitignore
 
-!.gitconfig
-
 
 !/.my-zsh/custom
 !/.my-zsh/custom/*
