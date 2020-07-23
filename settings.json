@@ -7,6 +7,7 @@
     "initialRows": 65,
     "tabWidthMode": "compact",
     "launchMode": "maximized",
+    "cursorShape": "vintage",
     "keybindings": [
         // {
         //   "command": "closeTab",
@@ -14,6 +15,14 @@
         //     "ctrl+w"
         //   ]
         // },
+        {
+            "command": "toggleFocusMode",
+            "keys": "alt+shift+f11"
+        },
+        {
+            "command": "commandPalette",
+            "keys": "ctrl+shift+p"
+        },
         {
             "command": {
                 "action": "splitPane",
@@ -89,7 +98,7 @@
             "experimental.retroTerminalEffect": false,
             "startingDirectory": "C:/Users/Javier/workspace/ScaledDi",
             "useAcrylic": true,
-            "acrylicOpacity": 0.70,
+            "acrylicOpacity": 0.65,
             "closeOnExit": true
         },
         "list": [
@@ -136,6 +145,7 @@
                 "commandline": "wsl",
                 "icon": "C:\\Users\\Javier\\Documents\\ubuntu.ico",
                 "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\matiasca\\workspace",
+                "cursorShape": "vintage",
                 "antialiasingMode": "grayscale"
             },
             {
