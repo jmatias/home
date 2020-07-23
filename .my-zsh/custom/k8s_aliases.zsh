@@ -11,4 +11,4 @@ alias kdvpa='kubectl describe vpa'
 
 alias kgpaw='kubectl get pods -A -w'
 
-
+alias kclcc='kubectl config unset current-context'
