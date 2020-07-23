@@ -1,6 +1,6 @@
 
 [kubernetes]
-style = "dimmed green"
+style = "green"
 disabled = false
 
 

@@ -1,5 +1,4 @@
 #!/usr/bin/zsh
-
 alias ls='ls -lha --color'
 alias win='cd /c/users/Javier/workspace/ScaledDi'
 alias work='cd ~/workspace'
@@ -9,7 +8,11 @@ alias intellij='idea >/dev/null 2>&1 &'
 alias toolbox='jetbrains-toolbox >/dev/null 2>&1 &'
 alias zshconfig="idea ~/.zshrc >/dev/null 2>&1 & "
 alias ohmyzsh="idea  ~/.oh-my-zsh"
-zshreload() { while (( $# )); do unfunction $1; autoload -U $1; shift; done }
+zshreload() { while (($#)); do
+  unfunction $1
+  autoload -U $1
+  shift
+done; }
 alias reload='source ~/.zshrc'
 
 alias awk1='awk '"'"'{print $1}'"'"''
