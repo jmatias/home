@@ -42,8 +42,9 @@ install)
     }
     trap clean_up EXIT
 
-    python3 -m venv $ROOT_DIR/.env3
-    source $ROOT_DIR/.env3/bin/activate
+    sudo apt-get install python3-venv -y
+    python3 -m venv $HOME/.env3
+    source $HOME/.env3/bin/activate
     pip install --upgrade pip
 
     rm -rf /tmp/aws_role_credentials
@@ -62,8 +63,12 @@ install)
 
     if [ ! -f "$HOME/.env3/bin/activate" ]; then
       echo "Creating Python 3 virtual environment"
-      python3 -m venv ~/.env3
+      sudo apt-get install python3-venv -y
+      python3 -m venv $HOME/.env3
     fi
+
+    source $HOME/.env3/bin/activate
+    sudo apt-get install fzf ripgrep
 
     command -v kubectl >/dev/null 2>&1
     if [[ $? -ne 0 ]]; then
@@ -150,17 +155,13 @@ install)
     command -v yq >/dev/null 2>&1
     if [ $? -ne 0 ]; then
 
-      python3 -m venv $SCRIPT_ROOT/.venv
-      source $SCRIPT_ROOT/.venv/bin/activate
-
-      output=$(pip install -r $SCRIPT_ROOT/hack/requirements.txt 2>&1)
+      pip install wheel yq
       if [ $? -ne 0 ]; then
         echo $output
         exit $retVal
       fi
 
     fi
-
 
     command -v vtop >/dev/null 2>&1
     if [ $? -ne 0 ]; then
@@ -179,8 +180,8 @@ install)
 
     fi
 
-
     ;;
+
   esac
 
   ;;
