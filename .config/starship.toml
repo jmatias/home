@@ -25,5 +25,5 @@ utc_time_offset = "local"
 shell = ["/usr/bin/zsh"]
 when = "exit 0"
 command = "devcli assume-role time-left"
-style = "bold dimmed green"
+style = "bold green"
 prefix= "AWS: "
