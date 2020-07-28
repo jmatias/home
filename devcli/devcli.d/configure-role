@@ -18,8 +18,10 @@ case ${1} in
 
   ***REMOVED***)
 
-  aws configure set region us-east-1 --profile ***REMOVED***
   aws configure --profile ***REMOVED***
+
+  aws configure set region "$(aws configure get serial-number --profile ***REMOVED***)" --profile ***REMOVED***mfa
+
 
   read -p "MFA Arn [$(aws configure get serial-number --profile ***REMOVED***)]: " mfaArn
   mfaArn=${mfaArn:-$(aws configure get serial-number --profile ***REMOVED***)}
@@ -29,6 +31,9 @@ case ${1} in
   roleArn=${roleArn:-$(aws configure get role-arn --profile ***REMOVED***)}
   aws configure set role-arn --profile ***REMOVED*** $roleArn
 
+  read -p "Account Number [$(aws configure get account-number --profile ***REMOVED***)]: " roleArn
+  roleArn=${roleArn:-$(aws configure get account-number --profile ***REMOVED***)}
+  aws configure set account-number --profile ***REMOVED*** $roleArn
   ;;
 
 tw)
