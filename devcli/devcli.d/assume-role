@@ -55,6 +55,9 @@ time-left)
   aws configure set region us-east-1 --profile ***REMOVED***mfa
   aws configure set expiration $expiration --profile ***REMOVED***mfa
 
+  aws ecr get-login-password --region "$(aws configure get region --profile ***REMOVED***)" --profile ***REMOVED***mfa | docker login \
+  --username AWS --password-stdin "$(aws configure get account-number --profile ***REMOVED***)".dkr.ecr.us-east-1.amazonaws.com
+
   ;;
 
 tw)
