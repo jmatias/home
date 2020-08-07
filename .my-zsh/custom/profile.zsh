@@ -48,3 +48,22 @@ source $HOME/.env3/bin/activate
 
 export AWS_PAGER=""
 export RPROMPT=""
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/matiasca/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+   eval "$__conda_setup"
+else
+   if [ -f "/home/matiasca/anaconda3/etc/profile.d/conda.sh" ]; then
+       . "/home/matiasca/anaconda3/etc/profile.d/conda.sh"
+   else
+       export PATH="/home/matiasca/anaconda3/bin:$PATH"
+   fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64

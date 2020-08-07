@@ -8,6 +8,7 @@ alias kkha='kubectl get khchecks --all-namespaces'
 alias kdkh='kubectl describe khchecks'
 
 alias kdvpa='kubectl describe vpa'
+alias kgvpa='kubectl get vpa'
 
 alias kgpaw='kubectl get pods -A -w'
 

@@ -28,3 +28,5 @@ function gsquash() {
   shift
   git reset --soft HEAD~$commits && git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"
 }
+
+alias please='sudo'
