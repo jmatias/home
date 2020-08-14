@@ -18,6 +18,7 @@
 
 !/.config
 !/.config/starship.toml
+!/.config/settings.json
 
 !/bin
 !/bin/assume-role

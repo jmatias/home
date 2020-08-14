@@ -16,7 +16,7 @@ start)
 
   rsync --info=name0 --info=progress3 --archive --delete   \
   /c/Users/Javier/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json \
-  $HOME/
+  $HOME/.config
 
   rsync --info=name0 --info=progress3 --delete-excluded --exclude="*anaconda*" \
   --exclude="*cache*" --exclude="*.git/*" --exclude=".gnupg" --exclude=".npm" --exclude=".m2" --exclude=".conda" \
