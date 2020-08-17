@@ -5,6 +5,7 @@
 
 !/.my-zsh/custom
 !/.my-zsh/custom/*
+!/.my-zsh/custom/plugins/*
 !/.my-zsh/completions
 !/.my-zsh/completions/*
 !/.my-zsh/
