@@ -68,7 +68,7 @@ install)
     fi
 
     source $HOME/.env3/bin/activate
-    sudo apt-get install fzf ripgrep
+    sudo apt-get install -y fzf ripgrep
 
     command -v kubectl >/dev/null 2>&1
     if [[ $? -ne 0 ]]; then
@@ -180,6 +180,20 @@ install)
 
     fi
 
+    command -v golangci-lint >/dev/null 2>&1
+    if [ $? -ne 0 ]; then
+
+      if [ __linux ]; then
+
+        curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sudo sh -s -- -b /usr/local/bin v1.30.0
+
+      elif [[ __osx ]]; then
+        echo "$OSTYPE" is not supported at this time.
+      else
+        echo "$OSTYPE" is not supported at this time.
+      fi
+
+    fi
     ;;
 
   esac
