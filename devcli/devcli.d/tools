@@ -44,7 +44,7 @@ install)
 
     if ! command -v python3 >/dev/null 2>&1; then
       if __linux; then
-         sudo apt-get install python3-venv -y
+        sudo apt-get install python3-venv -y
       elif __osx; then
         brew install python@3
         pip install virtualenv
@@ -52,6 +52,7 @@ install)
         echo "$OSTYPE" is not supported at this time.
       fi
     fi
+
     python3 -m venv $HOME/.env3
     source $HOME/.env3/bin/activate
     pip install --upgrade pip
@@ -72,18 +73,25 @@ install)
 
     source $HOME/.env3/bin/activate
 
-    command -v fzf >/dev/null 2>&1
-    if [[ $? -ne 0 ]]; then
+    if [[ ! -z "$ZSH" ]]; then
+      if ! command -v z >/dev/null 2>&1; then
+        git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
+      fi
+
+    fi
+
+
+    if ! command -v fzf >/dev/null 2>&1; then
       if __linux; then
-         sudo apt-get install -y fzf
+        sudo apt-get install -y fzf
       elif __osx; then
         brew install fzf
       else
         echo "$OSTYPE" is not supported at this time.
       fi
     fi
-    command -v ripgrep >/dev/null 2>&1
-    if [[ $? -ne 0 ]]; then
+
+    if ! command -v ripgrep >/dev/null 2>&1; then
       if __linux; then
         sudo apt-get install -y ripgrep
       elif __osx; then
@@ -93,8 +101,7 @@ install)
       fi
     fi
 
-    command -v kubectl >/dev/null 2>&1
-    if [[ $? -ne 0 ]]; then
+    if ! command -v kubectl >/dev/null 2>&1; then
       if __linux; then
 
         sudo wget "https://storage.googleapis.com/kubernetes-release/release/v1.16.8/bin/linux/amd64/kubectl" -O /usr/local/bin/kubectl
@@ -108,8 +115,7 @@ install)
 
     fi
 
-    command -v helm >/dev/null 2>&1
-    if [[ $? -ne 0 ]]; then
+    if ! command -v helm >/dev/null 2>&1; then
       if __linux; then
         wget -qO- https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz | tar xvz -C /tmp
         sudo chmod +x /tmp/linux-amd64/helm
@@ -123,8 +129,7 @@ install)
 
     fi
 
-    command -v fluxctl >/dev/null 2>&1
-    if [[ $? -ne 0 ]]; then
+    if ! command -v fluxctl >/dev/null 2>&1; then
       if __linux; then
         sudo wget "https://github.com/fluxcd/flux/releases/download/1.20.0/fluxctl_linux_amd64" -O /usr/local/bin/fluxctl
         sudo chmod +x /usr/local/bin/fluxctl
@@ -136,8 +141,7 @@ install)
 
     fi
 
-    command -v eksctl >/dev/null 2>&1
-    if [[ $? -ne 0 ]]; then
+    if ! command -v eksctl >/dev/null 2>&1; then
 
       if __linux; then
 
@@ -155,8 +159,7 @@ install)
 
     fi
 
-    command -v jq >/dev/null 2>&1
-    if [ $? -ne 0 ]; then
+    if ! command -v jq >/dev/null 2>&1; then
       if __linux; then
         sudo apt-get update && sudo apt-get install jq -y
       elif __osx; then
@@ -167,16 +170,15 @@ install)
 
     fi
 
-    command -v yq >/dev/null 2>&1
-    if [ $? -ne 0 ]; then
+    if ! command -v yq >/dev/null 2>&1; then
       pip install wheel yq
       if [ $? -ne 0 ]; then
         echo $output
         exit $retVal
       fi
     fi
-    command -v vtop >/dev/null 2>&1
-    if [ $? -ne 0 ]; then
+
+    if ! command -v vtop >/dev/null 2>&1; then
 
       if __linux; then
         curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
@@ -191,11 +193,15 @@ install)
 
     fi
 
-    command -v awscli > /dev/null 2>&1
-    if [ $? -ne 0 ]; then
+    if ! command -v awscli >/dev/null 2>&1; then
 
       if __linux; then
-        sudo apt-get install -y awscli
+
+        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+        unzip awscliv2.zip
+        sudo ./aws/install
+        rm -rf ./aws
+
       elif __osx; then
         brew install awscli
       else
@@ -204,9 +210,8 @@ install)
 
     fi
 
-    command -v golangci-lint >/dev/null 2>&1
-    if [ $? -ne 0 ]; then
-        curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sudo sh -s -- -b /usr/local/bin v1.30.0
+    if ! command -v golangci-lint >/dev/null 2>&1; then
+      curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sudo sh -s -- -b /usr/local/bin v1.30.0
     fi
     ;;
 
