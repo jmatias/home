@@ -4,7 +4,7 @@ SUBCOMMAND_DESC="Assume an AWS IAM role."
 SUBCOMMAND_HELP=$(
   cat <<EOH
 
-***REMOVED***                      Connect to Trilogy's AWS account.
+client                      Connect to Trilogy's AWS account.
 tw                           Connect to ThoughtWorks' AWS account.
 personal                     Connect to my personal AWS account.
 time-left                    Print the time remaining in the current assume-role session.
@@ -34,19 +34,19 @@ time-left)
 #                                                                              
 
 
-***REMOVED***)
+client)
 
   set -e
 
-  echo MFA Arn: $(aws configure get serial-number --profile ***REMOVED***)
+  echo MFA Arn: $(aws configure get serial-number --profile client)
   echo -n "MFA code: "
   read -s code
   echo
 
   source $ROOT_DIR/.env3/bin/activate
 
-  temp_role=$(aws --profile ${1} sts assume-role --serial-number $(aws configure get serial-number --profile ***REMOVED***) \
-    --role-arn $(aws configure get role-arn --profile ***REMOVED***) --token-code $code \
+  temp_role=$(aws --profile ${1} sts assume-role --serial-number $(aws configure get serial-number --profile client) \
+    --role-arn $(aws configure get role-arn --profile client) --token-code $code \
     --role-session-name AssumedRole --duration-seconds 3600)
 
   in_green "Assumed admin role.\n"
@@ -58,14 +58,14 @@ time-left)
 
   in_gray "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {}) \n"
 
-  aws configure set aws_session_token $token --profile ***REMOVED***mfa
-  aws configure set aws_secret_access_key $secret --profile ***REMOVED***mfa
-  aws configure set aws_access_key_id $access_key --profile ***REMOVED***mfa
-  aws configure set region us-east-1 --profile ***REMOVED***mfa
-  aws configure set expiration $expiration --profile ***REMOVED***mfa
+  aws configure set aws_session_token $token --profile clientmfa
+  aws configure set aws_secret_access_key $secret --profile clientmfa
+  aws configure set aws_access_key_id $access_key --profile clientmfa
+  aws configure set region us-east-1 --profile clientmfa
+  aws configure set expiration $expiration --profile clientmfa
 
-  aws ecr get-login-password --region "$(aws configure get region --profile ***REMOVED***)" --profile ***REMOVED***mfa | docker login \
-  --username AWS --password-stdin "$(aws configure get account-number --profile ***REMOVED***)".dkr.ecr.us-east-1.amazonaws.com
+  aws ecr get-login-password --region "$(aws configure get region --profile client)" --profile clientmfa | docker login \
+  --username AWS --password-stdin "$(aws configure get account-number --profile client)".dkr.ecr.us-east-1.amazonaws.com
 
   ;;
 
