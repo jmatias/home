@@ -4,7 +4,7 @@ SUBCOMMAND_DESC="Configure credentials for an AWS IAM role."
 SUBCOMMAND_HELP=$(
   cat <<EOH
 
-client                       Configure role for Trilogy's AWS account.
+client                       Configure role for secondary AWS account.
 tw                           Configure role for ThoughtWorks' AWS account.
 personal                     Configure role for my personal AWS account.
 
