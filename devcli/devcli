@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+export PS4='+${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]:+${FUNCNAME[0]}():} '
+
 declare -r MAIN_COMMAND_VERSION="1.1"
 declare -r MAIN_COMMAND=$(basename ${0})
 declare -r ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}" )" > /dev/null && pwd)"
