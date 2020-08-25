@@ -18,7 +18,7 @@ export PATH=$PATH:/opt/zeppelin/zeppelin-0.9.0-preview1-bin-all/bin/
 export PATH=$PATH:/usr/local/sonar-scanner/bin
 export PATH=/usr/local/sbt/bin:$PATH
 
-export PATH="$PATH:/home/matiasca/anaconda3/bin"
+#export PATH="$PATH:/home/matiasca/anaconda3/bin"
 
 export COMPLETION_WAITING_DOTS="true"
 export HYPHEN_INSENSITIVE="true"
@@ -71,4 +71,4 @@ function conda-start {
 # <<< conda initialize <<<
 
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64
