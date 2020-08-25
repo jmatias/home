@@ -28,3 +28,6 @@
 !/devcli/devcli.d
 !/devcli/devcli.d/*
 !/devcli/devcli
+
+!/devcli/conf
+!/devcli/conf/requirements.txt
