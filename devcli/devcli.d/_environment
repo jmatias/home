@@ -16,8 +16,7 @@ function __osx() {
 }
 
 
-function __linux() {
-  # __osx - return if we are running in 'Darwin' (macos)
-  [[ $(uname) == "Linux" ]]
+function __ubuntu() {
+  [[ $(uname) == "Linux" && $(cat /etc/issue | grep -i ubuntu) ]]
 }
 

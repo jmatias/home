@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 if ! command -v kubectl >/dev/null 2>&1; then
-  if __linux; then
+  if __ubuntu; then
 
     sudo wget "https://storage.googleapis.com/kubernetes-release/release/v1.16.8/bin/linux/amd64/kubectl" -O /usr/local/bin/kubectl
     sudo chmod +x /usr/local/bin/kubectl
@@ -15,7 +15,7 @@ if ! command -v kubectl >/dev/null 2>&1; then
 fi
 
 if ! command -v helm >/dev/null 2>&1; then
-  if __linux; then
+  if __ubuntu; then
     wget -qO- https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz | tar xvz -C /tmp
     sudo chmod +x /tmp/linux-amd64/helm
     sudo mv /tmp/linux-amd64/helm /usr/local/bin
@@ -29,7 +29,7 @@ if ! command -v helm >/dev/null 2>&1; then
 fi
 
 if ! command -v fluxctl >/dev/null 2>&1; then
-  if __linux; then
+  if __ubuntu; then
     sudo wget "https://github.com/fluxcd/flux/releases/download/1.20.0/fluxctl_linux_amd64" -O /usr/local/bin/fluxctl
     sudo chmod +x /usr/local/bin/fluxctl
   elif __osx; then
@@ -42,7 +42,7 @@ fi
 
 if ! command -v eksctl >/dev/null 2>&1; then
 
-  if __linux; then
+  if __ubuntu; then
 
     wget -qO- "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xvz -C /tmp
     sudo mv /tmp/eksctl /usr/local/bin
