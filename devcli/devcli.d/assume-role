@@ -51,18 +51,25 @@ client)
 
   in_green "Assumed admin role.\n"
 
-  expiration=$(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {} +%s)
   access_key=$(echo $temp_role | jq -r .Credentials.AccessKeyId)
   secret=$(echo $temp_role | jq -r .Credentials.SecretAccessKey)
   token=$(echo $temp_role | jq -r .Credentials.SessionToken)
 
-  in_gray "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {}) \n"
+  if __ubuntu; then
+    expiration=$(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {} +%s)
+    in_gray "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {}) \n"
+  fi
+
 
   aws configure set aws_session_token $token --profile clientmfa
   aws configure set aws_secret_access_key $secret --profile clientmfa
   aws configure set aws_access_key_id $access_key --profile clientmfa
   aws configure set region us-east-1 --profile clientmfa
-  aws configure set expiration $expiration --profile clientmfa
+
+  if __ubuntu; then
+    aws configure set expiration $expiration --profile clientmfa
+  fi
+
 
   aws ecr get-login-password --region "$(aws configure get region --profile client)" --profile clientmfa | docker login \
   --username AWS --password-stdin "$(aws configure get account-number --profile client)".dkr.ecr.us-east-1.amazonaws.com
