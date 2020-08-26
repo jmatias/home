@@ -54,3 +54,5 @@ if ! command -v vtop >/dev/null 2>&1; then
   fi
 
 fi
+
+curl -fsSL https://starship.rs/install.sh | bash
