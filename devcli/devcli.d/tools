@@ -4,13 +4,9 @@ SUBCOMMAND_DESC="Install development tools."
 SUBCOMMAND_HELP=$(
   cat <<EOH
 
-install  [toolkit]              Install development tools.
-toolkits:
-  eks - Tools to assume a role in AWS.
-  dev - Misc development tools
-
-
-
+install eks :  Install tools to assume a role in AWS.
+install dev :  Install development tools
+install ds  :  Install data science tools.
 
 EOH
 )
@@ -30,6 +26,7 @@ install)
 
   case $toolKit in
   eks)
+
     mypwd=$PWD
     set -e
     clean_up() {
@@ -42,36 +39,16 @@ install)
     }
     trap clean_up EXIT
 
-    if ! command -v python3 >/dev/null 2>&1; then
-      if __linux; then
-        sudo apt-get install python3-venv -y
-      elif __osx; then
-        brew install python@3
-        pip install virtualenv
-      else
-        echo "$OSTYPE" is not supported at this time.
-      fi
-    fi
+    . ${SUBCOMMANDS_DIR}/_install-python3
+    . ${SUBCOMMANDS_DIR}/_install-okta
+    . ${SUBCOMMANDS_DIR}/_install-k8s-tools
+    . ${SUBCOMMANDS_DIR}/_install-awscli
 
-    python3 -m venv $HOME/.env3
-    source $HOME/.env3/bin/activate
-    pip install --upgrade pip
-
-    rm -rf /tmp/aws_role_credentials
-    rm -rf /tmp/oktaauth
-
-    git clone git@github.com:MatthiasScholzTW/aws_role_credentials.git /tmp/aws_role_credentials
-    git clone git@github.com:MatthiasScholzTW/oktaauth.git /tmp/oktaauth
-
-    cd /tmp/aws_role_credentials
-    python setup.py install
-    cd /tmp/oktaauth
-    python setup.py install
     ;;
 
   dev)
 
-    source $HOME/.env3/bin/activate
+    . ${SUBCOMMANDS_DIR}/_install-python3
 
     if [[ ! -z "$ZSH" ]]; then
       if ! command -v z >/dev/null 2>&1; then
@@ -80,145 +57,17 @@ install)
 
     fi
 
-    if ! command -v fzf >/dev/null 2>&1; then
-      if __linux; then
-        sudo apt-get install -y fzf
-      elif __osx; then
-        brew install fzf
-      else
-        echo "$OSTYPE" is not supported at this time.
-      fi
-    fi
-
-    if ! command -v ripgrep >/dev/null 2>&1; then
-      if __linux; then
-        sudo apt-get install -y ripgrep
-      elif __osx; then
-        brew install ripgrep
-      else
-        echo "$OSTYPE" is not supported at this time.
-      fi
-    fi
-
-    if ! command -v kubectl >/dev/null 2>&1; then
-      if __linux; then
-
-        sudo wget "https://storage.googleapis.com/kubernetes-release/release/v1.16.8/bin/linux/amd64/kubectl" -O /usr/local/bin/kubectl
-        sudo chmod +x /usr/local/bin/kubectl
-
-      elif __osx; then
-        brew install kubectl@1.16.8
-      else
-        echo "$OSTYPE" is not supported at this time.
-      fi
-
-    fi
-
-    if ! command -v helm >/dev/null 2>&1; then
-      if __linux; then
-        wget -qO- https://get.helm.sh/helm-v3.2.4-linux-amd64.tar.gz | tar xvz -C /tmp
-        sudo chmod +x /tmp/linux-amd64/helm
-        sudo mv /tmp/linux-amd64/helm /usr/local/bin
-        rm -rf /tmp/linux-amd64/
-      elif __osx; then
-        brew install helm@3.2.4
-      else
-        echo "$OSTYPE" is not supported at this time.
-      fi
-
-    fi
-
-    if ! command -v fluxctl >/dev/null 2>&1; then
-      if __linux; then
-        sudo wget "https://github.com/fluxcd/flux/releases/download/1.20.0/fluxctl_linux_amd64" -O /usr/local/bin/fluxctl
-        sudo chmod +x /usr/local/bin/fluxctl
-      elif __osx; then
-        brew install fluxctl@1.20.0
-      else
-        echo "$OSTYPE" is not supported at this time.
-      fi
-
-    fi
-
-    if ! command -v eksctl >/dev/null 2>&1; then
-
-      if __linux; then
-
-        wget -qO- "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xvz -C /tmp
-        sudo mv /tmp/eksctl /usr/local/bin
-
-      elif __osx; then
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-        brew tap weaveworks/tap
-        brew install weaveworks/tap/eksctl
-        brew upgrade eksctl && brew link --overwrite eksctl
-      else
-        echo "$OSTYPE" is not supported at this time.
-      fi
-
-    fi
-
-    if ! command -v jq >/dev/null 2>&1; then
-      if __linux; then
-        sudo apt-get update && sudo apt-get install jq -y
-      elif __osx; then
-        brew install jq
-      else
-        echo "$OSTYPE" is not supported at this time.
-      fi
-
-    fi
-
-    if ! command -v yq >/dev/null 2>&1; then
-      pip install wheel yq
-      if [ $? -ne 0 ]; then
-        echo $output
-        exit $retVal
-      fi
-    fi
-
-    if ! command -v vtop >/dev/null 2>&1; then
-
-      if __linux; then
-        curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-        sudo apt-get install -y nodejs
-        sudo npm -g install vtop
-      elif __osx; then
-        brew install nodejs
-        brew install vtop
-      else
-        echo "$OSTYPE" is not supported at this time.
-      fi
-
-    fi
-
-    if ! command -v aws >/dev/null 2>&1; then
-
-      if __linux; then
-
-        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-        unzip awscliv2.zip
-        sudo ./aws/install
-        rm -rf ./aws
-
-      elif __osx; then
-        brew install awscli
-      else
-        echo "$OSTYPE" is not supported at this time.
-      fi
-
-    fi
-
     if ! command -v golangci-lint >/dev/null 2>&1; then
       curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sudo sh -s -- -b /usr/local/bin v1.30.0
     fi
+
+    . ${SUBCOMMANDS_DIR}/_install-cli-tools
+
     ;;
 
   ds)
-    python3 -m venv $HOME/.env3
-    source $HOME/.env3/bin/activate
-    pip install --upgrade pip
 
+    . ${SUBCOMMANDS_DIR}/_install-python3
     pip install --upgrade -r ${CONFIGURATION_DIR}/requirements.txt
 
     ;;
