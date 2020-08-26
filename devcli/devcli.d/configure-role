@@ -18,20 +18,22 @@ case ${1} in
 
   client)
 
+  stars=$(printf '*%.0s' {1..20})
+  aws configure set region us-east-1 --profile client
   aws configure --profile client
 
   aws configure set region "$(aws configure get region --profile client)" --profile clientmfa
 
 
-  read -p "MFA Arn [$(aws configure get serial-number --profile client)]: " mfaArn
+  read -p "MFA Arn [$(aws configure get serial-number --profile client | sed -e "s/^.\{20\}/${stars}/g")]: " mfaArn
   mfaArn=${mfaArn:-$(aws configure get serial-number --profile client)}
   aws configure set serial-number --profile client $mfaArn
 
-  read -p "Assumed Role Arn [$(aws configure get role-arn --profile client)]: " roleArn
+  read -p "Assumed Role Arn [$(aws configure get role-arn --profile client | sed -e "s/^.\{20\}/${stars}/g")]: " roleArn
   roleArn=${roleArn:-$(aws configure get role-arn --profile client)}
   aws configure set role-arn --profile client $roleArn
 
-  read -p "Account Number [$(aws configure get account-number --profile client)]: " roleArn
+  read -p "Account Number [$(aws configure get account-number --profile client | sed -e 's/^......./*******/g')]: " roleArn
   roleArn=${roleArn:-$(aws configure get account-number --profile client)}
   aws configure set account-number --profile client $roleArn
   ;;
