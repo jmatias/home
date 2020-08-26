@@ -88,6 +88,12 @@
             "keys": [
                 "ctrl+f"
             ]
+        },
+        {
+            "command": "togglePaneZoom",
+            "keys": [
+                "alt+shift+enter"
+            ]
         }
     ],
     "profiles": {
