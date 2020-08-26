@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+if ! command -v python3 >/dev/null 2>&1; then
+  if __linux; then
+    sudo apt-get install python3-venv -y
+  elif __osx; then
+    brew install python@3
+    pip install virtualenv
+  else
+    echo "$OSTYPE" is not supported at this time.
+  fi
+fi
+
+python3 -m venv $HOME/.env3
+source $HOME/.env3/bin/activate
+pip install --upgrade pip

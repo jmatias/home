@@ -1,0 +1,57 @@
+#!/usr/bin/bash
+
+if ! command -v fzf >/dev/null 2>&1; then
+  if __linux; then
+    sudo apt-get install -y fzf
+  elif __osx; then
+    brew install fzf
+  else
+    echo "$OSTYPE" is not supported at this time.
+  fi
+fi
+
+if ! command -v ripgrep >/dev/null 2>&1; then
+  if __linux; then
+    sudo apt-get install -y ripgrep
+  elif __osx; then
+    brew install ripgrep
+  else
+    echo "$OSTYPE" is not supported at this time.
+  fi
+fi
+
+
+
+if ! command -v jq >/dev/null 2>&1; then
+  if __linux; then
+    sudo apt-get update && sudo apt-get install jq -y
+  elif __osx; then
+    brew install jq
+  else
+    echo "$OSTYPE" is not supported at this time.
+  fi
+
+fi
+
+if ! command -v yq >/dev/null 2>&1; then
+  pip install wheel yq
+  if [ $? -ne 0 ]; then
+    echo $output
+    exit $retVal
+  fi
+fi
+
+if ! command -v vtop >/dev/null 2>&1; then
+
+  if __linux; then
+    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    sudo npm -g install vtop
+  elif __osx; then
+    brew install nodejs
+    brew install vtop
+  else
+    echo "$OSTYPE" is not supported at this time.
+  fi
+
+fi
