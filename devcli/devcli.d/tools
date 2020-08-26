@@ -49,19 +49,7 @@ install)
   dev)
 
     . ${SUBCOMMANDS_DIR}/_install-python3
-
-    if [[ ! -z "$ZSH" ]]; then
-      if ! command -v z >/dev/null 2>&1; then
-        git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-      fi
-
-    fi
-
-    if ! command -v golangci-lint >/dev/null 2>&1; then
-      curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sudo sh -s -- -b /usr/local/bin v1.30.0
-    fi
-
+    . ${SUBCOMMANDS_DIR}/_install-golang
     . ${SUBCOMMANDS_DIR}/_install-cli-tools
 
     ;;
