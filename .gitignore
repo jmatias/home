@@ -25,6 +25,7 @@
 !/devcli/devcli.d
 !/devcli/devcli.d/*
 !/devcli/devcli
+!/devcli/_boilerplate.sh
 
 !/devcli/conf
 !/devcli/conf/requirements.txt
