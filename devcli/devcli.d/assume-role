@@ -43,7 +43,7 @@ client)
   read -s code
   echo
 
-  source $ROOT_DIR/.env3/bin/activate
+  source $HOME/.env3/bin/activate
 
   temp_role=$(aws --profile ${1} sts assume-role --serial-number $(aws configure get serial-number --profile client) \
     --role-arn $(aws configure get role-arn --profile client) --token-code $code \
