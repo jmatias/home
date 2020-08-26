@@ -20,7 +20,7 @@ case ${1} in
 
   aws configure --profile client
 
-  aws configure set region "$(aws configure get serial-number --profile client)" --profile clientmfa
+  aws configure set region "$(aws configure get region --profile client)" --profile clientmfa
 
 
   read -p "MFA Arn [$(aws configure get serial-number --profile client)]: " mfaArn
