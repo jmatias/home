@@ -33,9 +33,7 @@ if ! command -v go >/dev/null 2>&1; then
     trap reloadShell EXIT
 
 
-  elif
-    __osx
-  then
+  elif __osx; then
     brew update && brew install golang
   else
     echo "$OSTYPE" is not supported at this time.

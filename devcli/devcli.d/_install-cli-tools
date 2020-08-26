@@ -48,7 +48,7 @@ if ! command -v vtop >/dev/null 2>&1; then
     sudo npm -g install vtop
   elif __osx; then
     brew install nodejs
-    brew install vtop
+    sudo npm -g install vtop
   else
     echo "$OSTYPE" is not supported at this time.
   fi
