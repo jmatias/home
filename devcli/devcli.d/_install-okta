@@ -2,6 +2,14 @@
 
 . ${SUBCOMMANDS_DIR}/_install-python3
 
+clean_up() {
+  ARG=$?
+  rm -rf /tmp/aws_role_credentials
+  rm -rf /tmp/oktaauth
+  exit $ARG
+}
+trap clean_up EXIT
+
 if ! command -v oktaauth >/dev/null 2>&1; then
   rm -rf /tmp/oktaauth
   git clone git@github.com:MatthiasScholzTW/oktaauth.git /tmp/oktaauth

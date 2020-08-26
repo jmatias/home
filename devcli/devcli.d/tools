@@ -1,43 +1,23 @@
 #!/usr/bin/env bash
 
-SUBCOMMAND_DESC="Install development tools."
-SUBCOMMAND_HELP=$(
-  cat <<EOH
+valid_values=("eks dev ds")
 
-install eks :  Install tools to assume a role in AWS.
-install dev :  Install development tools
-install ds  :  Install data science tools.
+[[ "${__usage+x}" ]] || read -r -d '' __usage <<-'EOF' || true # exits non-zero when EOF encountered
+  -i --install  [arg] Toolkit to install. Valid values: [eks, dev, ds]. Required.
+EOF
 
-EOH
-)
+source $ROOT_DIR/_boilerplate.sh
 
-case ${1} in
+# shellcheck disable=SC2076
+[[ " ${valid_values[*]} " =~ " ${arg_i:-} " ]]    || help
 
-install)
 
-  shift
-  toolKit=${1}
-  shift
+case "${arg_i}" in
 
-  if [ -z $toolKit ]; then
-    echo "Must specify a toolkit"
-    exit 1
-  fi
-
-  case $toolKit in
   eks)
 
     mypwd=$PWD
     set -e
-    clean_up() {
-      ARG=$?
-      echo "> clean_up"
-      rm -rf /tmp/aws_role_credentials
-      rm -rf /tmp/oktaauth
-      cd $mypwd
-      exit $ARG
-    }
-    trap clean_up EXIT
 
     . ${SUBCOMMANDS_DIR}/_install-python3
     . ${SUBCOMMANDS_DIR}/_install-okta
@@ -63,7 +43,3 @@ install)
     ;;
 
   esac
-
-  ;;
-
-esac
