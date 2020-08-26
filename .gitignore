@@ -9,8 +9,6 @@
 !/.my-zsh/completions/*
 !/.my-zsh/
 
-!.zshrc
-!.bashrc
 !/.vimrc
 !/lefthook.yml
 !/settings.json
