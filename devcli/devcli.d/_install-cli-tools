@@ -10,7 +10,7 @@ if ! command -v fzf >/dev/null 2>&1; then
   fi
 fi
 
-if ! command -v ripgrep >/dev/null 2>&1; then
+if ! command -v rg >/dev/null 2>&1; then
   if __ubuntu; then
     sudo apt-get install -y ripgrep
   elif __osx; then
@@ -36,8 +36,7 @@ fi
 if ! command -v yq >/dev/null 2>&1; then
   pip install wheel yq
   if [ $? -ne 0 ]; then
-    echo $output
-    exit $retVal
+    exit $?
   fi
 fi
 
