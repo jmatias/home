@@ -58,6 +58,7 @@ client)
   if __ubuntu; then
     expiration=$(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {} +%s)
     in_gray "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {}) \n"
+    aws configure set expiration $expiration --profile clientmfa
   fi
 
 
@@ -65,10 +66,6 @@ client)
   aws configure set aws_secret_access_key $secret --profile clientmfa
   aws configure set aws_access_key_id $access_key --profile clientmfa
   aws configure set region us-east-1 --profile clientmfa
-
-  if __ubuntu; then
-    aws configure set expiration $expiration --profile clientmfa
-  fi
 
 
   aws ecr get-login-password --region "$(aws configure get region --profile client)" --profile clientmfa | docker login \
