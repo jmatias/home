@@ -1,3 +1,0 @@
-[submodule ".my-zsh/custom/plugins/.my-zsh/custom/plugins/zsh-z"]
-	path = .my-zsh/custom/plugins/.my-zsh/custom/plugins/zsh-z
-	url = https://github.com/agkozak/zsh-z
