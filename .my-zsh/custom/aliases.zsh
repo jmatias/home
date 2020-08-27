@@ -1,5 +1,11 @@
 #!/usr/bin/zsh
-#alias ls='ls -lha --color'
+
+if [[ $(uname) == "Linux" && $(cat /etc/issue | grep -i ubuntu) ]]; then
+  alias ls='ls -lha --color'
+fi
+
+
+
 alias win='cd /c/users/Javier/workspace/ScaledDi'
 alias work='cd ~/workspace'
 alias bfg='java -jar /home/matiasca/workspace/external-repos/bfg-repo-cleaner/bfg/target/bfg-1.13.0-tags/v1.13.0-2c1ec2f.jar'
