@@ -56,17 +56,20 @@ client)
   token=$(echo $temp_role | jq -r .Credentials.SessionToken)
 
   if __ubuntu; then
-    expiration=$(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {} +%s)
-    in_gray "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} date -d {}) \n"
-    aws configure set expiration $expiration --profile clientmfa
+    date_command="date"
+  else
+    date_command="gdate"
   fi
+
+  expiration=$(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} $date_command -d {} +%s)
+  in_gray "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} $date_command -d {}) \n"
+  aws configure set expiration $expiration --profile clientmfa
 
 
   aws configure set aws_session_token $token --profile clientmfa
   aws configure set aws_secret_access_key $secret --profile clientmfa
   aws configure set aws_access_key_id $access_key --profile clientmfa
   aws configure set region us-east-1 --profile clientmfa
-
 
   aws ecr get-login-password --region "$(aws configure get region --profile client)" --profile clientmfa | docker login \
   --username AWS --password-stdin "$(aws configure get account-number --profile client)".dkr.ecr.us-east-1.amazonaws.com

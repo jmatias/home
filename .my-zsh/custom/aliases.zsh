@@ -36,3 +36,4 @@ function gsquash() {
 }
 
 alias please='sudo'
+alias envs='env | sort'

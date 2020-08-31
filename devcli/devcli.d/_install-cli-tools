@@ -1,5 +1,11 @@
 #!/usr/bin/bash
 
+if __ubuntu; then
+  echo 'noop' > /dev/null
+elif __osx; then
+  brew install coreutils
+fi
+
 if ! command -v fzf >/dev/null 2>&1; then
   if __ubuntu; then
     sudo apt-get install -y fzf
