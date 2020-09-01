@@ -18,7 +18,6 @@ style = "bold dimmed green"
 [time]
 disabled = false
 format = "[ %T ]"
-
 utc_time_offset = "local"
 
 [custom.assume_role]
@@ -27,3 +26,9 @@ when = "exit 0"
 command = "devcli assume-role time-left"
 style = "bold green"
 prefix= "AWS: "
+
+[custom.assume_role_expired]
+shell = ["/usr/bin/zsh"]
+when = "devcli assume-role time-expired "
+command = "echo AWS"
+style = "bold red"
