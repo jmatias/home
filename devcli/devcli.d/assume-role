@@ -8,11 +8,22 @@ client                      Connect to the client's AWS account.
 tw                           Connect to ThoughtWorks' AWS account.
 personal                     Connect to my personal AWS account.
 time-left                    Print the time remaining in the current assume-role session.
+time-expired                 Return success if session has expired.
 
 EOH
 )
 
 case ${1} in
+
+time-expired)
+  expiration="$(aws configure get expiration)"
+  [[ -z $expiration ]] && exit 0
+
+  secondsRemaining=$(($expiration - $(date -u +%s) - 3))
+  date -u -d "@$secondsRemaining" +'%Hh %Mm %Ss'
+  [[ $secondsRemaining -le 0 ]] && exit 0
+  exit 1
+;;
 
 time-left)
 
