@@ -27,7 +27,7 @@ alias awk3='awk '"'"'{print $3}'"'"''
 alias awk4='awk '"'"'{print $4}'"'"''
 alias awk5='awk '"'"'{print $5}'"'"''
 
-alias weather='curl wttr.in/Sunnyside+NY'
+alias weather='curl wttr.in/NewYork+NY'
 
 function gsquash() {
   commits=$1
