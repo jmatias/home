@@ -161,9 +161,12 @@ function _tkn_clustertask_start {
     '--output[format of TaskRun dry-run (yaml or json)]:()' \
     '(*-o *--outputresource)'{\*-o,\*--outputresource}'[pass the output resource name and ref as name=ref]:()' \
     '(*-p *--param)'{\*-p,\*--param}'[pass the param as key=value for string type, or key=value1,value2,... for array type]:()' \
+    '--pod-template[local or remote file containing a PodTemplate definition]:()' \
     '(-s --serviceaccount)'{-s,--serviceaccount}'[pass the serviceaccount name]: :__kubectl_get_serviceaccount' \
     '--showlog[show logs right after starting the ClusterTask]' \
     '--timeout[timeout for TaskRun]:()' \
+    '--use-param-defaults[use default parameter values without prompting for input]' \
+    '(*-w *--workspace)'{\*-w,\*--workspace}'[pass one or more workspaces to map to the corresponding physical volumes as name=name,claimName=pvcName or name=name,emptyDir=]:()' \
     '(-c --context)'{-c,--context}'[name of the kubeconfig context to use (default: kubectl config current-context)]:()' \
     '(-k --kubeconfig)'{-k,--kubeconfig}'[kubectl config file (default: $HOME/.kube/config)]: :_filedir' \
     '(-C --nocolour)'{-C,--nocolour}'[disable colouring (default: false)]' \
@@ -500,6 +503,7 @@ function _tkn_pipeline_start {
     '(-L --last)'{-L,--last}'[re-run the Pipeline using last PipelineRun values]' \
     '--output[format of PipelineRun dry-run (yaml or json)]:()' \
     '(*-p *--param)'{\*-p,\*--param}'[pass the param as key=value for string type, or key=value1,value2,... for array type]:()' \
+    '--pod-template[local or remote file containing a PodTemplate definition]:()' \
     '--prefix-name[specify a prefix for the PipelineRun name (must be lowercase alphanumeric characters)]:()' \
     '(*-r *--resource)'{\*-r,\*--resource}'[pass the resource name and ref as name=ref]:()' \
     '(-s --serviceaccount)'{-s,--serviceaccount}'[pass the serviceaccount name]: :__kubectl_get_serviceaccount' \
@@ -829,6 +833,7 @@ function _tkn_task_start {
     '--output[format of TaskRun dry-run (yaml or json)]:()' \
     '(*-o *--outputresource)'{\*-o,\*--outputresource}'[pass the output resource name and ref as name=ref]:()' \
     '(*-p *--param)'{\*-p,\*--param}'[pass the param as key=value for string type, or key=value1,value2,... for array type]:()' \
+    '--pod-template[local or remote file containing a PodTemplate definition]:()' \
     '--prefix-name[specify a prefix for the TaskRun name (must be lowercase alphanumeric characters)]:()' \
     '(-s --serviceaccount)'{-s,--serviceaccount}'[pass the serviceaccount name]: :__kubectl_get_serviceaccount' \
     '--showlog[show logs right after starting the Task]' \

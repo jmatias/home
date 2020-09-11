@@ -23,6 +23,13 @@ if ! command -v eksctl >/dev/null 2>&1; then
 
 fi
 
+
+if ! command -v tkn >/dev/null 2>&1; then
+
+  wget -qO- "https://github.com/tektoncd/cli/releases/download/v0.12.0/tkn_0.12.0_$(uname -s)_x86_64.tar.gz" | tar xvz -C /tmp
+  sudo mv /tmp/tkn /usr/local/bin
+fi
+
 if ! command -v helm >/dev/null 2>&1; then
   wget -qO- "https://get.helm.sh/helm-v3.2.4-${os_name}-amd64.tar.gz" | tar xvz -C /tmp
   sudo chmod +x /tmp/"${os_name}"-amd64/helm
