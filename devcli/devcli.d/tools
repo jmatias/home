@@ -4,42 +4,56 @@ valid_values=("eks dev ds")
 
 [[ "${__usage+x}" ]] || read -r -d '' __usage <<-'EOF' || true # exits non-zero when EOF encountered
   -i --install  [arg] Toolkit to install. Valid values: [eks, dev, ds]. Required.
+  -r --reinstall      Re-install.
 EOF
 
 source $ROOT_DIR/_boilerplate.sh
 
 # shellcheck disable=SC2076
-[[ " ${valid_values[*]} " =~ " ${arg_i:-} " ]]    || help
+[[ " ${valid_values[*]} " =~ " ${arg_i:-} " ]] || help
 
 
 case "${arg_i}" in
 
-  eks)
+eks)
 
-    mypwd=$PWD
-    set -e
+  if [[ "${arg_r:?}" = "1" ]]; then
+    sudo rm -rf /usr/local/bin/eksctl
+    sudo rm -rf /usr/local/bin/kubectl
+    sudo rm -rf /usr/local/bin/helm
+    sudo rm -rf /usr/local/bin/fluxctl
+    sudo rm -rf /usr/local/bin/tkn
+  fi
 
-    . ${SUBCOMMANDS_DIR}/_install-python3
-    . ${SUBCOMMANDS_DIR}/_install-okta
-    . ${SUBCOMMANDS_DIR}/_install-k8s-tools
-    . ${SUBCOMMANDS_DIR}/_install-awscli
+  mypwd=$PWD
+  set -e
 
-    ;;
+  . ${SUBCOMMANDS_DIR}/_install-python3
+  . ${SUBCOMMANDS_DIR}/_install-okta
+  . ${SUBCOMMANDS_DIR}/_install-k8s-tools
+  . ${SUBCOMMANDS_DIR}/_install-awscli
 
-  dev)
+  ;;
 
-    . ${SUBCOMMANDS_DIR}/_install-python3
-    . ${SUBCOMMANDS_DIR}/_install-golang
-    . ${SUBCOMMANDS_DIR}/_install-cli-tools
-    . ${SUBCOMMANDS_DIR}/_install-zsh-plugins
+dev)
 
-    ;;
+  if [[ "${arg_r:?}" = "1" ]]; then
+    sudo rm -rf /usr/local/go
+  fi
 
-  ds)
 
-    . ${SUBCOMMANDS_DIR}/_install-python3
-    pip install --upgrade -r ${CONFIGURATION_DIR}/requirements.txt
+  . ${SUBCOMMANDS_DIR}/_install-python3
+  . ${SUBCOMMANDS_DIR}/_install-golang
+  . ${SUBCOMMANDS_DIR}/_install-cli-tools
+  . ${SUBCOMMANDS_DIR}/_install-zsh-plugins
 
-    ;;
+  ;;
 
-  esac
+ds)
+
+  . ${SUBCOMMANDS_DIR}/_install-python3
+  pip install --upgrade -r ${CONFIGURATION_DIR}/requirements.txt
+
+  ;;
+
+esac

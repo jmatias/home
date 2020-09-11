@@ -3,8 +3,6 @@
 style = "green"
 disabled = false
 
-
-
 [memory_usage]
 disabled = true
 show_percentage = true

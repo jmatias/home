@@ -16,9 +16,9 @@ EOH
 case ${1} in
 
 time-expired)
+  [[ -z $AWS_PROFILE ]] && exit 1
   expiration="$(aws configure get expiration)"
   [[ -z $expiration ]] && exit 0
-
   secondsRemaining=$(($expiration - $(date -u +%s) - 3))
   date -u -d "@$secondsRemaining" +'%Hh %Mm %Ss'
   [[ $secondsRemaining -le 0 ]] && exit 0
