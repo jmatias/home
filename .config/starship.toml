@@ -1,4 +1,3 @@
-
 [kubernetes]
 style = "green"
 disabled = false
@@ -23,10 +22,14 @@ shell = ["/usr/bin/zsh"]
 when = "exit 0"
 command = "devcli assume-role time-left"
 style = "bold green"
-prefix= "AWS: "
+prefix = "AWS: "
 
 [custom.assume_role_expired]
 shell = ["/usr/bin/zsh"]
 when = "devcli assume-role time-expired "
 command = "echo AWS"
 style = "bold red"
+
+
+[helm]
+disbled = false

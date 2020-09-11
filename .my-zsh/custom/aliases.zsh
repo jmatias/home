@@ -10,7 +10,18 @@ alias win='cd /c/users/Javier/workspace/ScaledDi'
 alias work='cd ~/workspace'
 alias bfg='java -jar /home/matiasca/workspace/external-repos/bfg-repo-cleaner/bfg/target/bfg-1.13.0-tags/v1.13.0-2c1ec2f.jar'
 
-alias intellij='idea >/dev/null 2>&1 &'
+# alias intellij='idea >/dev/null 2>&1 &; disown'
+function intellij {
+  if [[ $# -gt 0 ]]; then
+    idea $1 >/dev/null 2>&1 &
+  else
+    idea >/dev/null 2>&1 &
+  fi
+
+  disown
+}
+
+
 alias toolbox='jetbrains-toolbox >/dev/null 2>&1 &'
 alias zshconfig="idea ~/.zshrc >/dev/null 2>&1 & "
 alias ohmyzsh="idea  ~/.oh-my-zsh"
