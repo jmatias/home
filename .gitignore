@@ -3,11 +3,12 @@
 !.gitignore
 
 
+!/.my-zsh/
+!/.my-zsh/*.iml
 !/.my-zsh/custom
 !/.my-zsh/custom/*
 !/.my-zsh/completions
 !/.my-zsh/completions/*
-!/.my-zsh/
 
 !/.vimrc
 !/lefthook.yml
@@ -15,6 +16,7 @@
 
 
 !/.config
+!/.config/*.iml
 !/.config/starship.toml
 !/.config/settings.json
 
@@ -22,6 +24,7 @@
 !/bin/assume-role
 
 !/devcli
+!/devcli/*.iml
 !/devcli/devcli.d
 !/devcli/devcli.d/*
 !/devcli/devcli
