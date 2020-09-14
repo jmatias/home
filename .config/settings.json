@@ -96,14 +96,103 @@
             ]
         }
     ],
+    "schemes": [
+        {
+            "name": "BlulocoDark",
+            "black": "#4a505d",
+            "red": "#f81141",
+            "green": "#23974a",
+            "yellow": "#fd7e57",
+            "blue": "#285bff",
+            "purple": "#8c62fd",
+            "cyan": "#366f9a",
+            "white": "#ccd5e5",
+            "brightBlack": "#61697a",
+            "brightRed": "#fc4a6d",
+            "brightGreen": "#37bd58",
+            "brightYellow": "#f6be48",
+            "brightBlue": "#199ffd",
+            "brightPurple": "#fc58f6",
+            "brightCyan": "#50acae",
+            "brightWhite": "#ffffff",
+            "background": "#1e2127",
+            "foreground": "#abb2bf"
+        },
+        {
+            "name": "Argonaut",
+            "black": "#232323",
+            "red": "#ff000f",
+            "green": "#8ce10b",
+            "yellow": "#ffb900",
+            "blue": "#008df8",
+            "purple": "#6d43a6",
+            "cyan": "#00d8eb",
+            "white": "#ffffff",
+            "brightBlack": "#444444",
+            "brightRed": "#ff2740",
+            "brightGreen": "#abe15b",
+            "brightYellow": "#ffd242",
+            "brightBlue": "#0092ff",
+            "brightPurple": "#9a5feb",
+            "brightCyan": "#67fff0",
+            "brightWhite": "#ffffff",
+            "background": "#0e1019",
+            "foreground": "#dbd3d3"
+        },
+        {
+            "name": "Blue Matrix",
+            "black": "#101116",
+            "red": "#ff5680",
+            "green": "#00ff9c",
+            "yellow": "#fffc58",
+            "blue": "#00b0ff",
+            "purple": "#d57bff",
+            "cyan": "#76c1ff",
+            "white": "#c7c7c7",
+            "brightBlack": "#686868",
+            "brightRed": "#ff6e67",
+            "brightGreen": "#5ffa68",
+            "brightYellow": "#fffc67",
+            "brightBlue": "#6871ff",
+            "brightPurple": "#d682ec",
+            "brightCyan": "#60fdff",
+            "brightWhite": "#ffffff",
+            "background": "#101116",
+            "foreground": "#00a2ff"
+        },
+        {
+            "name": "Broadcast",
+            "black": "#000000",
+            "red": "#da4939",
+            "green": "#519f50",
+            "yellow": "#ffd24a",
+            "blue": "#6d9cbe",
+            "purple": "#d0d0ff",
+            "cyan": "#6e9cbe",
+            "white": "#ffffff",
+            "brightBlack": "#323232",
+            "brightRed": "#ff7b6b",
+            "brightGreen": "#83d182",
+            "brightYellow": "#ffff7c",
+            "brightBlue": "#9fcef0",
+            "brightPurple": "#ffffff",
+            "brightCyan": "#a0cef0",
+            "brightWhite": "#ffffff",
+            "background": "#2b2b2b",
+            "foreground": "#e6e1dc"
+          }
+    ],
     "profiles": {
         "defaults": {
             // "colorScheme": "Campbell",
+            // "colorScheme": "Blue Matrix",
+            "colorScheme": "Argonaut",
+            // "colorScheme": "Broadcast",
             "fontFace": "Fira Code",
             "fontSize": 11,
             "experimental.retroTerminalEffect": false,
             "startingDirectory": "C:/Users/Javier/workspace/ScaledDi",
-            "useAcrylic": true,
+            "useAcrylic": false,
             "acrylicOpacity": 0.75,
             "closeOnExit": true
         },
@@ -141,6 +230,23 @@
                 "cursorShape": "vintage",
                 "antialiasingMode": "grayscale"
             },
+            {   "guid":"{842d31bb-a9e0-4996-99d0-db7306617c43}",
+                "commandline" : "C:/tools/cygwin/bin/bash --login",
+                "icon" : "C:/tools/cygwin/Cygwin.ico",
+                "startingDirectory" : "C:/Users/Javier",
+                "acrylicOpacity" : 0.75,
+                "closeOnExit" : true,
+                "colorScheme" : "Campbell",
+                "cursorColor" : "#FFFFFF",
+                "cursorShape" : "bar",
+                "fontFace" : "Input",
+                "fontSize" : 12,
+                "historySize" : 9001,
+                "name" : "Cygwin",
+                "padding" : "0, 0, 0, 0",
+                "snapOnInput" : true,
+                "useAcrylic" : true
+            },
             {
                 // Make changes here to the powershell.exe profile
                 "guid": "{733116de-c1b1-463a-874f-61e294a36ad6}",
@@ -168,11 +274,8 @@
                 "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl"
             }
-
         ]
-    }
-    // Add custom color schemes to this array
-    // "schemes": [],
+    },
     // Add any keybinding overrides to this array.
     // To unbind a default keybinding, set the command to "unbound"
     // "keybindings": []
