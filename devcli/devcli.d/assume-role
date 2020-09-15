@@ -1,10 +1,11 @@
 #!/bin/bash
 
+
 SUBCOMMAND_DESC="Assume an AWS IAM role."
 SUBCOMMAND_HELP=$(
   cat <<EOH
 
-client                      Connect to the client's AWS account.
+client                       Connect to the client's AWS account.
 tw                           Connect to ThoughtWorks' AWS account.
 personal                     Connect to my personal AWS account.
 time-left                    Print the time remaining in the current assume-role session.

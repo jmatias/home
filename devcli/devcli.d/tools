@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 
 valid_values=("eks dev ds")
+read -r -d '' __helptext <<-'EOF' || true # exits non-zero when EOF encountered
+ Install development tools.
+EOF
 
 [[ "${__usage+x}" ]] || read -r -d '' __usage <<-'EOF' || true # exits non-zero when EOF encountered
   -i --install  [arg] Toolkit to install. Valid values: [eks, dev, ds]. Required.
   -r --reinstall      Re-install.
 EOF
+
 
 source $ROOT_DIR/_boilerplate.sh
 

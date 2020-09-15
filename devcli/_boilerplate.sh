@@ -109,16 +109,18 @@ function info ()      { [[ "${LOG_LEVEL:-0}" -ge 6 ]] && __b3bp_log info "${@}";
 function debug ()     { [[ "${LOG_LEVEL:-0}" -ge 7 ]] && __b3bp_log debug "${@}"; true; }
 
 function help () {
+  if [[ "${__helptext:-}" ]]; then
+    echo " ${__helptext}" 1>&2
+    echo "" 1>&2
+  fi
+
+
   echo "" 1>&2
   echo " ${*}" 1>&2
   echo "" 1>&2
   echo "  ${__usage:-No usage available}" 1>&2
   echo "" 1>&2
 
-  if [[ "${__helptext:-}" ]]; then
-    echo " ${__helptext}" 1>&2
-    echo "" 1>&2
-  fi
 
   exit 1
 }

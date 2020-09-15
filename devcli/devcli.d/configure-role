@@ -1,19 +1,22 @@
 #!/bin/bash
 
-SUBCOMMAND_DESC="Configure credentials for an AWS IAM role."
-SUBCOMMAND_HELP=$(
-  cat <<EOH
 
-client                       Configure role for secondary AWS account.
-tw                           Configure role for ThoughtWorks' AWS account.
-personal                     Configure role for my personal AWS account.
+valid_values=("client tw personal")
+read -r -d '' __helptext <<-'EOF' || true # exits non-zero when EOF encountered
+ Configure AWS access roles.
+EOF
 
-EOH
-)
+[[ "${__usage+x}" ]] || read -r -d '' __usage <<-'EOF' || true # exits non-zero when EOF encountered
+  -p --profile  [arg] Profile to configure. Valid values: [client, tw, personal]. Required.
+EOF
 
-set -e
 
-case ${1} in
+source $ROOT_DIR/_boilerplate.sh
+
+# shellcheck disable=SC2076
+[[ " ${valid_values[*]} " =~ " ${arg_p:-} " ]] || help
+
+case "${arg_p}" in
 
 
   client)
