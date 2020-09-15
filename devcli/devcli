@@ -230,11 +230,11 @@ function _list_commands() {
 EOU
   log "reading subcommands from ${SUBCOMMANDS_DIR}"
   for i in $(export LC_COLLATE=C; find ${SUBCOMMANDS_DIR} -maxdepth 1 -type f -or -type l | grep -vE '/_[^[:blank:]]+$' | sort); do
-    source "${i}"
+#    source "${i}"
     local libname=$(basename ${i})
     printf "  %.24s %-60s\n" \
        "${libname}                                          " \
-       "${SUBCOMMAND_DESC}"
+#       "${SUBCOMMAND_DESC}"
   done
   echo
   exit 1
