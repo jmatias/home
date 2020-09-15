@@ -226,7 +226,7 @@
                 "name": "Ubuntu",
                 "commandline": "wsl",
                 "icon": "C:\\Users\\Javier\\Documents\\ubuntu.ico",
-                "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\matiasca\\workspace",
+                "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\matiasca",
                 "cursorShape": "vintage",
                 "antialiasingMode": "grayscale"
             },

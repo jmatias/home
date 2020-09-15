@@ -12,9 +12,9 @@ alias bfg='java -jar /home/matiasca/workspace/external-repos/bfg-repo-cleaner/bf
 
 function intellij {
   if [[ $# -gt 0 ]]; then
-    idea $1 >/dev/null 2>&1 &
+    /home/matiasca/bin/idea $1 >/dev/null 2>&1 &
   else
-    idea >/dev/null 2>&1 &
+    /home/matiasca/bin/idea >/dev/null 2>&1 &
   fi
 
   disown
