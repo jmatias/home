@@ -1,0 +1,71 @@
+#compdef _scraper scraper
+
+
+function _scraper {
+  local -a commands
+
+  _arguments -C \
+    "1: :->cmnds" \
+    "*::arg:->args"
+
+  case $state in
+  cmnds)
+    commands=(
+      "completion:Generates zsh completion scripts"
+      "help:Help about any command"
+      "voting-centers:Scrape voting center info."
+    )
+    _describe "command" commands
+    ;;
+  esac
+
+  case "$words[1]" in
+  completion)
+    _scraper_completion
+    ;;
+  help)
+    _scraper_help
+    ;;
+  voting-centers)
+    _scraper_voting-centers
+    ;;
+  esac
+}
+
+function _scraper_completion {
+  _arguments \
+    '(-h --help)'{-h,--help}'[help for completion]'
+}
+
+function _scraper_help {
+  _arguments
+}
+
+
+function _scraper_voting-centers {
+  local -a commands
+
+  _arguments -C \
+    "1: :->cmnds" \
+    "*::arg:->args"
+
+  case $state in
+  cmnds)
+    commands=(
+      "check-ballots:Check if ballots are available online."
+    )
+    _describe "command" commands
+    ;;
+  esac
+
+  case "$words[1]" in
+  check-ballots)
+    _scraper_voting-centers_check-ballots
+    ;;
+  esac
+}
+
+function _scraper_voting-centers_check-ballots {
+  _arguments
+}
+

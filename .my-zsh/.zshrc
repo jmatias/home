@@ -20,3 +20,4 @@ plugins=(
 export ZSH_CUSTOM="$HOME/.my-zsh/custom"
 
 source $ZSH/oh-my-zsh.sh
+
