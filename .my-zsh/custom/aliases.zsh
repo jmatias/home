@@ -19,13 +19,13 @@ function intellij() {
 }
 
 alias jbt='jetbrains-toolbox >/dev/null 2>&1 &; disown'
+alias gnucash='gnucash >/dev/null 2>&1 &; disown'
 
 function eclip() {
   eclipse >/dev/null 2>&1 &
   disown
 }
 
-alias toolbox='jetbrains-toolbox >/dev/null 2>&1 &'
 alias zshconfig="idea ~/.zshrc >/dev/null 2>&1 & "
 alias ohmyzsh="idea  ~/.oh-my-zsh"
 zshreload() { while (($#)); do
