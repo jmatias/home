@@ -263,13 +263,14 @@ function _subcommand_help() {
   # _subcommand_help - display SUBCOMMAND_HELP defined in subcommands
   local subcmd=${1}
   local subhelp=${2}
-  cat <<EOU
-
-  Showing '${MAIN_COMMAND} ${subcmd}' available actions:
-
-  ${subhelp}
-
-EOU
+#  cat <<EOU
+#
+#  Showing '${MAIN_COMMAND} ${subcmd}' available actions:
+#
+#  ${subhelp}
+#
+#EOU
+  . "${SUBCOMMANDS_DIR}/${SUBCOMMAND}"
   exit 1
 }
 
