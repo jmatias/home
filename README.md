@@ -3,7 +3,10 @@
 ### CLI Tools
 
 Under `devcli\devcli.d` is a set of utility scripts
--  **assume-role** - Script to assume an AWS IAM Role
+-  **assume-role** - Assume an AWS IAM Role
+-  **configure-role** - Configure IAM roles
+-  **role-session** - Check the status of the IAM session
+-  **tools** - Development environment setup
 -  **secret** - Script to recursively grep the contents of a directory for sensitive keywords
 
 
