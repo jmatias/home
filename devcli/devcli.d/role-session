@@ -1,0 +1,42 @@
+#!/bin/bash
+
+read -r -d '' __helptext <<-'EOF' || true                      # exits non-zero when EOF encountered
+ Check the status of the IAM session.
+EOF
+
+[[ "${__usage+x}" ]] || read -r -d '' __usage <<-'EOF' || true # exits non-zero when EOF encountered
+  -l --time-left        Return time left in the session. Returns error if time left is less than 0.
+  -e --time-expired     Return success if session has expired.
+EOF
+
+source $ROOT_DIR/_boilerplate.sh
+
+# At least one needs to be specified
+[[ "${arg_l}" -lt 1 && "${arg_e}" -lt 1 ]] && help
+
+# Both cannot be specified.
+if [[ "${arg_l}" -gt 0 && "${arg_e}" -gt 0 ]]; then
+  error "Both flags may not be specified at the same time."
+  help
+fi
+
+if [[ "${arg_e}" -gt 0 ]]; then
+  [[ -z ${AWS_PROFILE+x} ]] && exit 1
+  expiration="$(aws configure get expiration)"
+  [[ -z $expiration ]] && exit 0
+  secondsRemaining=$(($expiration - $(date -u +%s) - 3))
+  #  date -u -d "@$secondsRemaining" +'%Hh %Mm %Ss'
+  [[ $secondsRemaining -le 0 ]] && exit 0
+  exit 1
+fi
+
+if [[ "${arg_l}" -gt 0 ]]; then
+
+  expiration="$(aws configure get expiration)"
+  [[ -z $expiration ]] && exit 1
+
+  secondsRemaining=$(($expiration - $(date -u +%s) - 3))
+  date -u -d "@$secondsRemaining" +'%Hh %Mm %Ss'
+  [[ $secondsRemaining -le 0 ]] && exit 1
+  exit 0
+fi

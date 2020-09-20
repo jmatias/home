@@ -20,13 +20,13 @@ utc_time_offset = "local"
 [custom.assume_role]
 shell = ["/usr/bin/zsh"]
 when = "exit 0"
-command = "devcli assume-role time-left"
+command = "devcli role-session --time-left"
 style = "bold green"
 prefix = "AWS: "
 
 [custom.assume_role_expired]
 shell = ["/usr/bin/zsh"]
-when = "devcli assume-role time-expired "
+when = "devcli role-session --time-expired"
 command = "echo AWS"
 style = "bold red"
 
