@@ -53,6 +53,7 @@ function _scraper_voting-centers {
   cmnds)
     commands=(
       "check-ballots:Check if ballots are available online."
+      "download-ballots:Download ballots are available online."
     )
     _describe "command" commands
     ;;
@@ -62,10 +63,17 @@ function _scraper_voting-centers {
   check-ballots)
     _scraper_voting-centers_check-ballots
     ;;
+  download-ballots)
+    _scraper_voting-centers_download-ballots
+    ;;
   esac
 }
 
 function _scraper_voting-centers_check-ballots {
+  _arguments
+}
+
+function _scraper_voting-centers_download-ballots {
   _arguments
 }
 
