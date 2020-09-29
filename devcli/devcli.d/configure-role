@@ -59,6 +59,25 @@ tw)
 
 
   personal)
-  echo "Not implemented."
+
+
+  stars=$(printf '*%.0s' {1..20})
+  aws configure set region us-east-1 --profile personal
+  aws configure --profile personal
+
+  aws configure set region "$(aws configure get region --profile personal)" --profile personalmfa
+
+
+  read -p "MFA Arn [$(aws configure get serial-number --profile personal | sed -e "s/^.\{20\}/${stars}/g")]: " mfaArn
+  mfaArn=${mfaArn:-$(aws configure get serial-number --profile personal)}
+  aws configure set serial-number --profile personal $mfaArn
+
+  read -p "Assumed Role Arn [$(aws configure get role-arn --profile personal | sed -e "s/^.\{20\}/${stars}/g")]: " roleArn
+  roleArn=${roleArn:-$(aws configure get role-arn --profile personal)}
+  aws configure set role-arn --profile personal $roleArn
+
+  read -p "Account Number [$(aws configure get account-number --profile personal | sed -e 's/^......./*******/g')]: " roleArn
+  roleArn=${roleArn:-$(aws configure get account-number --profile personal)}
+  aws configure set account-number --profile personal $roleArn
   ;;
 esac
