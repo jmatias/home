@@ -14,7 +14,7 @@ style = "bold dimmed green"
 
 [time]
 disabled = false
-format = "[ %T ]"
+format = "[\\[ $time \\]]($style)"
 utc_time_offset = "local"
 
 [custom.assume_role]
@@ -22,7 +22,7 @@ shell = ["/usr/bin/zsh"]
 when = "exit 0"
 command = "devcli role-session --time-left"
 style = "bold green"
-prefix = "AWS: "
+format = "[AWS: $output]($style)"
 
 [custom.assume_role_expired]
 shell = ["/usr/bin/zsh"]
