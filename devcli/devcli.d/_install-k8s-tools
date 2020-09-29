@@ -18,7 +18,7 @@ fi
 
 if ! command -v eksctl >/dev/null 2>&1; then
 
-  wget -qO- "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xvz -C /tmp
+  wget -qO- "https://github.com/weaveworks/eksctl/releases/download/0.26.0/eksctl_$(uname -s)_amd64.tar.gz" | tar xvz -C /tmp
   sudo mv /tmp/eksctl /usr/local/bin
 
 fi
