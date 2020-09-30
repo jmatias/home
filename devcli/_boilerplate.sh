@@ -58,6 +58,23 @@ NO_COLOR="${NO_COLOR:-}"    # true = disable color. otherwise autodetected
 ### Functions
 ##############################################################################
 
+
+function __print_red () {
+  echo -n "$(tput setaf 1)$1$(tput sgr 0)"
+}
+
+function __println_red () {
+  echo "$(tput setaf 1)$1$(tput sgr 0)"
+}
+
+function __print_green () {
+  echo -n "$(tput setaf 2)$1$(tput sgr 0)"
+}
+
+function __println_green () {
+  echo "$(tput setaf 2)$1$(tput sgr 0)"
+}
+
 function __b3bp_log () {
   local log_level="${1}"
   shift
