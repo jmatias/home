@@ -4,4 +4,4 @@ pre-commit:
     secret-leak-check:
       tags: secrets
       files: git ls-files
-      run: ~/devcli/devcli secret check -s ~/secret {files}
+      run: ~/devcli/devcli secret -s ~/secret -r .

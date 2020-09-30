@@ -55,3 +55,8 @@ function gsquash() {
 
 alias please='sudo'
 alias envs='env | sort'
+
+
+function decode() {
+  echo $1 | base64 -d
+}
