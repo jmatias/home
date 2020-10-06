@@ -60,3 +60,9 @@ alias envs='env | sort'
 function decode() {
   echo $1 | base64 -d
 }
+
+
+function humanread() {
+  numfmt --to=iec-i --suffix=B --padding=7 $1
+}
+
