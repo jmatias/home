@@ -129,7 +129,7 @@ tw)
 
   temp_role=$(aws --profile ${arg_p} sts assume-role --serial-number $(aws configure get serial-number --profile personal) \
     --role-arn $(aws configure get role-arn --profile personal) --token-code $code \
-    --role-session-name AssumedRole --duration-seconds 3600)
+    --role-session-name AssumedRole --duration-seconds 14400)
 
   in_green "Assumed admin role.\n"
 
