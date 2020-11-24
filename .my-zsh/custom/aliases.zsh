@@ -1,7 +1,11 @@
 #!/usr/bin/zsh
 
-if [[ $(uname) == "Linux" && $(cat /etc/issue | grep -i ubuntu) ]]; then
+. $ZSH_CUSTOM/environments.zsh
+
+if __ubuntu; then
   alias ls='ls -lha --color'
+elif __osx; then
+  alias ls='ls -lha'
 fi
 
 alias win='cd /c/users/Javier/workspace/ScaledDi'
@@ -22,7 +26,6 @@ alias jbt='jetbrains-toolbox >/dev/null 2>&1 &; disown'
 alias gnucash='gnucash >/dev/null 2>&1 &; disown'
 alias msedge='msedge >/dev/null 2>&1 &; disown'
 alias startgui='startxfce4 >/dev/null 2>&1 &; disown'
-
 
 function eclip() {
   eclipse >/dev/null 2>&1 &
@@ -59,13 +62,10 @@ function gsquash() {
 alias please='sudo'
 alias envs='env | sort'
 
-
 function decode() {
   echo $1 | base64 -d
 }
 
-
 function humanread() {
   numfmt --to=iec-i --suffix=B --padding=7 $1
 }
-
