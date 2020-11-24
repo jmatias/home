@@ -69,3 +69,11 @@ function decode() {
 function humanread() {
   numfmt --to=iec-i --suffix=B --padding=7 $1
 }
+
+function hnv() {
+  hn view $1
+}
+
+function hnt() {
+  hn top $1
+}
