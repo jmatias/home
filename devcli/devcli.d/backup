@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 SUBCOMMAND_DESC="Backup WSL file system"
 SUBCOMMAND_HELP=$(
   cat <<EOH
@@ -10,11 +12,11 @@ case ${1} in
 start)
 
 
-  rsync --info=name0 --info=progress3 --archive --delete   \
+  nice -n 3 rsync --info=name0 --info=progress3 --archive --delete   \
   /c/Users/Javier/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json \
   $HOME/.config
 
-  rsync --info=name0 --info=progress3 --delete-excluded --exclude="*anaconda*" \
+  nice -n 3 rsync --info=name0 --info=progress3  --exclude="*anaconda*" \
   --exclude="*cache*" --exclude="*.git/*" --exclude=".gnupg" --exclude=".npm" --exclude=".m2" --exclude=".conda" \
   --exclude="go" --exclude=".env3" --exclude="R/*" --exclude=".theano" --exclude="***REMOVED***" \
   --exclude=".m2" --exclude=".gradle" --exclude=".vscode-server" --exclude=".dotnet" \
@@ -22,6 +24,6 @@ start)
   --archive --delete \
   /home/matiasca/ /e/Dropbox/wsl2_backup
 
-
+  nice -n 3 rsync --info=name0 --info=progress3 --archive --delete /home/matiasca/.cache/JetBrains /e/Dropbox/wsl2_backup/.cache/JetBrains 
   ;;
 esac

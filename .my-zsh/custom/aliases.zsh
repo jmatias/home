@@ -14,9 +14,9 @@ alias bfg='java -jar /home/matiasca/workspace/external-repos/bfg-repo-cleaner/bf
 
 function intellij() {
   if [[ $# -gt 0 ]]; then
-    /home/matiasca/bin/idea $1 >/dev/null 2>&1 &
+    /home/matiasca/bin/idea1 $1 >/dev/null 2>&1 &
   else
-    /home/matiasca/bin/idea >/dev/null 2>&1 &
+    /home/matiasca/bin/idea1 >/dev/null 2>&1 &
   fi
 
   disown
@@ -74,6 +74,8 @@ function hnv() {
   hn view $1
 }
 
-function hnt() {
-  hn top $1
-}
+
+alias hnt='hn top'
+alias mtail='multitail -cS amir_log'
+
+alias rstudio='QMLSCENE_DEVICE=softwarecontext rstudio >/dev/null 2>&1 &; disown'
