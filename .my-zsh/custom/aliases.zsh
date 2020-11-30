@@ -79,3 +79,5 @@ alias hnt='hn top'
 alias mtail='multitail -cS amir_log'
 
 alias rstudio='QMLSCENE_DEVICE=softwarecontext rstudio >/dev/null 2>&1 &; disown'
+
+alias psaux='ps aux | grep'
