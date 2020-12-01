@@ -50,6 +50,8 @@ alias awk6='awk '"'"'{print $6}'"'"''
 alias awk7='awk '"'"'{print $7}'"'"''
 alias awk8='awk '"'"'{print $8}'"'"''
 alias awk9='awk '"'"'{print $9}'"'"''
+alias awk10='awk '"'"'{print $10}'"'"''
+alias awk11='awk '"'"'{print $11}'"'"''
 
 alias weather="curl 'wttr.in/NYC?m'"
 
@@ -80,7 +82,4 @@ alias mtail='multitail -cS amir_log'
 
 alias rstudio='QMLSCENE_DEVICE=softwarecontext rstudio >/dev/null 2>&1 &; disown'
 
-alias psaux='ps aux | grep'
-
-alias grep='grep -i'
-alias grepv='grep -i'
+alias psgrep='ps aux | grep'
