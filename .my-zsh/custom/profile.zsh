@@ -18,9 +18,6 @@ export PATH=$PATH:/opt/zeppelin/zeppelin-0.9.0-preview1-bin-all/bin/
 export PATH=$PATH:/usr/local/sonar-scanner/bin
 export PATH=/usr/local/sbt/bin:$PATH
 
-export PATH=$HOME/.env3/bin:$PATH
-
-
 
 export COMPLETION_WAITING_DOTS="true"
 export HYPHEN_INSENSITIVE="true"
