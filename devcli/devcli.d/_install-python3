@@ -1,8 +1,11 @@
 #!/usr/bin/bash
 
+
 if ! command -v python3 >/dev/null 2>&1; then
   if __ubuntu; then
-    sudo apt-get install python3-virtualenv -y
+    sudo apt update
+    sudo apt install python3-virtualenv python3-venv -y
+
   elif __osx; then
     brew install python@3
     pip install virtualenv
@@ -10,6 +13,18 @@ if ! command -v python3 >/dev/null 2>&1; then
     echo "$OSTYPE" is not supported at this time.
   fi
 fi
+
+
+if __ubuntu; then
+  sudo apt update
+  sudo apt install python3-virtualenv python3-venv -y
+elif __osx; then
+  brew install python@3
+  pip install virtualenv
+else
+  echo "$OSTYPE" is not supported at this time.
+fi
+
 
 python3 -m venv $HOME/.env3
 source $HOME/.env3/bin/activate
