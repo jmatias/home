@@ -19,6 +19,8 @@
 !/.config/*.iml
 !/.config/starship.toml
 !/.config/settings.json
+!/.config/wsl.conf
+!/.config/.wslconfig
 
 !/bin
 !/bin/assume-role

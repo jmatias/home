@@ -1,0 +1,4 @@
+[wsl2]
+localhostForwarding=true
+processors=8
+memory=64GB
