@@ -32,3 +32,6 @@
 
 !/devcli/conf
 !/devcli/conf/requirements.txt
+
+
+!/devcli/winsetup.ps1
