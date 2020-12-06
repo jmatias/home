@@ -1,9 +1,9 @@
 pandas
-# tensorflow-gpu >= 2.3.0
-# tensorflow-probability >= 0.11
-tf-nightly-gpu
-tfp-nightly
-tb-nightly
+tensorflow-gpu >= 2.3.0
+tensorflow-probability >= 0.11
+#tf-nightly-gpu
+#tfp-nightly
+#tb-nightly
 seaborn
 matplotlib
 scikit-learn
