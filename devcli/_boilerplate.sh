@@ -75,6 +75,24 @@ function __println_green () {
   echo "$(tput setaf 2)$1$(tput sgr 0)"
 }
 
+
+function __print_blue () {
+  echo -n "$(tput setaf 4)$1$(tput sgr 0)"
+}
+
+function __println_blue () {
+  echo "$(tput setaf 4)$1$(tput sgr 0)"
+}
+
+
+function __print () {
+  echo -n "$1"
+}
+
+function __println () {
+  echo "$1"
+}
+
 function __b3bp_log () {
   local log_level="${1}"
   shift
@@ -132,12 +150,10 @@ function help () {
   fi
 
 
-  echo "" 1>&2
   echo " ${*}" 1>&2
   echo "" 1>&2
   echo "  ${__usage:-No usage available}" 1>&2
   echo "" 1>&2
-
 
   exit 1
 }
@@ -155,17 +171,12 @@ function help () {
 #   you can use bash variables to work around this (so use ${HOME} instead)
 
 # shellcheck disable=SC2015
-#[[ "${__usage+x}" ]] || read -r -d '' __usage <<-'EOF' || true # exits non-zero when EOF encountered
-#  -f --file  [arg] Filename to process. Required.
-#  -t --temp  [arg] Location of tempfile. Default="/tmp/bar"
-#  -v               Enable verbose mode, print script as it is executed
-#  -d --debug       Enables debug mode
-#  -h --help        This page
-#  -n --no-color    Disable color output
-#  -1 --one         Do just one thing
-#  -i --input [arg] File to process. Can be repeated.
-#  -x               Specify a flag. Can be repeated.
-#EOF
+[[ "${__usage+x}" ]] || read -r -d '' __usage <<-'EOF' || true # exits non-zero when EOF encountered
+  -v               Enable verbose mode, print script as it is executed
+  -d --debug       Enables debug mode
+  -h --help        This page
+  -n --no-color    Disable color output
+EOF
 
 # shellcheck disable=SC2015
 #[[ "${__helptext+x}" ]] || read -r -d '' __helptext <<-'EOF' || true # exits non-zero when EOF encountered
@@ -299,6 +310,7 @@ if [[ "${__b3bp_tmp_opts:-}" ]]; then
         # repeatable flags, they increcemnt
         __b3bp_tmp_varname="arg_${__b3bp_tmp_opt:0:1}"
         debug "cli arg ${__b3bp_tmp_varname} = (${__b3bp_tmp_default}) -> ${!__b3bp_tmp_varname}"
+          # shellcheck disable=SC2004
         __b3bp_tmp_value=$((${!__b3bp_tmp_varname} + 1))
         printf -v "${__b3bp_tmp_varname}" '%s' "${__b3bp_tmp_value}"
       else
@@ -372,10 +384,10 @@ fi
 ### Signal trapping and backtracing
 ##############################################################################
 
-function __b3bp_cleanup_before_exit () {
-  info "Cleaning up. Done"
-}
-trap __b3bp_cleanup_before_exit EXIT
+#function __b3bp_cleanup_before_exit () {
+#  info "Cleaning up. Done"
+#}
+#trap __b3bp_cleanup_before_exit EXIT
 
 # requires `set -o errtrace`
 __b3bp_err_report() {
@@ -384,7 +396,7 @@ __b3bp_err_report() {
     exit ${error_code}
 }
 # Uncomment the following line for always providing an error backtrace
-# trap '__b3bp_err_report "${FUNCNAME:-.}" ${LINENO}' ERR
+ trap '__b3bp_err_report "${FUNCNAME:-.}" ${LINENO}' ERR
 
 
 ### Command-line argument switches (like -d for debugmode, -h for showing helppage)
@@ -419,50 +431,4 @@ fi
 ### Validation. Error out if the things required for your script are not present
 ##############################################################################
 
-[[ "${arg_f:-}" ]]     || help      "Setting a filename with -f or --file is required"
 [[ "${LOG_LEVEL:-}" ]] || emergency "Cannot continue without LOG_LEVEL. "
-
-
-#info "__i_am_main_script: ${__i_am_main_script}"
-#info "__file: ${__file}"
-#info "__dir: ${__dir}"
-#info "__base: ${__base}"
-#info "OSTYPE: ${OSTYPE}"
-#
-#info "arg_f: ${arg_f}"
-#info "arg_d: ${arg_d}"
-#info "arg_v: ${arg_v}"
-#info "arg_h: ${arg_h}"
-#
-## shellcheck disable=SC2015
-#if [[ -n "${arg_i:-}" ]] && declare -p arg_i 2> /dev/null | grep -q '^declare \-a'; then
-#  info "arg_i:"
-#  for input_file in "${arg_i[@]}"; do
-#    info " - ${input_file}"
-#  done
-#elif [[ -n "${arg_i:-}" ]]; then
-#  info "arg_i: ${arg_i}"
-#else
-#  info "arg_i: 0"
-#fi
-#
-## shellcheck disable=SC2015
-#if [[ -n "${arg_x:-}" ]] && declare -p arg_x 2> /dev/null | grep -q '^declare \-a'; then
-#  info "arg_x: ${#arg_x[@]}"
-#elif [[ -n "${arg_x:-}" ]]; then
-#  info "arg_x: ${arg_x}"
-#else
-#  info "arg_x: 0"
-#fi
-#
-#info "$(echo -e "multiple lines example - line #1\\nmultiple lines example - line #2\\nimagine logging the output of 'ls -al /path/'")"
-#
-## All of these go to STDERR, so you can use STDOUT for piping machine readable information to other software
-#debug "Info useful to developers for debugging the application, not useful during operations."
-#info "Normal operational messages - may be harvested for reporting, measuring throughput, etc. - no action required."
-#notice "Events that are unusual but not error conditions - might be summarized in an email to developers or admins to spot potential problems - no immediate action required."
-#warning "Warning messages, not an error, but indication that an error will occur if action is not taken, e.g. file system 85% full - each item must be resolved within a given time. This is a debug message"
-#error "Non-urgent failures, these should be relayed to developers or admins; each item must be resolved within a given time."
-#critical "Should be corrected immediately, but indicates failure in a primary system, an example is a loss of a backup ISP connection."
-#alert "Should be corrected immediately, therefore notify staff who can fix the problem. An example would be the loss of a primary ISP connection."
-#emergency "A \"panic\" condition usually affecting multiple apps/servers/sites. At this level it would usually notify all tech staff on call."

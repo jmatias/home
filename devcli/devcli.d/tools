@@ -45,11 +45,10 @@ dev)
     sudo rm -rf /usr/local/go
   fi
 
-
+  . ${SUBCOMMANDS_DIR}/_install-zsh-plugins
   . ${SUBCOMMANDS_DIR}/_install-python3
   . ${SUBCOMMANDS_DIR}/_install-golang
   . ${SUBCOMMANDS_DIR}/_install-cli-tools
-  . ${SUBCOMMANDS_DIR}/_install-zsh-plugins
 
   ;;
 

@@ -284,13 +284,8 @@ function _handle_subcommand() {
   local -r SUBCOMMAND=${1}; shift 1
   local -r ACTION="${@}"
 
-  log "running ${SUBCOMMANDS_DIR}/${SUBCOMMAND} ${ACTION} "
-  . "${SUBCOMMANDS_DIR}/${SUBCOMMAND}" ${ACTION}
-
-  if [[ "${ACTION}" == "help" || -z "${ACTION}" ]]; then
-    log "showing '${SUBCOMMAND}' help"
-    _help
-  fi
+  log "running ${SUBCOMMANDS_DIR}/${SUBCOMMAND} "
+  . "${SUBCOMMANDS_DIR}/${SUBCOMMAND}"
 }
 
 _arg_subcmd=${1}

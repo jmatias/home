@@ -2,7 +2,7 @@
 
 if ! command -v python3 >/dev/null 2>&1; then
   if __ubuntu; then
-    sudo apt-get install python3-venv -y
+    sudo apt-get install python3-virtualenv -y
   elif __osx; then
     brew install python@3
     pip install virtualenv

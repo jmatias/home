@@ -2,6 +2,7 @@
 
 if ! command -v go >/dev/null 2>&1; then
   if __ubuntu; then
+    sudo apt install wget -y
     sudo wget -q https://golang.org/dl/go1.14.8.linux-amd64.tar.gz -O - | sudo tar zxvf - -C /usr/local
 
     shellName=$(basename ${SHELL})

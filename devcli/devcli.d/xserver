@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source $ROOT_DIR/_boilerplate.sh
+
+__print_blue "VcXsrv powershell command: "
+__println "& 'C:\Program Files\VcXsrv\vcxsrv.exe' -ac -noprimary -wgl -multiwindow -hostintitle"
