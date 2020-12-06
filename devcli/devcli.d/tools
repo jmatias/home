@@ -57,6 +57,7 @@ ds)
   . ${SUBCOMMANDS_DIR}/_install-python3
   pip install --upgrade -r ${CONFIGURATION_DIR}/requirements.txt
   . ${SUBCOMMANDS_DIR}/_install-r
+  . ${SUBCOMMANDS_DIR}/_install-jetbrains
 
   ;;
 
