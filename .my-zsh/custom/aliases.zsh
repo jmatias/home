@@ -32,6 +32,7 @@ function eclip() {
   disown
 }
 
+alias firefox='firefox >/dev/null 2>&1 &; disown'
 alias zshconfig="idea ~/.zshrc >/dev/null 2>&1 & "
 alias ohmyzsh="idea  ~/.oh-my-zsh"
 zshreload() { while (($#)); do
