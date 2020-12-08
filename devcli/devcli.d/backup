@@ -23,7 +23,7 @@ nice -n 3 rsync --info=name0 --info=progress3 --archive --delete \
 
 nice -n 3 rsync --info=name0 --info=progress3 --exclude="*anaconda*" \
   --exclude="*cache*" --exclude="*.git/*" --exclude=".gnupg" --exclude=".npm" --exclude=".m2" --exclude=".conda" \
-  --exclude="go" --exclude=".env3" --exclude="R/*" --exclude=".theano" --exclude="***REMOVED***" \
+  --exclude="go" --exclude=".env3" --exclude="R/*" --exclude=".theano" --exclude="aurea-crm" \
   --exclude=".m2" --exclude=".gradle" --exclude=".vscode-server" --exclude=".dotnet" \
   --exclude="node_modules" --exclude="external-repos" \
   --archive --delete \
