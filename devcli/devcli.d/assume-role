@@ -1,19 +1,20 @@
 #!/bin/bash
-
+SUBCOMMAND_DESC="Assume an AWS IAM role."
 valid_values=("client tw personal")
-read -r -d '' __helptext <<-'EOF' || true # exits non-zero when EOF encountered
+read -r -d '' __helptext <<-'EOF' || true                      # exits non-zero when EOF encountered
  Assume an AWS IAM role.
 EOF
 
 [[ "${__usage+x}" ]] || read -r -d '' __usage <<-'EOF' || true # exits non-zero when EOF encountered
   -p --profile  [arg] Profile to configure. Valid values: [client, tw, personal]. Required.
+  -d --debug          Enables debug mode
+  -h --help           This page
 EOF
 
 source $ROOT_DIR/_boilerplate.sh
 
 # shellcheck disable=SC2076
 [[ " ${valid_values[*]} " =~ " ${arg_p:-} " ]] || help
-
 
 case "${arg_p}" in
 
@@ -24,8 +25,8 @@ case "${arg_p}" in
 #    \____||_||_| \___||_| |_| \__|  \__,_| \___|\___|\___/  \__,_||_| |_| \__|
 #
 
-
-client)
+\
+  client)
 
   set -e
 
@@ -56,18 +57,15 @@ client)
   in_gray "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} $date_command -d {}) \n"
   aws configure set expiration $expiration --profile clientmfa
 
-
   aws configure set aws_session_token $token --profile clientmfa
   aws configure set aws_secret_access_key $secret --profile clientmfa
   aws configure set aws_access_key_id $access_key --profile clientmfa
   aws configure set region us-east-1 --profile clientmfa
 
   aws ecr get-login-password --region "$(aws configure get region --profile client)" --profile clientmfa | docker login \
-  --username AWS --password-stdin "$(aws configure get account-number --profile client)".dkr.ecr.us-east-1.amazonaws.com
+    --username AWS --password-stdin "$(aws configure get account-number --profile client)".dkr.ecr.us-east-1.amazonaws.com
 
   ;;
-
-
 
 #    _____  _                           _      _  __        __            _
 #   |_   _|| |__    ___   _   _   __ _ | |__  | |_\ \      / /___   _ __ | | __ ___
@@ -76,14 +74,14 @@ client)
 #     |_|  |_| |_| \___/  \__,_| \__, ||_| |_| \__|  \_/\_/  \___/ |_|   |_|\_\|___/
 #                                |___/
 
-
-tw)
+\
+  tw)
 
   set -e
 
   source $ROOT_DIR/.env3/bin/activate
-  saml=$(oktaauth --username $(aws configure get username --profile tw)  \
-    -s  $(aws configure get server --profile tw) --apptype amazon_aws \
+  saml=$(oktaauth --username $(aws configure get username --profile tw) \
+    -s $(aws configure get server --profile tw) --apptype amazon_aws \
     --appid $(aws configure get tw-app-id --profile tw))
 
   if [ $? -ne 0 ]; then
@@ -107,15 +105,14 @@ tw)
 
   ;;
 
+  #    ____                                        _                                         _
+  #   |  _ \  ___  _ __  ___   ___   _ __    __ _ | |   __ _   ___  ___  ___   _   _  _ __  | |_
+  #   | |_) |/ _ \| '__|/ __| / _ \ | '_ \  / _` || |  / _` | / __|/ __|/ _ \ | | | || '_ \ | __|
+  #   |  __/|  __/| |   \__ \| (_) || | | || (_| || | | (_| || (__| (__| (_) || |_| || | | || |_
+  #   |_|    \___||_|   |___/ \___/ |_| |_| \__,_||_|  \__,_| \___|\___|\___/  \__,_||_| |_| \__|
+  #
 
-#    ____                                        _                                         _
-#   |  _ \  ___  _ __  ___   ___   _ __    __ _ | |   __ _   ___  ___  ___   _   _  _ __  | |_
-#   | |_) |/ _ \| '__|/ __| / _ \ | '_ \  / _` || |  / _` | / __|/ __|/ _ \ | | | || '_ \ | __|
-#   |  __/|  __/| |   \__ \| (_) || | | || (_| || | | (_| || (__| (__| (_) || |_| || | | || |_
-#   |_|    \___||_|   |___/ \___/ |_| |_| \__,_||_|  \__,_| \___|\___|\___/  \__,_||_| |_| \__|
-#
-
-
+\
   personal)
 
   set -e
@@ -147,14 +144,13 @@ tw)
   in_gray "Expires: $(echo $temp_role | jq -r .Credentials.Expiration | xargs -I{} $date_command -d {}) \n"
   aws configure set expiration $expiration --profile personalmfa
 
-
   aws configure set aws_session_token $token --profile personalmfa
   aws configure set aws_secret_access_key $secret --profile personalmfa
   aws configure set aws_access_key_id $access_key --profile personalmfa
   aws configure set region us-east-1 --profile personalmfa
 
   aws ecr get-login-password --region "$(aws configure get region --profile personal)" --profile personalmfa | docker login \
-  --username AWS --password-stdin "$(aws configure get account-number --profile personal)".dkr.ecr.us-east-1.amazonaws.com
+    --username AWS --password-stdin "$(aws configure get account-number --profile personal)".dkr.ecr.us-east-1.amazonaws.com
 
   ;;
 esac

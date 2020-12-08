@@ -1,29 +1,32 @@
 #!/usr/bin/bash
+function __install_okta() {
 
-. ${SUBCOMMANDS_DIR}/_install-python3
+  __install_python3
 
-clean_up() {
-  ARG=$?
-  rm -rf /tmp/aws_role_credentials
-  rm -rf /tmp/oktaauth
-  exit $ARG
+  clean_up() {
+    ARG=$?
+    rm -rf /tmp/aws_role_credentials
+    rm -rf /tmp/oktaauth
+    exit $ARG
+  }
+  trap clean_up EXIT
+
+  if ! command -v oktaauth >/dev/null 2>&1; then
+    rm -rf /tmp/oktaauth
+    git clone git@github.com:MatthiasScholzTW/oktaauth.git /tmp/oktaauth
+    cd /tmp/oktaauth
+    python setup.py install
+    rm -rf /tmp/oktaauth
+
+  fi
+
+  if ! command -v oktaauth >/dev/null 2>&1; then
+    rm -rf /tmp/aws_role_credentials
+    git clone git@github.com:MatthiasScholzTW/aws_role_credentials.git /tmp/aws_role_credentials
+    cd /tmp/oktaauth
+    python setup.py install
+    rm -rf /tmp/aws_role_credentials
+
+  fi
+
 }
-trap clean_up EXIT
-
-if ! command -v oktaauth >/dev/null 2>&1; then
-  rm -rf /tmp/oktaauth
-  git clone git@github.com:MatthiasScholzTW/oktaauth.git /tmp/oktaauth
-  cd /tmp/oktaauth
-  python setup.py install
-  rm -rf /tmp/oktaauth
-
-fi
-
-if ! command -v oktaauth >/dev/null 2>&1; then
-  rm -rf /tmp/aws_role_credentials
-  git clone git@github.com:MatthiasScholzTW/aws_role_credentials.git /tmp/aws_role_credentials
-  cd /tmp/oktaauth
-  python setup.py install
-  rm -rf /tmp/aws_role_credentials
-
-fi

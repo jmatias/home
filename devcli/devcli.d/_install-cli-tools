@@ -1,64 +1,65 @@
 #!/usr/bin/bash
-
-if __ubuntu; then
-  echo 'noop' > /dev/null
-elif __osx; then
-  brew install coreutils
-fi
-
-if ! command -v fzf >/dev/null 2>&1; then
-  if __ubuntu; then
-    sudo apt-get install -y fzf
-  elif __osx; then
-    brew install fzf
-  else
-    echo "$OSTYPE" is not supported at this time.
-  fi
-fi
-
-if ! command -v rg >/dev/null 2>&1; then
-  if __ubuntu; then
-    sudo apt-get install -y ripgrep
-  elif __osx; then
-    brew install ripgrep
-  else
-    echo "$OSTYPE" is not supported at this time.
-  fi
-fi
-
-
-
-if ! command -v jq >/dev/null 2>&1; then
-  if __ubuntu; then
-    sudo apt-get update && sudo apt-get install jq -y
-  elif __osx; then
-    brew install jq
-  else
-    echo "$OSTYPE" is not supported at this time.
-  fi
-
-fi
-
-if ! command -v yq >/dev/null 2>&1; then
-  pip install wheel yq
-  if [ $? -ne 0 ]; then
-    exit $?
-  fi
-fi
-
-if ! command -v vtop >/dev/null 2>&1; then
+function __install_cli_tools() {
 
   if __ubuntu; then
-    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-    sudo apt-get install -y nodejs
-    sudo npm -g install vtop
+    echo 'noop' >/dev/null
   elif __osx; then
-    brew install nodejs
-    sudo npm -g install vtop
-  else
-    echo "$OSTYPE" is not supported at this time.
+    brew install coreutils
   fi
 
-fi
+  if ! command -v fzf >/dev/null 2>&1; then
+    if __ubuntu; then
+      sudo apt-get install -y fzf
+    elif __osx; then
+      brew install fzf
+    else
+      echo "$OSTYPE" is not supported at this time.
+    fi
+  fi
 
-curl -fsSL https://starship.rs/install.sh | bash
+  if ! command -v rg >/dev/null 2>&1; then
+    if __ubuntu; then
+      sudo apt-get install -y ripgrep
+    elif __osx; then
+      brew install ripgrep
+    else
+      echo "$OSTYPE" is not supported at this time.
+    fi
+  fi
+
+  if ! command -v jq >/dev/null 2>&1; then
+    if __ubuntu; then
+      sudo apt-get update && sudo apt-get install jq -y
+    elif __osx; then
+      brew install jq
+    else
+      echo "$OSTYPE" is not supported at this time.
+    fi
+
+  fi
+
+  if ! command -v yq >/dev/null 2>&1; then
+    pip install wheel yq
+    if [ $? -ne 0 ]; then
+      exit $?
+    fi
+  fi
+
+  if ! command -v vtop >/dev/null 2>&1; then
+
+    if __ubuntu; then
+      curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+      sudo apt-get install -y nodejs
+      sudo npm -g install vtop
+    elif __osx; then
+      brew install nodejs
+      sudo npm -g install vtop
+    else
+      echo "$OSTYPE" is not supported at this time.
+    fi
+
+  fi
+
+  curl -fsSL https://starship.rs/install.sh | bash
+
+}

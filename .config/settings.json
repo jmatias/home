@@ -10,6 +10,7 @@
     "cursorShape": "vintage",
     "profiles": {
         "defaults": {
+            "bellStyle": "none",
             // "colorScheme": "Campbell",
             // "colorScheme": "Blue Matrix",
             "colorScheme": "Argonaut",
