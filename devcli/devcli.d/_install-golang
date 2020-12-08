@@ -42,4 +42,10 @@ function __install_golang() {
     fi
 
   fi
+
+  if ! command -v golangci-lint >/dev/null 2>&1; then
+    curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.33.0
+    golangci-lint --version
+
+  fi
 }
