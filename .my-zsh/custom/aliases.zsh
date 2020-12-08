@@ -5,7 +5,7 @@
 if __ubuntu; then
   alias ls='ls -lha --color'
 elif __osx; then
-  alias ls='ls -lha'
+  alias ls='ls -lhaG'
 fi
 
 alias win='cd /c/users/Javier/workspace/ScaledDi'
