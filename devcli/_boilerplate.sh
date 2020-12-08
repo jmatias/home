@@ -403,29 +403,29 @@ __b3bp_err_report() {
 ##############################################################################
 
 # debug mode
-if [[ "${arg_d:?}" = "1" ]]; then
-  set -o xtrace
-  PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
-  LOG_LEVEL="7"
-  # Enable error backtracing
-  trap '__b3bp_err_report "${FUNCNAME:-.}" ${LINENO}' ERR
-fi
-
-# verbose mode
-if [[ "${arg_v:?}" = "1" ]]; then
-  set -o verbose
-fi
-
-# no color mode
-if [[ "${arg_n:?}" = "1" ]]; then
-  NO_COLOR="true"
-fi
-
-# help mode
-if [[ "${arg_h:?}" = "1" ]]; then
-  # Help exists with code 1
-  help "Help using ${0}"
-fi
+#if [[ "${arg_d:?}" = "1" ]]; then
+#  set -o xtrace
+#  PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
+#  LOG_LEVEL="7"
+#  # Enable error backtracing
+#  trap '__b3bp_err_report "${FUNCNAME:-.}" ${LINENO}' ERR
+#fi
+#
+## verbose mode
+#if [[ "${arg_v:?}" = "1" ]]; then
+#  set -o verbose
+#fi
+#
+## no color mode
+#if [[ "${arg_n:?}" = "1" ]]; then
+#  NO_COLOR="true"
+#fi
+#
+## help mode
+#if [[ "${arg_h:?}" = "1" ]]; then
+#  # Help exists with code 1
+#  help "Help using ${0}"
+#fi
 
 
 ### Validation. Error out if the things required for your script are not present

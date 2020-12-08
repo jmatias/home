@@ -1,29 +1,33 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
-if ! command -v zsh >/dev/null 2>&1; then
-  if __ubuntu; then
-    sudo apt install zsh -y
-  elif __osx; then
-    brew install zsh
-  else
-    echo "$OSTYPE" is not supported at this time.
-  fi
-fi
+function __install_zsh_plugins() {
 
-if [[ ! -d "$HOME/.oh-my-zsh/" ]]; then
-  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
-
-if [[ ! -d "$ZSH_CUSTOM/plugins/zsh-z" ]]; then
-  if ! command -v z >/dev/null 2>&1; then
-    git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
+  if ! command -v zsh >/dev/null 2>&1; then
+    if __ubuntu; then
+      sudo apt install zsh -y
+    elif __osx; then
+      brew install zsh
+    else
+      echo "$OSTYPE" is not supported at this time.
+    fi
   fi
 
-fi
-
-if [[ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]]; then
-  if ! command -v z >/dev/null 2>&1; then
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+  if [[ ! -d "$HOME/.oh-my-zsh/" ]]; then
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   fi
 
-fi
+  if [[ ! -d "$ZSH_CUSTOM/plugins/zsh-z" ]]; then
+    if ! command -v z >/dev/null 2>&1; then
+      git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
+    fi
+
+  fi
+
+  if [[ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]]; then
+    if ! command -v z >/dev/null 2>&1; then
+      git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    fi
+
+  fi
+
+}

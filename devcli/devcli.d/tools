@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
+use install-zsh-plugins
+use install-awscli
+use install-cli-tools
+use install-golang
+use install-jetbrains
+use install-k8s-tools
+use install-okta
+use install-r
+use install-python3
+
 
 valid_values=("eks dev ds")
 read -r -d '' __helptext <<-'EOF' || true # exits non-zero when EOF encountered
@@ -32,10 +42,10 @@ eks)
   mypwd=$PWD
   set -e
 
-  . ${SUBCOMMANDS_DIR}/_install-python3
-  . ${SUBCOMMANDS_DIR}/_install-okta
-  . ${SUBCOMMANDS_DIR}/_install-k8s-tools
-  . ${SUBCOMMANDS_DIR}/_install-awscli
+  __install_python3
+  __install_okta
+  __install_k8s_tools
+  __install_awscli
 
   ;;
 
@@ -45,19 +55,19 @@ dev)
     sudo rm -rf /usr/local/go
   fi
 
-  . ${SUBCOMMANDS_DIR}/_install-zsh-plugins
-  . ${SUBCOMMANDS_DIR}/_install-python3
-  . ${SUBCOMMANDS_DIR}/_install-golang
-  . ${SUBCOMMANDS_DIR}/_install-cli-tools
+  __install_zsh_plugins
+  __install_python3
+  __install_golang
+  __install_cli_tools
 
   ;;
 
 ds)
 
-  . ${SUBCOMMANDS_DIR}/_install-python3
+  __install_python3
   pip install --upgrade -r ${CONFIGURATION_DIR}/requirements.txt
-  . ${SUBCOMMANDS_DIR}/_install-r
-  . ${SUBCOMMANDS_DIR}/_install-jetbrains
+  __install_r
+  __install_jetbrains
 
   ;;
 

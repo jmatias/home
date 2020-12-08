@@ -1,43 +1,45 @@
 #!/usr/bin/bash
+function __install_golang() {
+  if ! command -v go >/dev/null 2>&1; then
+    if __ubuntu; then
+      sudo apt install wget -y
+      sudo wget -q https://golang.org/dl/go1.14.8.linux-amd64.tar.gz -O - | sudo tar zxvf - -C /usr/local
 
-if ! command -v go >/dev/null 2>&1; then
-  if __ubuntu; then
-    sudo apt install wget -y
-    sudo wget -q https://golang.org/dl/go1.14.8.linux-amd64.tar.gz -O - | sudo tar zxvf - -C /usr/local
+      shellName=$(basename ${SHELL})
+      case ${shellName} in
 
-    shellName=$(basename ${SHELL})
-    case ${shellName} in
+      zsh)
+        shellProfileScript="${HOME}/.zshrc"
+        ;;
 
-    zsh)
-      shellProfileScript="${HOME}/.zshrc"
-      ;;
+      bash)
+        shellProfileScript="${HOME}/.bashrc"
+        ;;
 
-    bash)
-      shellProfileScript="${HOME}/.bashrc"
-      ;;
+      esac
 
-    esac
+      echo " " >>"${shellProfileScript}"
+      echo "export GOROOT=/usr/local/go" >>"${shellProfileScript}"
+      echo 'export GOPATH=$HOME/go' >>"${shellProfileScript}"
+      echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >>"${shellProfileScript}"
 
-    echo " " >>"${shellProfileScript}"
-    echo "export GOROOT=/usr/local/go" >>"${shellProfileScript}"
-    echo 'export GOPATH=$HOME/go' >>"${shellProfileScript}"
-    echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >>"${shellProfileScript}"
+      export GOROOT=/usr/local/go
+      export GOPATH=$HOME/go
+      export PATH=${GOPATH}/bin:${GOROOT}/bin:${PATH}
 
-    export GOROOT=/usr/local/go
-    export GOPATH=$HOME/go
-    export PATH=${GOPATH}/bin:${GOROOT}/bin:${PATH}
+      reloadShell() {
+        $SHELL -i
+      }
 
-    reloadShell() {
-      $SHELL -i
-    }
+      trap reloadShell EXIT
 
-    trap reloadShell EXIT
+    elif
+      __osx
+    then
+      brew update && brew install golang
+    else
+      echo "$OSTYPE" is not supported at this time.
+    fi
 
-
-  elif __osx; then
-    brew update && brew install golang
-  else
-    echo "$OSTYPE" is not supported at this time.
   fi
-
-fi
+}
