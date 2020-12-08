@@ -22,11 +22,11 @@ nice -n 3 rsync --info=name0 --info=progress3 --archive --delete \
   $HOME/.config
 
 nice -n 3 rsync --info=name0 --info=progress3 --exclude="*anaconda*" \
-  --exclude="*cache*" --exclude="*.git/*" --exclude=".gnupg" --exclude=".npm" --exclude=".m2" --exclude=".conda" \
-  --exclude="go" --exclude=".env3" --exclude="R/*" --exclude=".theano" --exclude="***REMOVED***" \
+  --exclude="*cache" --exclude="*.git*" --exclude=".gnupg" --exclude=".npm" --exclude=".m2" --exclude=".conda" \
+  --exclude="go" --exclude="JetBrains" --exclude=".env3" --exclude="R/*" --exclude=".theano" \
   --exclude=".m2" --exclude=".gradle" --exclude=".vscode-server" --exclude=".dotnet" \
-  --exclude="node_modules" --exclude="external-repos" \
-  --archive --delete \
-  /home/matiasca/ /e/Dropbox/wsl2_backup
+  --exclude="node_modules" --exclude=".eclipse" --exclude="external-repos" --exclude=".oh-my-zsh" \
+  --exclude=".sbt" --exclude="eclipse-workspace" --exclude="paravotar" --exclude="practicatuvoto" \
+  --archive /home/matiasca/ /e/Dropbox/wsl2_backup
 
 nice -n 3 rsync --info=name0 --info=progress3 --archive --delete /home/matiasca/.cache/JetBrains /e/Dropbox/wsl2_backup/.cache/JetBrains
