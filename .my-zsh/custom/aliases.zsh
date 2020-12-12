@@ -22,6 +22,16 @@ function intellij() {
   disown
 }
 
+function clion() {
+  if [[ $# -gt 0 ]]; then
+    /home/matiasca/bin/clion $1 >/dev/null 2>&1 &
+  else
+    /home/matiasca/bin/clion >/dev/null 2>&1 &
+  fi
+
+  disown
+}
+
 alias jbt='jetbrains-toolbox >/dev/null 2>&1 &; disown'
 alias gnucash='gnucash >/dev/null 2>&1 &; disown'
 alias msedge='msedge >/dev/null 2>&1 &; disown'
