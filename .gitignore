@@ -21,6 +21,7 @@
 !/.config/settings.json
 !/.config/wsl.conf
 !/.config/.wslconfig
+!/.config/ubuntu.ico
 
 !/bin
 !/bin/assume-role
