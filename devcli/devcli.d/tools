@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 use install-zsh-plugins
 use install-awscli
 use install-cli-tools
