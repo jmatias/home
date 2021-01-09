@@ -3,10 +3,12 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-    "initialCols": 200,
-    "initialRows": 65,
+    "initialCols": 250,
+    "initialRows": 60,
+    "initialPosition":"30,30",
+
     "tabWidthMode": "compact",
-    "launchMode": "maximized",
+    // "launchMode": "maximized",
     "cursorShape": "vintage",
     "profiles": {
         "defaults": {
@@ -46,6 +48,8 @@
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "name": "Ubuntu",
+                "useAcrylic": true,
+                "acrylicOpacity": 0.75,
                 "commandline": "wsl",
                 "icon": "C:\\Users\\Javier\\Documents\\ubuntu.ico",
                 "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\matiasca",
