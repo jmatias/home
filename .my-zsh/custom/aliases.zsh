@@ -94,3 +94,6 @@ alias mtail='multitail -cS amir_log'
 alias rstudio='QMLSCENE_DEVICE=softwarecontext rstudio >/dev/null 2>&1 &; disown'
 
 alias psgrep='ps aux | grep'
+
+
+alias openports='sudo ss -tulwn'
