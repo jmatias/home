@@ -49,7 +49,7 @@
                 "hidden": false,
                 "name": "Ubuntu",
                 "useAcrylic": true,
-                "acrylicOpacity": 0.80,
+                "acrylicOpacity": 0.75,
                 "commandline": "wsl",
                 "icon": "\\\\wsl$\\Ubuntu\\home\\matiasca\\.config\\ubuntu.ico",
                 "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\matiasca",
