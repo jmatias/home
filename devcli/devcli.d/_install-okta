@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 function __install_okta() {
 
-  __install_python3
 
   clean_up() {
     ARG=$?

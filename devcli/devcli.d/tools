@@ -38,6 +38,7 @@ eks)
     sudo rm -rf /usr/local/bin/helm
     sudo rm -rf /usr/local/bin/fluxctl
     sudo rm -rf /usr/local/bin/tkn
+    sudo rm -rf /usr/local/go
   fi
 
   mypwd=$PWD
@@ -45,6 +46,7 @@ eks)
 
   __install_python3
   __install_okta
+  __install_golang
   __install_k8s_tools
   __install_awscli
 
