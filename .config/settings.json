@@ -49,9 +49,9 @@
                 "hidden": false,
                 "name": "Ubuntu",
                 "useAcrylic": true,
-                "acrylicOpacity": 0.75,
+                "acrylicOpacity": 0.80,
                 "commandline": "wsl",
-                "icon": "C:\\Users\\Javier\\Documents\\ubuntu.ico",
+                "icon": "\\\\wsl$\\Ubuntu\\home\\matiasca\\.config\\ubuntu.ico",
                 "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\matiasca",
                 "cursorShape": "vintage",
                 "antialiasingMode": "grayscale"

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
 sudo service docker start
+sudo service cron start
+sudo service rsyslog start
 /home/matiasca/bin/zeppelin-0.9.0-bin-all/bin/zeppelin-daemon.sh restart
