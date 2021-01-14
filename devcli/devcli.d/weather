@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+touch $HOME/.cache/last_session_day
+session_day_last=$(<$HOME/.cache/last_session_day)
+session_day_current=$(date +%j | sed 's/^0*//')
+
+if [[ "$session_day_current" -ne "$session_day_last" ]]; then
+  curl 'wttr.in/NYC?m'
+fi
+
+echo $session_day_current > $HOME/.cache/last_session_day
