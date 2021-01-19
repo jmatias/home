@@ -48,10 +48,4 @@ source $HOME/.env3/bin/activate
 export AWS_PAGER=""
 export RPROMPT=""
 
-export CATALINA_HOME=/usr/share/tomcat9
-export CATALINA_BASE=/var/lib/tomcat9
-export CATALINA_TMPDIR=/tmp
-export JAVA_OPTS=-Djava.awt.headless=true
 
-
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64
