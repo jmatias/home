@@ -1,8 +1,11 @@
 #!/usr/bin/zsh
 
+
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 export KUBE_EDITOR='code --wait'
 
@@ -10,9 +13,10 @@ export PATH=/usr/local/sbt/bin:$PATH
 export PATH=$HOME/bin/:$PATH
 export PATH=$HOME/devcli/:$PATH
 
-export SPARK_HOME=/opt/spark
+export SPARK_HOME=/$HOME/bin/spark-3.0.1-bin-hadoop3.2
 export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
-export SPARK_MASTER_WEBUI_PORT=8081
+#export SPARK_MASTER_WEBUI_PORT=8081
+export SPARK_CONF_DIR=$SPARK_HOME/conf/
 
 export PATH=$PATH:/opt/zeppelin/zeppelin-0.9.0-preview1-bin-all/bin/
 export PATH=$PATH:/usr/local/sonar-scanner/bin
@@ -23,7 +27,7 @@ export COMPLETION_WAITING_DOTS="true"
 export HYPHEN_INSENSITIVE="true"
 export FLUX_FORWARD_NAMESPACE=flux
 
-fpath=($fpath ~/.my-zsh/completions ~/.my-zsh/completions/private)
+fpath=($fpath ~/.my-zsh/completions ~/.my-zsh/completions/private /usr/share/zsh/5.7.1/functions)
 rm -f ~/.zcompdump
 autoload -U compinit
 compinit
@@ -47,5 +51,3 @@ source $HOME/.env3/bin/activate
 
 export AWS_PAGER=""
 export RPROMPT=""
-
-
