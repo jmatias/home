@@ -10,6 +10,9 @@
 !/.my-zsh/completions
 !/.my-zsh/completions/*
 
+/.my-zsh/custom/client_profile.zsh
+
+
 !/.vimrc
 !/lefthook.yml
 !/settings.json
