@@ -15,6 +15,7 @@ plugins=(
   aws
   pip
   z
+  brew
   zsh_reload
 )
 
