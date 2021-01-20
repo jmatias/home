@@ -15,6 +15,7 @@ plugins=(
   aws
   pip
   z
+  zsh_reload
 )
 
 export ZSH_CUSTOM="$HOME/.my-zsh/custom"
