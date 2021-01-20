@@ -5,7 +5,11 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+if __osx; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+elif  __ubuntu; then
+  export JAVA_HOME=$(type -p java|xargs readlink -f | grep -v $HOME | xargs dirname | xargs dirname)
+fi
 
 export KUBE_EDITOR='code --wait'
 
