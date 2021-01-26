@@ -17,6 +17,7 @@ plugins=(
   z
   brew
   zsh_reload
+  docker
 )
 
 export ZSH_CUSTOM="$HOME/.my-zsh/custom"

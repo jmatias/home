@@ -29,7 +29,7 @@ shell = ["/usr/bin/zsh"]
 when = "devcli role-session --time-expired"
 command = "echo AWS"
 style = "bold red"
-
+format = "[AWS ]($style)"
 
 [helm]
 disbled = false
