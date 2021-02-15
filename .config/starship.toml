@@ -17,19 +17,26 @@ disabled = false
 format = "[\\[ $time \\]]($style)"
 utc_time_offset = "local"
 
-[custom.assume_role]
-shell = ["/usr/bin/zsh"]
-when = "exit 0"
-command = "devcli role-session --time-left"
-style = "bold green"
-format = "[AWS: $output]($style)"
+#
+#[custom.assume_role]
+#shell = ["/usr/bin/zsh"]
+#when = "exit 0"
+#command = "devcli role-session --time-left"
+#style = "bold green"
+#format = "[AWS: $output]($style)"
+#
+#[custom.assume_role_expired]
+#shell = ["/usr/bin/zsh"]
+#when = "devcli role-session --time-expired"
+#command = "echo AWS"
+#style = "bold red"
+#format = "[AWS ]($style)"
 
-[custom.assume_role_expired]
-shell = ["/usr/bin/zsh"]
-when = "devcli role-session --time-expired"
-command = "echo AWS"
-style = "bold red"
-format = "[AWS ]($style)"
+[custom.blank]
+format=" "
+shell=["/usr/bin/zsh"]
+when = "exit 0"
+command ="echo lol"
 
 [helm]
-disbled = false
+disabled = false
