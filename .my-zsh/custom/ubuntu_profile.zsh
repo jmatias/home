@@ -32,4 +32,6 @@ if  __ubuntu; then
   export SDKMAN_DIR="/home/matiasca/.sdkman"
   [[ -s "/home/matiasca/.sdkman/bin/sdkman-init.sh" ]] && source "/home/matiasca/.sdkman/bin/sdkman-init.sh"
 
+  alias stonks='/usr/local/bin/gnucash-cli --quotes get /e/Dropbox/GNU\ Cash/jmatias_accounting.gnucash'
+
 fi
