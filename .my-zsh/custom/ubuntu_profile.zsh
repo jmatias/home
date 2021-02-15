@@ -27,11 +27,11 @@ if  __ubuntu; then
   export JAVA_OPTS=-Djava.awt.headless=true
 
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64
+  alias stonks='/usr/local/bin/gnucash-cli --quotes get /mnt/dropbox/GNU\ Cash/jmatias_accounting.gnucash'
 
   #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
   export SDKMAN_DIR="/home/matiasca/.sdkman"
   [[ -s "/home/matiasca/.sdkman/bin/sdkman-init.sh" ]] && source "/home/matiasca/.sdkman/bin/sdkman-init.sh"
 
-  alias stonks='/usr/local/bin/gnucash-cli --quotes get /e/Dropbox/GNU\ Cash/jmatias_accounting.gnucash'
 
 fi
