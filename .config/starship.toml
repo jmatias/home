@@ -40,3 +40,6 @@ command ="echo lol"
 
 [helm]
 disabled = false
+
+[java]
+style="red"
