@@ -9,6 +9,7 @@ use install-k8s-tools
 use install-okta
 use install-r
 use install-python3
+use install-ruby
 
 
 valid_values=("eks dev ds")
@@ -60,6 +61,7 @@ dev)
 
   __install_zsh_plugins
   __install_python3
+  __install_ruby
   __install_golang
   __install_cli_tools
 

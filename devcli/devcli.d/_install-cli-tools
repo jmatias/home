@@ -60,6 +60,13 @@ function __install_cli_tools() {
 
   fi
 
+
+  if ! git pair  >/dev/null 2>&1; then
+      gem install git-pair
+  fi
+
+
+
   curl -fsSL https://starship.rs/install.sh | bash
 
 }

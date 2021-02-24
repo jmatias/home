@@ -1,0 +1,35 @@
+#!/bin/bash
+
+read -r -d '' __helptext <<-'EOF' || true                      # exits non-zero when EOF encountered
+ Configure virtual python environment.
+EOF
+
+[[ "${__usage+x}" ]] || read -r -d '' __usage <<-'EOF' || true # exits non-zero when EOF encountered
+  -i --init   Initialize python virtual environment
+  -r --reset  Reset python virtual environment
+EOF
+
+source $ROOT_DIR/_boilerplate.sh
+
+# At least one needs to be specified
+[[ "${arg_i}" -lt 1 && "${arg_r}" -lt 1 ]] && help
+
+# Both cannot be specified.
+if [[ "${arg_i}" -gt 0 && "${arg_r}" -gt 0 ]]; then
+  error "Both flags may not be specified at the same time."
+  help
+fi
+
+
+if [[ "${arg_r}" -gt 0 ]]; then
+  in_white "Deleting virtual environment...\n"
+  rm -rf $HOME/.env3
+
+fi
+
+in_green "Creating virutal environment.\n"
+python3 -m venv $HOME/.env3/
+source ~/.env3/bin/activate
+pip install flask requests
+
+

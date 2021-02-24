@@ -15,6 +15,7 @@ function in_yellow()  { _color 3 "${1}"; } # use for warnings / attention
 function in_magenta() { _color 5 "${1}"; } # use for debug messages
 function in_cyan()    { _color 6 "${1}"; } # use for main actions / progress
 function in_gray()    { _color 246 "${1}"; } # use for main actions / progress
+function in_white()    { _color 7 "${1}"; } # use for main actions / progress
 
 function __box() {
   echo "$(in_cyan '[')$(echo "${1}" )$(in_cyan ']')"
