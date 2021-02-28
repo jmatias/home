@@ -21,7 +21,7 @@
             // "colorScheme": "Broadcast",
             // "fontFace": "Fira Code",
             "fontFace": "JetBrains Mono",
-            "fontSize": 11,
+            "fontSize": 10,
             "experimental.retroTerminalEffect": false,
             "startingDirectory": "C:/Users/Javier",
             "useAcrylic": false,
