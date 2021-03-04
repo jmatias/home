@@ -2,13 +2,13 @@
 
 use configure-git-pair
 
-valid_values=("git-pair")
+valid_values=("git-pair git-personal")
 read -r -d '' __helptext <<-'EOF' || true                      # exits non-zero when EOF encountered
  Configure your workstation.
 EOF
 
 [[ "${__usage+x}" ]] || read -r -d '' __usage <<-'EOF' || true # exits non-zero when EOF encountered
-  -p --profile  [arg] Profile to configure. Valid values: [git-pair]. Required.
+  -p --profile  [arg] Profile to configure. Valid values: [git-pair, git-personal]. Required.
 EOF
 
 source $ROOT_DIR/_boilerplate.sh
@@ -20,6 +20,12 @@ case "${arg_p}" in
 
 git-pair)
   __configure_git_pair
+
+  ;;
+
+git-personal)
+  git config --global --replace-all user.name "Javier Matias-Cabrera"
+  git config --global --replace-all user.email Javier.L.Matias@gmail.com
 
   ;;
 
