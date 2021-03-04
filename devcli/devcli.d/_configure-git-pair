@@ -1,0 +1,38 @@
+#!/usr/bin/bash
+
+function __configure_git_pair() {
+
+	if ! command -v ruby > /dev/null 2>&1; then
+		in_gray "Installing ruby...\n"
+		brew install ruby
+	fi
+
+	gem install pivotal_git_scripts
+
+	cat <<- EOM
+
+
+EOM
+
+	pairs="pairs:
+    jm: Javier Matias; Javier.L.Matias
+
+email:
+    prefix: pair
+    domain: gmail.com
+    no_solo_prefix: true
+global: true"
+
+
+	in_white "Use 'git pair <dev1 initials> <dev2 initials> ... <devN initials>' to configure future commit messages.\n"
+	in_white "Example: 'git pair ef jp'"
+
+		cat <<- EOM
+
+
+	EOM
+
+	in_gray "${pairs}\n"
+	echo "$pairs" > $HOME/.pairs
+
+}

@@ -5,11 +5,6 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-if __osx; then
-  export JAVA_HOME=$(/usr/libexec/java_home)
-elif  __ubuntu; then
-  export JAVA_HOME=$(type -p java|xargs readlink -f | grep -v $HOME | xargs dirname | xargs dirname)
-fi
 
 export KUBE_EDITOR='code --wait'
 
@@ -31,10 +26,6 @@ export COMPLETION_WAITING_DOTS="true"
 export HYPHEN_INSENSITIVE="true"
 export FLUX_FORWARD_NAMESPACE=flux
 
-fpath=($fpath ~/.my-zsh/completions ~/.my-zsh/completions/private /usr/share/zsh/5.7.1/functions)
-rm -f ~/.zcompdump
-autoload -U compinit
-compinit
 eval "$(starship init zsh)"
 
 export DISABLE_AUTO_TITLE="true"
@@ -55,3 +46,5 @@ source $HOME/.env3/bin/activate
 
 export AWS_PAGER=""
 export RPROMPT=""
+
+devcli weather

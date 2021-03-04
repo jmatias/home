@@ -58,39 +58,54 @@ NO_COLOR="${NO_COLOR:-}"    # true = disable color. otherwise autodetected
 ### Functions
 ##############################################################################
 
+function __print_gray () {
+  echo -ne "$(tput setaf 246)$1$(tput sgr 0)"
+}
+
+function __println_gray () {
+  echo -e "$(tput setaf 246)"$1"$(tput sgr 0)"
+}
+
 
 function __print_red () {
-  echo -n "$(tput setaf 1)$1$(tput sgr 0)"
+  echo -ne "$(tput setaf 9)$1$(tput sgr 0)"
 }
 
 function __println_red () {
-  echo "$(tput setaf 1)$1$(tput sgr 0)"
+  echo -e "$(tput setaf 9)"$1"$(tput sgr 0)"
 }
 
 function __print_green () {
-  echo -n "$(tput setaf 2)$1$(tput sgr 0)"
+  echo -ne "$(tput setaf 2)"$1"$(tput sgr 0)"
 }
 
 function __println_green () {
-  echo "$(tput setaf 2)$1$(tput sgr 0)"
+  echo -e "$(tput setaf 2)"$1"$(tput sgr 0)"
 }
 
-
 function __print_blue () {
-  echo -n "$(tput setaf 4)$1$(tput sgr 0)"
+  echo -ne "$(tput setaf 4)"$1"$(tput sgr 0)"
 }
 
 function __println_blue () {
-  echo "$(tput setaf 4)$1$(tput sgr 0)"
+  echo -e "$(tput setaf 4)"$1"$(tput sgr 0)"
+}
+
+function __print_cyan () {
+  echo -ne "$(tput setaf 6)"$1"$(tput sgr 0)"
+}
+
+function __println_cyan () {
+  echo -e "$(tput setaf 6)"$1"$(tput sgr 0)"
 }
 
 
 function __print () {
-  echo -n "$1"
+  echo -ne "$1"
 }
 
 function __println () {
-  echo "$1"
+  echo -e "$1"
 }
 
 function __b3bp_log () {

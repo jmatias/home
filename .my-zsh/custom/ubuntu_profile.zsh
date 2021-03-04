@@ -3,13 +3,16 @@
 # shellcheck source=./environments.zsh
 source $HOME/.my-zsh/custom/environments.zsh
 
-if  __ubuntu; then
+if __ubuntu; then
 
-  devcli weather
+  fpath=($fpath ~/.my-zsh/completions ~/.my-zsh/completions/private /usr/share/zsh/5.7.1/functions)
+  rm -f ~/.zcompdump
+  autoload -U compinit
+  compinit
 
   # add Pulumi to the PATH
   export PATH=$PATH:$HOME/.pulumi/bin
-
+  export JAVA_HOME=$(type -p java | xargs readlink -f | grep -v $HOME | xargs dirname | xargs dirname)
   PATH="/home/matiasca/perl5/bin${PATH:+:${PATH}}"
   export PATH
   PERL5LIB="/home/matiasca/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
@@ -32,6 +35,5 @@ if  __ubuntu; then
   #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
   export SDKMAN_DIR="/home/matiasca/.sdkman"
   [[ -s "/home/matiasca/.sdkman/bin/sdkman-init.sh" ]] && source "/home/matiasca/.sdkman/bin/sdkman-init.sh"
-
 
 fi
