@@ -38,6 +38,12 @@ shell=["/usr/bin/zsh"]
 when = "exit 0"
 command ="echo lol"
 
+[custom.git]
+style="bold 172"
+format="[\\[$output\\]]($style) "
+when="exit 0"
+command="devcli git-pair"
+
 [helm]
 disabled = false
 
