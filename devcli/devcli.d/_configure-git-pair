@@ -2,14 +2,23 @@
 
 function __configure_git_pair() {
 
-	if ! command -v ruby > /dev/null 2>&1; then
-		in_gray "Installing ruby...\n"
-		brew install ruby
-	fi
+  if ! command -v ruby >/dev/null 2>&1; then
+    in_gray "Installing ruby...\n"
 
-	gem install pivotal_git_scripts
+    if __ubuntu; then
+      sudo apt install ruby -y
+    elif __osx; then
+      brew install ruby
+    else
+      echo "$OSTYPE" is not supported at this time.
+    fi
 
-	cat <<- EOM
+    brew install ruby
+  fi
+
+  sudo gem install pivotal_git_scripts
+
+  cat <<-EOM
 
 
 EOM
@@ -23,16 +32,15 @@ email:
     no_solo_prefix: true
 global: true"
 
+  in_white "Use 'git pair <dev1 initials> <dev2 initials> ... <devN initials>' to configure future commit messages.\n"
+  in_white "Example: 'git pair ef jp'"
 
-	in_white "Use 'git pair <dev1 initials> <dev2 initials> ... <devN initials>' to configure future commit messages.\n"
-	in_white "Example: 'git pair ef jp'"
-
-		cat <<- EOM
+  cat <<-EOM
 
 
 	EOM
 
-	in_gray "${pairs}\n"
-	echo "$pairs" > $HOME/.pairs
+  in_gray "${pairs}\n"
+  echo "$pairs" >$HOME/.pairs
 
 }

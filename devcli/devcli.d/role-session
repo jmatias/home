@@ -11,6 +11,8 @@ EOF
 
 source $ROOT_DIR/_boilerplate.sh
 
+set +o errexit
+
 # At least one needs to be specified
 [[ "${arg_l}" -lt 1 && "${arg_e}" -lt 1 ]] && help
 

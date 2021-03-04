@@ -11,41 +11,40 @@ symbol = "Mem: "
 separator = "/"
 style = "bold dimmed green"
 
+[python]
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\))]($style) '
 
 [time]
 disabled = false
 format = "[\\[ $time \\]]($style)"
 utc_time_offset = "local"
 
-#
-#[custom.assume_role]
-#shell = ["/usr/bin/zsh"]
-#when = "exit 0"
-#command = "devcli role-session --time-left"
-#style = "bold green"
-#format = "[AWS: $output]($style)"
-#
-#[custom.assume_role_expired]
-#shell = ["/usr/bin/zsh"]
-#when = "devcli role-session --time-expired"
-#command = "echo AWS"
-#style = "bold red"
-#format = "[AWS ]($style)"
 
-[custom.blank]
-format=" "
-shell=["/usr/bin/zsh"]
-when = "exit 0"
-command ="echo lol"
+[custom.assume_role]
+shell = ["/usr/bin/zsh"]
+when = "devcli role-session --time-left"
+command = "devcli role-session --time-left"
+format = "[AWS:](120) $output "
+
+[custom.assume_role_expired]
+shell = ["/usr/bin/zsh"]
+when = "devcli role-session --time-expired"
+command = "echo AWS"
+style = "bold red"
+format = "[AWS ]($style)"
 
 [custom.git]
-style="bold 172"
-format="[\\[$output\\]]($style) "
-when="exit 0"
-command="devcli git-pair"
+style = "bold 172"
+format = "[\\[$output\\]]($style) "
+when = "exit 0"
+command = "devcli git-pair"
 
 [helm]
 disabled = false
 
 [java]
-style="red"
+style = "red"
+
+
+[aws]
+symbol = "☁️ "
