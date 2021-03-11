@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
 function __install_ruby() {
-
-if ! command -v ruby >/dev/null 2>&1; then
-    if __osx; then
-      brew install ruby
+  if __osx; then
+    brew install ruby
+  else
+    if ! command -v ruby >/dev/null 2>&1; then
+      sudo apt get install ruby
     fi
-fi
-
+  fi
 }

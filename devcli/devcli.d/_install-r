@@ -11,7 +11,7 @@ function __install_r() {
       R --version
 
     elif __osx; then
-      echo "$OSTYPE" is not supported at this time.
+      brew install R
     else
       echo "$OSTYPE" is not supported at this time.
     fi

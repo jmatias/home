@@ -18,6 +18,7 @@ plugins=(
   brew
   zsh_reload
   docker
+  gradle
 )
 
 export ZSH_CUSTOM="$HOME/.my-zsh/custom"

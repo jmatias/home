@@ -8,7 +8,7 @@ if ! command -v python3 >/dev/null 2>&1; then
     sudo apt install python3-virtualenv python3-venv -y
 
   elif __osx; then
-    brew install python@3
+    brew install python@3.8
     pip install virtualenv
   else
     echo "$OSTYPE" is not supported at this time.
@@ -20,7 +20,7 @@ if __ubuntu; then
   sudo apt update
   sudo apt install python3-virtualenv python3-venv -y
 elif __osx; then
-  brew install python@3
+  brew install python@3.8
   pip install virtualenv
 else
   echo "$OSTYPE" is not supported at this time.
