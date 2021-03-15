@@ -24,7 +24,7 @@
             "fontSize": 10,
             "experimental.retroTerminalEffect": false,
             "startingDirectory": "C:/Users/Javier",
-            "useAcrylic": false,
+            "useAcrylic": true,
             "acrylicOpacity": 0.75,
             "closeOnExit": true
         },
@@ -49,7 +49,7 @@
                 "hidden": false,
                 "name": "Ubuntu",
                 "useAcrylic": true,
-                "acrylicOpacity": 0.75,
+                "acrylicOpacity": 0.90,
                 "commandline": "wsl",
                 "icon": "\\\\wsl$\\Ubuntu\\home\\matiasca\\.config\\ubuntu.ico",
                 "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\matiasca",
