@@ -2,10 +2,34 @@
 
 function __install_ruby() {
   if __osx; then
-    brew install ruby
+    brew install rbenv
+    eval "$(rbenv init -)"
+    rbenv install 3.0.0
   else
     if ! command -v ruby >/dev/null 2>&1; then
-      sudo apt get install ruby
+      curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
+      eval "$(rbenv init -)"
+
+      shellName=$(basename ${SHELL})
+      case ${shellName} in
+
+      zsh)
+        shellProfileScript="${HOME}/.zshrc"
+        ;;
+
+      bash)
+        shellProfileScript="${HOME}/.bashrc"
+        ;;
+
+      esac
+
+      if [ $(grep -cF 'PATH=$PATH:$HOME/.rbenv/bin' "${shellProfileScript}") -lt 1 ]; then
+        echo 'export PATH=$PATH:$HOME/.rbenv/bin' >>"${shellProfileScript}"]
+      fi
+
+      $HOME/.rbenv/bin/rbenv install 3.0.0
+      $HOME/.rbenv/bin/rbenv install 2.7.1
+
     fi
   fi
 }

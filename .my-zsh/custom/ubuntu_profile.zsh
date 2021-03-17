@@ -5,6 +5,12 @@ source $HOME/.my-zsh/custom/environments.zsh
 
 if __ubuntu; then
 
+  export PATH=$PATH:$HOME/.rbenv/bin
+  eval "$(rbenv init -)"
+
+  export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+
   fpath=($fpath ~/.my-zsh/completions ~/.my-zsh/completions/private /usr/share/zsh/5.7.1/functions)
   rm -f ~/.zcompdump
   autoload -U compinit
@@ -13,15 +19,15 @@ if __ubuntu; then
   # add Pulumi to the PATH
   export PATH=$PATH:$HOME/.pulumi/bin
   export JAVA_HOME=$(type -p java | xargs readlink -f | grep -v $HOME | xargs dirname | xargs dirname)
-  PATH="/home/matiasca/perl5/bin${PATH:+:${PATH}}"
+  PATH="$HOME/perl5/bin${PATH:+:${PATH}}"
   export PATH
-  PERL5LIB="/home/matiasca/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+  PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
   export PERL5LIB
-  PERL_LOCAL_LIB_ROOT="/home/matiasca/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+  PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
   export PERL_LOCAL_LIB_ROOT
-  PERL_MB_OPT="--install_base \"/home/matiasca/perl5\""
+  PERL_MB_OPT="--install_base \"$HOME/perl5\""
   export PERL_MB_OPT
-  PERL_MM_OPT="INSTALL_BASE=/home/matiasca/perl5"
+  PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"
   export PERL_MM_OPT
 
   export CATALINA_HOME=/usr/share/tomcat9
@@ -33,7 +39,7 @@ if __ubuntu; then
   alias stonks='/usr/local/bin/gnucash-cli --quotes get /mnt/dropbox/GNU\ Cash/jmatias_accounting.gnucash'
 
   #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-  export SDKMAN_DIR="/home/matiasca/.sdkman"
-  [[ -s "/home/matiasca/.sdkman/bin/sdkman-init.sh" ]] && source "/home/matiasca/.sdkman/bin/sdkman-init.sh"
+  export SDKMAN_DIR="$HOME/.sdkman"
+  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 fi
