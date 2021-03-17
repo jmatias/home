@@ -45,28 +45,6 @@ function __install_cli_tools() {
     fi
   fi
 
-  if ! command -v vtop >/dev/null 2>&1; then
-
-    if __ubuntu; then
-      curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-      sudo apt-get install -y nodejs
-      sudo npm -g install vtop
-    elif __osx; then
-      brew install nodejs
-      sudo npm -g install vtop
-    else
-      echo "$OSTYPE" is not supported at this time.
-    fi
-
-  fi
-
-
-  if ! git pair  >/dev/null 2>&1; then
-      gem install git-pair
-  fi
-
-
-
   curl -fsSL https://starship.rs/install.sh | bash
 
 }

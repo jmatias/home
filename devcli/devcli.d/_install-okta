@@ -22,7 +22,7 @@ function __install_okta() {
   if ! command -v oktaauth >/dev/null 2>&1; then
     rm -rf /tmp/aws_role_credentials
     git clone git@github.com:MatthiasScholzTW/aws_role_credentials.git /tmp/aws_role_credentials
-    cd /tmp/oktaauth
+    cd /tmp/aws_role_credentials
     python setup.py install
     rm -rf /tmp/aws_role_credentials
 
