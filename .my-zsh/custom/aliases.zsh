@@ -9,7 +9,7 @@ elif __osx; then
 fi
 
 alias work='cd ~/workspace'
-alias bfg='java -jar /home/matiasca/workspace/external-repos/bfg-repo-cleaner/bfg/target/bfg-1.13.0-tags/v1.13.0-2c1ec2f.jar'
+alias bfg="java -jar $HOME/workspace/external-repos/bfg-repo-cleaner/bfg/target/bfg-1.13.0-tags/v1.13.0-2c1ec2f.jar"
 
 function intellij() {
   if [[ $# -gt 0 ]]; then
@@ -23,9 +23,9 @@ function intellij() {
 
 function clion() {
   if [[ $# -gt 0 ]]; then
-    /home/matiasca/bin/clion $1 >/dev/null 2>&1 &
+    $HOME/bin/clion $1 >/dev/null 2>&1 &
   else
-    /home/matiasca/bin/clion >/dev/null 2>&1 &
+    $HOME/bin/clion >/dev/null 2>&1 &
   fi
 
   disown
