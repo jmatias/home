@@ -18,7 +18,7 @@ if __ubuntu; then
 
   # add Pulumi to the PATH
   export PATH=$PATH:$HOME/.pulumi/bin
-  export JAVA_HOME=$(type -p java | xargs readlink -f | grep -v $HOME | xargs dirname | xargs dirname)
+#  export JAVA_HOME=$(type -p java | xargss readlink -f | grep -v $HOME | xargs dirname | xargs dirname)
   PATH="$HOME/perl5/bin${PATH:+:${PATH}}"
   export PATH
   PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
