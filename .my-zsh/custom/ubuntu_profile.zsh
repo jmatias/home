@@ -18,7 +18,7 @@ if __ubuntu; then
 
   # add Pulumi to the PATH
   export PATH=$PATH:$HOME/.pulumi/bin
-#  export JAVA_HOME=$(type -p java | xargss readlink -f | grep -v $HOME | xargs dirname | xargs dirname)
+
   PATH="$HOME/perl5/bin${PATH:+:${PATH}}"
   export PATH
   PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
@@ -36,7 +36,7 @@ if __ubuntu; then
   export JAVA_OPTS=-Djava.awt.headless=true
 
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64
-  alias stonks='/usr/local/bin/gnucash-cli --quotes get /mnt/dropbox/GNU\ Cash/jmatias_accounting.gnucash'
+  alias stonks='/usr/local/bin/gnucash-cli --quotes get /mnt/dropbox/Banking/GnuCash/jmatias_accounting.gnucash'
 
   #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
   export SDKMAN_DIR="$HOME/.sdkman"

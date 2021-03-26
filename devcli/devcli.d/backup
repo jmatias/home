@@ -8,29 +8,32 @@ clean_up() {
 }
 trap clean_up SIGINT
 
+arguments="--info=name0,progress3"
 
-nice -n 3 rsync --info=name0 --info=progress3 --archive --delete \
+nice -n 3 rsync "$arguments" --archive --delete \
   /c/Users/Javier/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json \
   $HOME/.config
 
-nice -n 3 rsync --info=name0 --info=progress3 --archive --delete \
+nice -n 3 rsync "$arguments" --archive --delete \
   /c/Users/Javier/.wslconfig \
   $HOME/.config
 
-nice -n 3 rsync --info=name0 --info=progress3 --archive --delete \
+nice -n 3 rsync "$arguments" --archive --delete \
   /etc/wsl.conf \
   $HOME/.config
 
-nice -n 3 rsync --info=name0 --info=progress3 --exclude="*anaconda*" \
+nice -n 3 rsync "$arguments" --exclude="*anaconda*" \
   --exclude="*cache"  --exclude=".pip" --exclude="*.git*" --exclude=".gnupg" --exclude=".npm" --exclude=".m2" --exclude=".conda" \
   --exclude="go" --exclude="JetBrains" --exclude=".env3" --exclude="R/*" --exclude=".theano" \
   --exclude=".m2" --exclude=".gradle" --exclude=".vscode-server" --exclude=".dotnet" \
   --exclude="node_modules" --exclude=".eclipse" --exclude="external-repos" --exclude=".oh-my-zsh" \
   --exclude=".sbt" --exclude="eclipse-workspace" --exclude="paravotar" --exclude="paravotar-api" --exclude="practicatuvoto" \
-   --exclude=".npm" --exclude="psl-project4/data/images/MovieImages"  \
-   --exclude="python_stubs" --exclude="stubs" \
+  --exclude=".npm" --exclude="psl-project4/data/images/MovieImages"  \
+  --exclude="python_stubs" --exclude="stubs" --exclude="vendor" --exclude="custom/plugins" \
+  --exclude="compile-server" \
+  --exclude=".cpan" --exclude=".rbenv" --exclude="perl5" --exclude="imageCache" --exclude=rplugin,r_skeletons \
   --archive /home/matiasca/ /e/Dropbox/wsl2_backup
 
-nice -n 3 rsync --info=name0 --info=progress3 --archive --delete \
+nice -n 3 rsync "$arguments" --archive --delete \
  --exclude="node_modules" --exclude="python_stubs" --exclude="stubs"  \
  /home/matiasca/.cache/JetBrains /e/Dropbox/wsl2_backup/.cache/JetBrains
