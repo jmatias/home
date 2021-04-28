@@ -12,6 +12,7 @@ plugins=(
   zsh-syntax-highlighting
   history
   zsh-navigation-tools
+  zsh-autosuggestions
   aws
   pip
   z
