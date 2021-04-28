@@ -46,4 +46,7 @@ if __ubuntu; then
   export SDKMAN_DIR="$HOME/.sdkman"
   [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+
+  alias openports='sudo ss -tulwn'
+
 fi
