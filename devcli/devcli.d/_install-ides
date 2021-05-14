@@ -1,0 +1,39 @@
+#!/usr/bin/bash
+function __install_jetbrains() {
+
+  if ! command -v R >/dev/null 2>&1; then
+    if __ubuntu; then
+      mkdir -p $HOME/bin
+      wget -q https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.18.7609.tar.gz -O - | tar zxvf - -C /tmp
+      mv /tmp/jetbrains-toolbox*/jetbrains-toolbox $HOME/bin/
+
+      sudo apt install -y libnss3 libatk1.0-dev libatk-bridge2.0-dev xfce4
+
+    elif __osx; then
+      brew install visual-studio-code
+    else
+      echo "$OSTYPE" is not supported at this time.
+    fi
+
+  fi
+}
+
+function __install_vscode() {
+
+  if ! command -v R >/dev/null 2>&1; then
+    if __ubuntu; then
+      echo "$OSTYPE" is not supported at this time.
+
+    elif __osx; then
+      brew install visual-studio-code
+    else
+      echo "$OSTYPE" is not supported at this time.
+    fi
+
+  fi
+}
+
+function __install_ides() {
+  __install_jetbrains
+  __install_vscode
+}

@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+  #!/usr/bin/env bash
 
 use install-zsh-plugins
 use install-awscli
 use install-cli-tools
 use install-golang
-use install-jetbrains
+use install-ides
 use install-k8s-tools
 use install-okta
 use install-r
@@ -58,6 +58,7 @@ dev)
   __install_zsh_plugins
   __install_golang
   __install_cli_tools
+  __install_ides
 
   ;;
 
@@ -65,9 +66,8 @@ dev)
 ds)
 
   __install_python3
-  pip install --upgrade -r ${CONFIGURATION_DIR}/requirements.txt
   __install_r
-#  __install_jetbrains
+  __install_ides
 
   ;;
 
