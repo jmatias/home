@@ -1,12 +1,16 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 function __install_ruby() {
-  if __osx; then
-    brew install rbenv
-    eval "$(rbenv init -)"
-    rbenv install 3.0.0
-  else
-    if ! command -v ruby >/dev/null 2>&1; then
+
+  if ! command -v ruby >/dev/null 2>&1; then
+
+    if __osx; then
+      eval "$(rbenv init -)"
+      rbenv install 3.0.0
+      rbenv install 2.7.1
+
+      RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+    else
       curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
       eval "$(rbenv init -)"
 
@@ -31,5 +35,17 @@ function __install_ruby() {
       $HOME/.rbenv/bin/rbenv install 2.7.1
 
     fi
+
+  else
+
+    if __ubuntu; then
+      sudo apt upgrade -y libnss3 libatk1.0-dev libatk-bridge2.0-dev xfce4
+
+    elif __osx; then
+      noop
+    else
+      echo "$OSTYPE" is not supported at this time.
+    fi
   fi
+
 }

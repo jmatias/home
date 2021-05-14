@@ -7,13 +7,13 @@ function __configure_git_pair() {
 
     if __ubuntu; then
       sudo apt install ruby -y
+      sudo apt upgrade ruby -y
     elif __osx; then
-      brew install ruby
+      noop
     else
       echo "$OSTYPE" is not supported at this time.
     fi
 
-    brew install ruby
   fi
 
   sudo gem install pivotal_git_scripts

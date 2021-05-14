@@ -21,3 +21,6 @@ function __ubuntu() {
   [[ $(uname) == "Linux" && $(cat /etc/issue | grep -i ubuntu) ]]
 }
 
+function noop() {
+   echo 'noop' >/dev/null
+}

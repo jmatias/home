@@ -12,7 +12,7 @@ function __install_awscli() {
       rm -rf ./aws
 
     elif __osx; then
-      brew install awscli
+      noop
     else
       echo "$OSTYPE" is not supported at this time.
     fi

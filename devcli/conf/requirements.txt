@@ -1,8 +1,10 @@
 pandas
-tensorflow-gpu
+tensorflow
 tensorflow-probability >= 0.11
 seaborn
 matplotlib
 scikit-learn
 numpy
 coursera-dl
+wheel
+yq

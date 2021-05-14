@@ -1,4 +1,4 @@
-  #!/usr/bin/env bash
+#!/usr/bin/env bash
 
 use install-zsh-plugins
 use install-awscli
@@ -11,44 +11,31 @@ use install-r
 use install-python3
 use install-ruby
 
-
-valid_values=("dev ds")
 read -r -d '' __helptext <<-'EOF' || true # exits non-zero when EOF encountered
  Install development tools.
 EOF
 
 [[ "${__usage+x}" ]] || read -r -d '' __usage <<-'EOF' || true # exits non-zero when EOF encountered
-  -i --install  [arg] Toolkit to install. Valid values: [dev, ds]. Required.
-  -r --reinstall      Re-install.
+  -i --install      Install tools.
+  -r --reinstall    Re-install.
 EOF
-
 
 source $ROOT_DIR/_boilerplate.sh
 
-# shellcheck disable=SC2076
-[[ " ${valid_values[*]} " =~ " ${arg_i:-} " ]] || help
+if [[ "${arg_r:?}" = "1" ]]; then
+  sudo rm -rf /usr/local/bin/eksctl
+  sudo rm -rf /usr/local/bin/kube
+  sudo rm -rf /usr/local/bin/helm
+  sudo rm -rf /usr/local/bin/fluxctl
+  sudo rm -rf /usr/local/bin/tkn
+fi
 
-
-case "${arg_i}" in
-
-dev)
-
-  if [[ "${arg_r:?}" = "1" ]]; then
-    sudo rm -rf /usr/local/go
-  fi
-
-  if [[ "${arg_r:?}" = "1" ]]; then
-    sudo rm -rf /usr/local/bin/eksctl
-    sudo rm -rf /usr/local/bin/kube
-    sudo rm -rf /usr/local/bin/helm
-    sudo rm -rf /usr/local/bin/fluxctl
-    sudo rm -rf /usr/local/bin/tkn
-    sudo rm -rf /usr/local/go
-  fi
+if [[ "${arg_i:?}" -gt 0 ]]; then
 
   mypwd=$PWD
   set -e
 
+  __brew_bundle
   __install_python3
   __install_ruby
   __install_okta
@@ -56,19 +43,7 @@ dev)
   __install_k8s_tools
   __install_awscli
   __install_zsh_plugins
-  __install_golang
   __install_cli_tools
   __install_ides
 
-  ;;
-
-
-ds)
-
-  __install_python3
-  __install_r
-  __install_ides
-
-  ;;
-
-esac
+fi

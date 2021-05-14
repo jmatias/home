@@ -4,9 +4,20 @@ function __install_zsh_plugins() {
 
   if ! command -v zsh >/dev/null 2>&1; then
     if __ubuntu; then
+      sudo apt update
       sudo apt install zsh -y
     elif __osx; then
-      brew install zsh
+      noop
+    else
+      echo "$OSTYPE" is not supported at this time.
+    fi
+
+  else
+    if __ubuntu; then
+      sudo apt update
+      sudo apt upgrade zsh -y
+    elif __osx; then
+      noop
     else
       echo "$OSTYPE" is not supported at this time.
     fi

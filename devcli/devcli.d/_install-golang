@@ -1,51 +1,55 @@
 #!/usr/bin/bash
 function __install_golang() {
+  root_var=''
   if ! command -v go >/dev/null 2>&1; then
     if __ubuntu; then
       sudo apt install wget -y
       sudo wget -q https://golang.org/dl/go1.15.6.linux-amd64.tar.gz -O - | sudo tar zxvf - -C /usr/local
 
-      shellName=$(basename ${SHELL})
-      case ${shellName} in
-
-      zsh)
-        shellProfileScript="${HOME}/.zshrc"
-        ;;
-
-      bash)
-        shellProfileScript="${HOME}/.bashrc"
-        ;;
-
-      esac
-
-      echo " " >>"${shellProfileScript}"
-      echo "export GOROOT=/usr/local/go" >>"${shellProfileScript}"
-      echo 'export GOPATH=$HOME/go' >>"${shellProfileScript}"
-      echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >>"${shellProfileScript}"
-
-      export GOROOT=/usr/local/go
-      export GOPATH=$HOME/go
-      export PATH=${GOPATH}/bin:${GOROOT}/bin:${PATH}
-
-      reloadShell() {
-        $SHELL -i
-      }
-
-      trap reloadShell EXIT
-
-    elif
-      __osx
-    then
-      brew update && brew install golang
-    else
-      echo "$OSTYPE" is not supported at this time.
+    elif __osx; then
+      echo 'noop' >/dev/null
     fi
-
   fi
 
-  if ! command -v golangci-lint >/dev/null 2>&1; then
-    curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.33.0
-    golangci-lint --version
+  if __ubuntu; then
+    root_var='/usr/local/go'
 
+  elif __osx; then
+    root_var='/usr/local/var/homebrew/linked/go/'
   fi
+
+  shellName=$(basename ${SHELL})
+  case ${shellName} in
+
+  zsh)
+    shellProfileScript="${HOME}/.zshrc"
+    ;;
+
+  bash)
+    shellProfileScript="${HOME}/.bashrc"
+    ;;
+
+  esac
+
+
+  if ! grep -Fq 'export GOROOT=' ${shellProfileScript}; then
+    echo " " >>"${shellProfileScript}"
+    echo "export GOROOT=$root_var" >>"${shellProfileScript}"
+  fi
+
+  if ! grep -Fq 'export GOPATH=' "${shellProfileScript}"; then
+    echo 'export GOPATH=$HOME/go' >>"${shellProfileScript}"
+  fi
+
+  if ! grep -Fq 'export PATH=$GOPATH' ${shellProfileScript}; then
+    echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >>"${shellProfileScript}"
+  fi
+
+
+  reloadShell() {
+    $SHELL -i
+  }
+
+  trap reloadShell EXIT
+
 }

@@ -1,17 +1,16 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
+
 function __install_cli_tools() {
 
   if __ubuntu; then
     echo 'noop' >/dev/null
-  elif __osx; then
-    brew install coreutils
   fi
 
   if ! command -v fzf >/dev/null 2>&1; then
     if __ubuntu; then
       sudo apt-get install -y fzf
     elif __osx; then
-      brew install fzf
+      echo 'noop' >/dev/null
     else
       echo "$OSTYPE" is not supported at this time.
     fi
@@ -21,7 +20,7 @@ function __install_cli_tools() {
     if __ubuntu; then
       sudo apt-get install -y ripgrep
     elif __osx; then
-      brew install ripgrep
+      echo 'noop' >/dev/null
     else
       echo "$OSTYPE" is not supported at this time.
     fi
@@ -31,7 +30,7 @@ function __install_cli_tools() {
     if __ubuntu; then
       sudo apt-get update && sudo apt-get install jq -y
     elif __osx; then
-      brew install jq
+      echo 'noop' >/dev/null
     else
       echo "$OSTYPE" is not supported at this time.
     fi
@@ -45,6 +44,9 @@ function __install_cli_tools() {
     fi
   fi
 
-  curl -fsSL https://starship.rs/install.sh | bash
+  tmp_dir=$(mktemp -d -t ci-$(date +%Y-%m-%d-%H-%M-%S)-XXXXXXXXXX)
+  wget -O "$tmp_dir/install.sh" https://starship.rs/install.sh
+  chmod +x "$tmp_dir/install.sh"
+  "$tmp_dir/install.sh" -y
 
 }
