@@ -89,10 +89,8 @@ function hnv() {
 
 alias hnt='hn top'
 alias mtail='multitail -cS amir_log'
-
 alias rstudio='QMLSCENE_DEVICE=softwarecontext rstudio >/dev/null 2>&1 &; disown'
-
 alias psgrep='ps aux | grep'
-
-
-
+alias openports='sudo ss -tulwn'
+alias byeee='please shutdown -r now'
+alias openports='sudo ss -tulwn'
