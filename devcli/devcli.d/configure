@@ -2,35 +2,15 @@
 
 use configure-git-pair
 
-valid_values=("git-pair git-personal git-vscode")
-read -r -d '' __helptext <<-'EOF' || true                      # exits non-zero when EOF encountered
+read -r -d '' __helptext <<-'EOF' || true # exits non-zero when EOF encountered
  Configure your workstation.
-EOF
-
-[[ "${__usage+x}" ]] || read -r -d '' __usage <<-'EOF' || true # exits non-zero when EOF encountered
-  -p --profile  [arg] Profile to configure. Valid values: [git-pair, git-personal, git-vscode]. Required.
 EOF
 
 source $ROOT_DIR/_boilerplate.sh
 
-# shellcheck disable=SC2076
-[[ " ${valid_values[*]} " =~ " ${arg_p:-} " ]] || help
+__configure_git_pair
 
-case "${arg_p}" in
-
-git-pair)
-  __configure_git_pair
-
-  ;;
-
-git-personal)
-  git config --global --replace-all user.name "Javier Matias-Cabrera"
-  git config --global --replace-all user.email Javier.L.Matias@gmail.com
-
-  ;;
-
-git-vscode)
-  git config --global core.editor "code --wait"
-  ;;
-
-esac
+git config --global --replace-all user.name "Javier Matias-Cabrera"
+git config --global --replace-all user.email Javier.L.Matias@gmail.com
+git config --global core.editor "code --wait"
+git config --global pull.rebase true

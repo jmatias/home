@@ -9,7 +9,6 @@ elif __osx; then
 fi
 
 alias work='cd ~/workspace'
-alias bfg="java -jar $HOME/workspace/external-repos/bfg-repo-cleaner/bfg/target/bfg-1.13.0-tags/v1.13.0-2c1ec2f.jar"
 
 function intellij() {
   if [[ $# -gt 0 ]]; then

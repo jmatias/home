@@ -4,6 +4,9 @@
 source $HOME/.my-zsh/custom/environments.zsh
 
 if __ubuntu; then
+
+  alias bfg="java -jar $HOME/workspace/external-repos/bfg-repo-cleaner/bfg/target/bfg-1.13.0-tags/v1.13.0-2c1ec2f.jar"
+
   export GTK_THEME=Adwaita:dark
   export MANPATH="$MANPATH:/usr/local/texlive/2021/texmf-dist/doc/man"
   export INFOPATH="$INFOPATH:/usr/local/texlive/2021/texmf-dist/doc/info"
