@@ -18,6 +18,7 @@ plugins=(
   brew
   zsh_reload
   docker
+  docker-compose
   gradle
 )
 
@@ -28,3 +29,5 @@ source $ZSH/oh-my-zsh.sh
 export GOROOT=/usr/local/Cellar/go/1.16.3/
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+export SBT_CREDENTIALS=/Users/jmatiascabrera/.sbt/credentials
