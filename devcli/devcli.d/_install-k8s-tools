@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-function __brew_bundle() {
-
-  if __osx; then
-    brew bundle install --file ${CONFIGURATION_DIR}/Brewfile
-  fi
-
-}
-
 function __install_k8s_tools() {
 
   os_name=$(uname | tr '[:upper:]' '[:lower:]')

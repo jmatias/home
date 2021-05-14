@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+function __brew_bundle() {
+
+  if __osx; then
+    brew bundle install --file ${CONFIGURATION_DIR}/Brewfile
+  fi
+
+}
+
 function __install_python3() {
 
   if ! command -v python3 >/dev/null 2>&1; then
@@ -8,11 +16,16 @@ function __install_python3() {
       sudo apt install python3-virtualenv python3-venv -y
       sudo apt upgrade python3-virtualenv python3-venv -y
 
+
     elif __osx; then
       echo 'noop' >/dev/null
     else
       echo "$OSTYPE" is not supported at this time.
     fi
+
+    pip install virtualenv
+    pip install --upgrade pip
+    pip install -r ${CONFIGURATION_DIR}/requirements.txt
 
   else
 
@@ -24,6 +37,9 @@ function __install_python3() {
     else
       echo "$OSTYPE" is not supported at this time.
     fi
+
+    pip install --upgrade virtualenv pip
+    pip install --upgrade -r ${CONFIGURATION_DIR}/requirements.txt
 
   fi
 
