@@ -39,6 +39,7 @@
 !/devcli/conf
 !/devcli/conf/Brewfile
 !/devcli/conf/requirements.txt
+!/devcli/conf/apt.txt
 
 
 !/devcli/winsetup.ps1
