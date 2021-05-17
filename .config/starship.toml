@@ -42,9 +42,6 @@ command = "devcli git-pair"
 [helm]
 disabled = true
 
-[kubernetes]
-disabled = true
-
 [java]
 style = "red"
 

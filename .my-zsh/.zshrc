@@ -1,7 +1,5 @@
-
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
-
 
 plugins=(
   git
@@ -23,5 +21,9 @@ plugins=(
 )
 
 export ZSH_CUSTOM="$HOME/.my-zsh/custom"
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
