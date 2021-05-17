@@ -40,7 +40,10 @@ when = "exit 0"
 command = "devcli git-pair"
 
 [helm]
-disabled = false
+disabled = true
+
+[kubernetes]
+disabled = true
 
 [java]
 style = "red"
@@ -48,3 +51,7 @@ style = "red"
 
 [aws]
 symbol = "☁️ "
+
+
+[ruby]
+disabled = true
