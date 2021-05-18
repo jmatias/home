@@ -46,3 +46,10 @@
 
 !/Pictures
 !/Pictures/2858530.jpg
+
+
+!/.idea
+!/.idea/misc.xml
+!/.idea/modules.xml
+!/.idea/vcs.xml
+!/.idea/workspace.xml
