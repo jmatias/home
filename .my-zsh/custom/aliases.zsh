@@ -31,7 +31,6 @@ function clion() {
 }
 
 alias jbt='jetbrains-toolbox >/dev/null 2>&1 &; disown'
-alias gnucash='gnucash >/dev/null 2>&1 &; disown'
 alias msedge='msedge >/dev/null 2>&1 &; disown'
 alias startgui='startxfce4 >/dev/null 2>&1 &; disown'
 

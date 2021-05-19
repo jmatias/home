@@ -53,5 +53,6 @@ if __ubuntu; then
 
 
   alias openports='sudo ss -tulwn'
+  alias gnucash='gnucash >/dev/null 2>&1 &; disown'
 
 fi
