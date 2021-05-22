@@ -20,6 +20,8 @@ if __ubuntu; then
   export PATH="$HOME/.jenv/bin:$PATH"
   eval "$(jenv init -)"
 
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
   fpath=($fpath ~/.my-zsh/completions ~/.my-zsh/completions/private /usr/share/zsh/5.7.1/functions)
   rm -f ~/.zcompdump
   autoload -U compinit
@@ -54,5 +56,5 @@ if __ubuntu; then
 
   alias openports='sudo ss -tulwn'
   alias gnucash='gnucash >/dev/null 2>&1 &; disown'
-
+  alias signal-cli='/home/matiasca/workspace/external-repos/signal-cli/build/install/signal-cli/bin/signal-cli'
 fi
