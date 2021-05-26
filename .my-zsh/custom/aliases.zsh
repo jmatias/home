@@ -76,6 +76,10 @@ function decode() {
   echo $1 | base64 -d
 }
 
+function encode() {
+  echo $1 | base64
+}
+
 function humanread() {
   numfmt --to=iec-i --suffix=B --padding=7 $1
 }
