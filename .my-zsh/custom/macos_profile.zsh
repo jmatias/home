@@ -21,7 +21,7 @@ if __osx; then
 
   export TALISMAN_HOME=$HOME/.talisman/bin
   alias talisman=$TALISMAN_HOME/talisman_darwin_amd64
-  export TALISMAN_INTERACTIVE=false
+  export TALISMAN_INTERACTIVE=true
 
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
