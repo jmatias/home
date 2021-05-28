@@ -18,4 +18,11 @@ if __osx; then
   export LDFLAGS="-L/usr/local/opt/python@3.7/lib"
   export PKG_CONFIG_PATH="/usr/local/opt/python@3.7/lib/pkgconfig"
 
+
+  export TALISMAN_HOME=$HOME/.talisman/bin
+  alias talisman=$TALISMAN_HOME/talisman_darwin_amd64
+  export TALISMAN_INTERACTIVE=false
+
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 fi
