@@ -14,4 +14,8 @@ if __osx; then
   PERL_MB_OPT="--install_base \"/Users/jmatias/perl5\""; export PERL_MB_OPT;
   PERL_MM_OPT="INSTALL_BASE=/Users/jmatias/perl5"; export PERL_MM_OPT;
 
+  export PATH="/usr/local/opt/python@3.7/bin:$PATH"
+  export LDFLAGS="-L/usr/local/opt/python@3.7/lib"
+  export PKG_CONFIG_PATH="/usr/local/opt/python@3.7/lib/pkgconfig"
+
 fi
