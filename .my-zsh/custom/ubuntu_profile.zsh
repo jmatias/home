@@ -57,4 +57,10 @@ if __ubuntu; then
   alias openports='sudo ss -tulwn'
   alias gnucash='gnucash >/dev/null 2>&1 &; disown'
   alias signal-cli='/home/matiasca/workspace/external-repos/signal-cli/build/install/signal-cli/bin/signal-cli'
+
+
+  export GOROOT=/usr/local/go
+  export GOPATH=$HOME/go
+  export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
 fi
