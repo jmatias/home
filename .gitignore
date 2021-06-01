@@ -1,6 +1,7 @@
 *
 
 !.gitignore
+!.talismanrc
 
 
 !/.my-zsh/

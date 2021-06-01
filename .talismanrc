@@ -1,0 +1,5 @@
+fileignoreconfig:
+- filename: .idea/sonarIssues.xml
+  allowed_patterns: [key]
+- filename: .my-zsh/.zshrc
+  checksum: c92e6f9abe03b0b9cc0aae05fc8e27fbaed62f57a5d41fb1b5dfe8a26d99367d
