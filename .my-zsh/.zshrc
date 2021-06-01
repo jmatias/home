@@ -18,6 +18,8 @@ plugins=(
   docker
   docker-compose
   gradle
+  ruby
+  rbenv
 )
 
 export ZSH_CUSTOM="$HOME/.my-zsh/custom"
