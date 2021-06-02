@@ -2,7 +2,44 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/autostart" />
+      <excludeFolder url="file://$MODULE_DIR$/cef_user_data" />
+      <excludeFolder url="file://$MODULE_DIR$/configstore" />
+      <excludeFolder url="file://$MODULE_DIR$/dconf" />
+      <excludeFolder url="file://$MODULE_DIR$/dlv" />
+      <excludeFolder url="file://$MODULE_DIR$/enchant" />
+      <excludeFolder url="file://$MODULE_DIR$/eog" />
+      <excludeFolder url="file://$MODULE_DIR$/Epic" />
+      <excludeFolder url="file://$MODULE_DIR$/evolution" />
+      <excludeFolder url="file://$MODULE_DIR$/gatsby" />
+      <excludeFolder url="file://$MODULE_DIR$/gedit" />
+      <excludeFolder url="file://$MODULE_DIR$/gnucash" />
+      <excludeFolder url="file://$MODULE_DIR$/goa-1.0" />
+      <excludeFolder url="file://$MODULE_DIR$/gtk-3.0" />
+      <excludeFolder url="file://$MODULE_DIR$/helm" />
+      <excludeFolder url="file://$MODULE_DIR$/ibus" />
+      <excludeFolder url="file://$MODULE_DIR$/JetBrains" />
+      <excludeFolder url="file://$MODULE_DIR$/jgit" />
+      <excludeFolder url="file://$MODULE_DIR$/matplotlib" />
+      <excludeFolder url="file://$MODULE_DIR$/mdless" />
+      <excludeFolder url="file://$MODULE_DIR$/ofxtools" />
+      <excludeFolder url="file://$MODULE_DIR$/pdfcpu" />
+      <excludeFolder url="file://$MODULE_DIR$/procps" />
+      <excludeFolder url="file://$MODULE_DIR$/projector-launcher" />
+      <excludeFolder url="file://$MODULE_DIR$/pulse" />
+      <excludeFolder url="file://$MODULE_DIR$/R" />
+      <excludeFolder url="file://$MODULE_DIR$/RStudio" />
+      <excludeFolder url="file://$MODULE_DIR$/rstudio" />
+      <excludeFolder url="file://$MODULE_DIR$/themes" />
+      <excludeFolder url="file://$MODULE_DIR$/Thunar" />
+      <excludeFolder url="file://$MODULE_DIR$/wslu" />
+      <excludeFolder url="file://$MODULE_DIR$/xfce4" />
+      <excludeFolder url="file://$MODULE_DIR$/yarn" />
+      <excludeFolder url="file://$MODULE_DIR$/yelp" />
+      <excludeFolder url="file://$MODULE_DIR$/zathura" />
+      <excludeFolder url="file://$MODULE_DIR$/znt" />
+    </content>
     <orderEntry type="jdk" jdkName="Python 3.8 (.env3)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
