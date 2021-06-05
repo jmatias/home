@@ -5,6 +5,10 @@ source $HOME/.my-zsh/custom/environments.zsh
 
 if __osx; then
 
+  export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+  export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
+
   alias openports='lsof -i 4tcp'
   alias gnucash='open -a Gnucash'
 
