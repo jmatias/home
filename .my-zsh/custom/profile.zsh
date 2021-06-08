@@ -40,5 +40,7 @@ source $HOME/.env3/bin/activate
 
 export AWS_PAGER=""
 export RPROMPT=""
+export TALISMAN_INTERACTIVE=true
+
 
 devcli weather
