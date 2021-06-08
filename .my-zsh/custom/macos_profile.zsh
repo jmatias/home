@@ -31,4 +31,6 @@ if __osx; then
 
   export GOPATH=$HOME/go
 
+  export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk/"
+
 fi
