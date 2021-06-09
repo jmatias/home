@@ -55,7 +55,9 @@ if __ubuntu; then
 
 
   alias openports='sudo ss -tulwn'
-  alias gnucash='gnucash >/dev/null 2>&1 &; disown'
+
+  export PYTHONPATH=/usr/local/lib/python3.8/site-packages:$PYTHONPATH
+  alias gnucash="gnucash >>$HOME/log/gnucash.log 2>&1 &; disown"
   alias signal-cli='/home/matiasca/workspace/external-repos/signal-cli/build/install/signal-cli/bin/signal-cli'
 
 
