@@ -39,6 +39,12 @@
       <excludeFolder url="file://$MODULE_DIR$/yelp" />
       <excludeFolder url="file://$MODULE_DIR$/zathura" />
       <excludeFolder url="file://$MODULE_DIR$/znt" />
+      <excludeFolder url="file://$MODULE_DIR$/.mono" />
+      <excludeFolder url="file://$MODULE_DIR$/htop" />
+      <excludeFolder url="file://$MODULE_DIR$/iterm2" />
+      <excludeFolder url="file://$MODULE_DIR$/NuGet" />
+      <excludeFolder url="file://$MODULE_DIR$/stetic" />
+      <excludeFolder url="file://$MODULE_DIR$/xbuild" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.8 (.env3)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
