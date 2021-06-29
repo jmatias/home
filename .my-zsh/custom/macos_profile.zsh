@@ -30,6 +30,7 @@ if __osx; then
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
   export GOPATH=$HOME/go
+  export GOROOT=/usr/local/Cellar/go/1.16.4/
 
   export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk/"
 
