@@ -4,7 +4,7 @@ function __install_jetbrains() {
 
   if __ubuntu; then
     mkdir -p $HOME/bin
-    wget -q https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.18.7609.tar.gz -O - | tar zxvf - -C /tmp
+    wget -q https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.20.8804.tar.gz -O - | tar zxvf - -C /tmp
     mv /tmp/jetbrains-toolbox*/jetbrains-toolbox $HOME/bin/
 
     sudo apt update

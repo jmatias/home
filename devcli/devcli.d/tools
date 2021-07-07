@@ -23,11 +23,13 @@ EOF
 source $ROOT_DIR/_boilerplate.sh
 
 if [[ "${arg_r:?}" = "1" ]]; then
-  sudo rm -rf /usr/local/bin/eksctl
-  sudo rm -rf /usr/local/bin/kube
-  sudo rm -rf /usr/local/bin/helm
-  sudo rm -rf /usr/local/bin/fluxctl
-  sudo rm -rf /usr/local/bin/tkn
+  echo "Deleting..."
+  sudo rm -rfv /usr/local/bin/eksctl
+  sudo rm -rfv /usr/local/bin/kube
+  sudo rm -rfv /usr/local/bin/helm
+  sudo rm -rfv /usr/local/bin/fluxctl
+  sudo rm -rfv /usr/local/bin/tkn
+  sudo rm -rfv /usr/local/go
 fi
 
 if [[ "${arg_i:?}" -gt 0 ]]; then

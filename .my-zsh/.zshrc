@@ -25,3 +25,7 @@ plugins=(
 export ZSH_CUSTOM="$HOME/.my-zsh/custom"
 
 source $ZSH/oh-my-zsh.sh
+ 
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH

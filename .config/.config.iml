@@ -45,6 +45,8 @@
       <excludeFolder url="file://$MODULE_DIR$/NuGet" />
       <excludeFolder url="file://$MODULE_DIR$/stetic" />
       <excludeFolder url="file://$MODULE_DIR$/xbuild" />
+      <excludeFolder url="file://$MODULE_DIR$/update-notifier" />
+      <excludeFolder url="file://$MODULE_DIR$/catfish" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.8 (.env3)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

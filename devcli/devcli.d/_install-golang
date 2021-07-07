@@ -4,7 +4,7 @@ function __install_golang() {
   if ! command -v go >/dev/null 2>&1; then
     if __ubuntu; then
       sudo apt install wget -y
-      sudo wget -q https://golang.org/dl/go1.15.6.linux-amd64.tar.gz -O - | sudo tar zxvf - -C /usr/local
+      sudo wget -q https://golang.org/dl/go1.16.1.linux-amd64.tar.gz -O - | sudo tar zxvf - -C /usr/local
 
     elif __osx; then
       echo 'noop' >/dev/null

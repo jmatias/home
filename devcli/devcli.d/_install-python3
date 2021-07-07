@@ -16,16 +16,11 @@ function __install_python3() {
       sudo apt install python3-virtualenv python3-venv -y
       sudo apt upgrade python3-virtualenv python3-venv -y
 
-
     elif __osx; then
       echo 'noop' >/dev/null
     else
       echo "$OSTYPE" is not supported at this time.
     fi
-
-    pip install virtualenv
-    pip install --upgrade pip
-    pip install -r ${CONFIGURATION_DIR}/requirements.txt
 
   else
 
@@ -43,9 +38,14 @@ function __install_python3() {
 
   fi
 
-  pip install --upgrade virtualenv pip
-  python3 -m venv $HOME/.env3
-  source $HOME/.env3/bin/activate
+  pip install virtualenv
   pip install --upgrade pip
-  pip install --upgrade -r ${CONFIGURATION_DIR}/requirements.txt
+  pip install -r ${CONFIGURATION_DIR}/requirements.txt
+
+  if [[ ! -d $HOME/.env3 ]]; then
+
+    python3 -m venv $HOME/.env38
+    ln -s $HOME/.env38 $HOME/.env3
+  fi
+
 }
