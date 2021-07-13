@@ -4,7 +4,9 @@ function __install_golang() {
   if ! command -v go >/dev/null 2>&1; then
     if __ubuntu; then
       sudo apt install wget -y
-      sudo wget -q https://golang.org/dl/go1.16.1.linux-amd64.tar.gz -O - | sudo tar zxvf - -C /usr/local
+      latest_version=$(curl 'https://golang.org/VERSION?m=text')
+      sudo wget -q https://golang.org/dl/${latest_version}.linux-amd64.tar.gz -O - | sudo tar zxvf - -C /usr/local
+      curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.41.1
 
     elif __osx; then
       echo 'noop' >/dev/null
@@ -46,10 +48,5 @@ function __install_golang() {
   fi
 
 
-  reloadShell() {
-    $SHELL -i
-  }
-
-  trap reloadShell EXIT
 
 }
