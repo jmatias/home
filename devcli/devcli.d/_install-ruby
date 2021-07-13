@@ -11,7 +11,7 @@ function __install_ruby() {
 
       RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
     else
-      curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
+      curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer | bash
       eval "$(rbenv init -)"
 
       shellName=$(basename ${SHELL})

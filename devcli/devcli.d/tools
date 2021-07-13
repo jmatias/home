@@ -10,6 +10,7 @@ use install-okta
 use install-r
 use install-python3
 use install-ruby
+use install-jdk
 
 read -r -d '' __helptext <<-'EOF' || true # exits non-zero when EOF encountered
  Install development tools.
@@ -39,6 +40,7 @@ if [[ "${arg_i:?}" -gt 0 ]]; then
 
   __brew_bundle
   __install_python3
+  __install_jdk
   __install_ruby
   __install_okta
   __install_golang

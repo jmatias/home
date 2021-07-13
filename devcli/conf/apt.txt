@@ -1,1 +1,1 @@
-ruby fzf ripgrep jq xfce4 python3-virtualenv python3-venv r-base zsh guile-3.0-dev
+ruby fzf ripgrep jq xfce4 python3-virtualenv python3-venv r-base zsh guile-3.0-dev xdg-utils  libcairo2-dev libxslt-dev xsltproc ninja-build libboost-all-dev libgtk-3-dev guile-2.2-dev libgwengui-gtk3-dev libaqbanking-dev libofx-dev libdbi-dev libdbd-sqlite3 libwebkit2gtk-4.0-dev  googletest cmake libgirepository1.0-dev zsh
