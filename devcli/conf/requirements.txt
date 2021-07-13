@@ -1,9 +1,13 @@
 pandas
 tensorflow
-tensorflow-probability >= 0.11
+tensorflow-probability >= 0.12
 seaborn
 matplotlib
 scikit-learn
 coursera-dl
 wheel
 yq
+pycryptodome
+aiohttp
+gobject
+PyGObject

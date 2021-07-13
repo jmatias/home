@@ -1,9 +1,1 @@
-ruby
-fzf
-ripgrep
-jq
-xfce4
-python3-virtualenv
-python3-venv
-r-base
-zsh
+ruby fzf ripgrep jq xfce4 python3-virtualenv python3-venv r-base zsh guile-3.0-dev
