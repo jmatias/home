@@ -60,6 +60,7 @@ ruby
 swig
 texinfo
 texlive-full
+xclip
 xdg-utils
 xfce4
 xmlsec1

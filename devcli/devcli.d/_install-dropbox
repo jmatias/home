@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+function __install_dropbox() {
+
+  if ! command -v dropbox >/dev/null 2>&1; then
+
+    if __ubuntu; then
+      tmpdir=$(mktemp -d)
+      wget -q https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb -O ${tmpdir}/dropbox.deb
+      sudo dpkg --install ${tmpdir}/dropbox.deb
+      dropbox start -i
+
+    elif
+      __osx
+    then
+      noop
+    else
+      echo "$OSTYPE" is not supported at this time.
+    fi
+
+  fi
+
+}

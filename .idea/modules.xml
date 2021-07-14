@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.aqbanking/.aqbanking.iml" filepath="$PROJECT_DIR$/.aqbanking/.aqbanking.iml" />
       <module fileurl="file://$PROJECT_DIR$/.config/.config.iml" filepath="$PROJECT_DIR$/.config/.config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.local/.local.iml" filepath="$PROJECT_DIR$/.local/.local.iml" />
       <module fileurl="file://$PROJECT_DIR$/.my-zsh/.my-zsh.iml" filepath="$PROJECT_DIR$/.my-zsh/.my-zsh.iml" />
       <module fileurl="file://$PROJECT_DIR$/devcli/devcli.iml" filepath="$PROJECT_DIR$/devcli/devcli.iml" />
     </modules>

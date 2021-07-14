@@ -11,6 +11,7 @@ use install-r
 use install-python3
 use install-ruby
 use install-jdk
+use install-dropbox
 
 read -r -d '' __helptext <<-'EOF' || true # exits non-zero when EOF encountered
  Install development tools.
@@ -48,6 +49,7 @@ if [[ "${arg_i:?}" -gt 0 ]]; then
   __install_awscli
   __install_zsh_plugins
   __install_cli_tools
+  __install_dropbox
   __install_ides
 
 fi

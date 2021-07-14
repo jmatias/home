@@ -47,7 +47,7 @@ if __ubuntu; then
   export JAVA_OPTS=-Djava.awt.headless=true
 
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda/lib64
-  alias stonks='/usr/local/bin/gnucash-cli --quotes get /mnt/dropbox/Personal/Banking/GnuCash/jmatias_accounting.gnucash'
+  alias stonks="/usr/local/bin/gnucash-cli --quotes get $HOME/Dropbox/Personal/Banking/GnuCash/jmatias_accounting.gnucash"
 
   #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
   export SDKMAN_DIR="$HOME/.sdkman"
@@ -64,5 +64,7 @@ if __ubuntu; then
   export GOROOT=/usr/local/go
   export GOPATH=$HOME/go
   export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+  alias pbcopy=" tr -d '\n' | xclip -selection c"
 
 fi

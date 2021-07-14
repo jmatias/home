@@ -1,99 +1,89 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-    "initialCols": 250,
-    "initialPosition": "30,30",
-    "initialRows": 65,
-    "keybindings": [
-        // {
-        //   "command": "closeTab",
-        //   "keys": [
-        //     "ctrl+w"
-        //   ]
-        // },
+    "actions": 
+    [
         {
             "command": "toggleFocusMode",
             "keys": "alt+shift+f11"
         },
         {
-            "command": "commandPalette",
+            "command": 
+            {
+                "action": "commandPalette"
+            },
             "keys": "ctrl+shift+p"
         },
         {
-            "command": {
-                "action": "splitPane",
-                "index": 2,
-                "split": "vertical"
-            },
-            "keys": [
-                "alt+shift+n"
-            ]
-        },
-        {
-            "command": {
-                "action": "splitPane",
-                "index": 2,
-                "split": "horizontal"
-            },
-            "keys": [
-                "alt+shift+m"
-            ]
-        },
-        {
-            "command": {
+            "command": 
+            {
                 "action": "splitPane",
                 "index": 2,
                 "split": "auto"
             },
-            "keys": [
-                "alt+shift+,"
-            ]
+            "keys": "alt+shift+,"
         },
         {
-            "command": {
+            "command": 
+            {
+                "action": "splitPane",
+                "index": 2,
+                "split": "vertical"
+            },
+            "keys": "alt+shift+n"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "index": 2,
+                "split": "horizontal"
+            },
+            "keys": "alt+shift+m"
+        },
+        {
+            "command": 
+            {
                 "action": "splitPane",
                 "index": 0,
                 "split": "vertical"
             },
-            "keys": [
-                "alt+shift+j"
-            ]
+            "keys": "alt+shift+j"
         },
         {
-            "command": {
-                "action": "splitPane",
-                "index": 0,
-                "split": "horizontal"
-            },
-            "keys": [
-                "alt+shift+k"
-            ]
-        },
-        {
-            "command": {
+            "command": 
+            {
                 "action": "splitPane",
                 "index": 0,
                 "split": "auto"
             },
-            "keys": [
-                "alt+shift+l"
-            ]
+            "keys": "alt+shift+l"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "index": 0,
+                "split": "horizontal"
+            },
+            "keys": "alt+shift+k"
         },
         {
             "command": "find",
-            "keys": [
-                "ctrl+f"
-            ]
+            "keys": "ctrl+f"
         },
         {
             "command": "togglePaneZoom",
-            "keys": [
-                "alt+shift+enter"
-            ]
+            "keys": "alt+shift+enter"
         }
     ],
-    "profiles": {
-        "defaults": {
+    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+    "initialCols": 250,
+    "initialPosition": "30,30",
+    "initialRows": 65,
+    "profiles": 
+    {
+        "defaults": 
+        {
             "acrylicOpacity": 0.75,
             "bellStyle": "none",
             "closeOnExit": "graceful",
@@ -104,12 +94,14 @@
             "startingDirectory": "C:/Users/Javier",
             "useAcrylic": true
         },
-        "list": [
+        "list": 
+        [
             {
                 "commandline": "pwsh.exe",
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell Core 7",
+                "source": "Windows.Terminal.PowershellCore",
                 "useAcrylic": false
             },
             {
@@ -125,11 +117,13 @@
                 "commandline": "wsl",
                 "cursorHeight": 33,
                 "cursorShape": "vintage",
+                "fontFace": "JetBrains Mono",
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "historySize": 9271,
                 "icon": "\\\\wsl$\\Ubuntu\\home\\matiasca\\.config\\ubuntu.ico",
                 "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl",
                 "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\matiasca",
                 "useAcrylic": true
             },
@@ -167,7 +161,8 @@
             }
         ]
     },
-    "schemes": [
+    "schemes": 
+    [
         {
             "background": "#040404",
             "black": "#040404",
